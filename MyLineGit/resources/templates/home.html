@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ホーム</title>
+    <style>
+        body {
+            text-align: center;
+            background-color: skyblue;
+            font-family: Arial, sans-serif;
+            margin: 50px;
+        }
+
+        h1 {
+            color: white;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        button {
+            padding: 10px;
+            font-size: 16px;
+            margin: 10px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #4CAF50;
+            color: white;
+        }
+				.area {
+  width: 500px;
+  margin: auto;
+  flex-wrap: wrap;
+  display: flex;
+}
+ 
+.tab_class {
+  width: calc(100%/5);
+  height: 50px;
+  background-color: darkgrey;
+  line-height: 50px;
+  font-size: 15px;
+  text-align: center;
+  display: block;
+  float: left;
+  order: -1;
+}
+ 
+input[name="tab_name"] {
+  display: none;
+}
+ 
+input:checked + .tab_class {
+  background-color: cadetblue;
+  color: aliceblue;
+}
+ 
+.content_class {
+  display: none;
+  width: 100%;
+}
+ 
+input:checked + .tab_class + .content_class {
+  display: block;
+}
+ 
+    </style>
+</head>
+<body>
+    <h1>ホーム</h1>
+		<div class="area">
+			<input type="radio" name="tab_name" id="tab1" checked>
+			<label class="tab_class" for="tab1">ホーム</label>
+			<div class="content_class">
+				<a href="file:///C:/Users/S0521/Desktop/%E5%8D%92%E6%A5%AD%E5%88%B6%E4%BD%9C%E3%81%A7%E3%82%82/drop.html">
+					<button type="button">科目登録</button>
+			</a>
+			<a href="file:///C:/Users/S0521/Desktop/%E5%8D%92%E6%A5%AD%E5%88%B6%E4%BD%9C%E3%81%A7%E3%82%82/ivent.html">
+					<button type="button">イベント登録</button>
+			</a>
+			<a href="file:///C:/Users/S0521/Desktop/%E5%8D%92%E6%A5%AD%E5%88%B6%E4%BD%9C%E3%81%A7%E3%82%82/memo.html?datetime=&subjects=Java">
+					<button type="button">メモ登録</button>
+			</a>
+      <a href="file:///C:/Users/S0521/Desktop/%E5%8D%92%E6%A5%AD%E5%88%B6%E4%BD%9C%E3%81%A7%E3%82%82/memoeturan.html">
+        <button type="button">メモ閲覧</button>
+     </a>
+			</div>
+			<input type="radio" name="tab_name" id="tab2" >
+			<label class="tab_class" for="tab2">科目</label>
+			<div class="content_class">
+        <p><img src="images/getuyoubi.png" alt="月曜日" width="100" height="100">
+        <img src="images/kayoubi.png" alt="火曜日" width="100" height="100">
+        <img src="images/suiyoubi.png" alt="水曜日" width="100" height="100"></p>
+        
+        <p><img src="images/mokuyoubi.png" alt="木曜日" width="100" height="100">
+        <img src="images/kinyoubi.png" alt="金曜日" width="100" height="100"></p>
+			</div>
+			</div>
+    
+</body>
+</html>

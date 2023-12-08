@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>メモ閲覧画面</title>
+    <style>
+        body {
+            background-color: skyblue;
+            text-align: center;
+        }
+
+        .large-input {
+            width: 300px;
+            height: 350px;
+        }
+
+        .clicked {
+            background-color: lightcoral;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>メモ閲覧</h1>
+    <form>
+        <br>
+        <br>
+        <br>
+
+        <label for="date">日時:</label>
+        <input type="date" id="date" name="date">
+        <br>
+        <br>
+        <label for="subjects">科目:</label>
+        <select id="subjects" name="subjects">
+            <option value="Java">Java応用</option>
+            <option value="Cgengo">C言語</option>
+            <option value="Html">HTML/CSS</option>
+            <option value="Javascript">JavaScript</option>
+            <option value="DB">DB応用</option>
+        </select>
+        <br>
+        <br>
+        <label for="subjects">公開設定:</label>
+        <button id="onButton" onclick="handleButtonClick(this)">On</button>
+        <label for="subjects">/</label>
+        <button id="offButton" onclick="handleButtonClick(this)">Off</button>
+        <br>
+        <br>
+        <a>
+            <input type="button" value="検索" onclick="Click_Sub()">
+        </a>
+        <hr>
+
+        <label for="memo">メモ:</label>
+        <br>
+        <div id="div1" style="display: none;">Java != JavaScript</div>
+        <br>
+        <br>
+
+        <a href="home.html">
+            <button type="button">ホーム画面</button>
+        </a>
+    </form>
+
+    <script language="Javascript">
+        // ボタンのクリック時の処理
+        function handleButtonClick(button) {
+            // ボタンがクリックされた状態を切り替える
+            if (button.classList.contains('clicked')) {
+                button.classList.remove('clicked');
+            } else {
+                button.classList.add('clicked');
+            }
+            // 状態をローカルストレージに保存
+            saveButtonState(button.id, button.classList.contains('clicked'));
+        }
+
+        // ページ読み込み時にボタンの状態を復元
+        document.addEventListener('DOMContentLoaded', function () {
+            restoreButtonState('onButton');
+            restoreButtonState('offButton');
+        });
+
+        // ボタンの状態をローカルストレージに保存
+        function saveButtonState(buttonId, isClicked) {
+            localStorage.setItem(buttonId, isClicked);
+        }
+
+        // ローカルストレージからボタンの状態を復元
+        function restoreButtonState(buttonId) {
+            const isClicked = localStorage.getItem(buttonId) === 'true';
+            const button = document.getElementById(buttonId);
+            if (isClicked) {
+                button.classList.add('clicked');
+            }
+        }
+
+        function Click_Sub() {
+            var div1 = document.getElementById("div1");
+
+            if (div1.style.display === "none" || div1.style.display === "") {
+                div1.style.display = "block";
+            } else {
+                div1.style.display = "none";
+            }
+        }
+    </script>
+</body>
+
+</html>

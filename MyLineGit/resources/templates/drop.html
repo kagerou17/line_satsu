@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>科目登録</title>
+    <style>
+        body {
+            background-color: skyblue;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            margin: 50px;
+        }
+
+        h1 {
+            color: white;
+        }
+
+        form {
+            display: inline-block;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0;
+            font-size: 16px;
+            color: white;
+        }
+
+        select,
+        input[type="datetime-local"],
+        input[type="text"] {
+            width: 300px;
+            padding: 8px;
+            margin: 8px 0;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:first-child {
+            background-color: #4CAF50;
+            color: white;
+            margin-right: 10px;
+        }
+
+        input[type="submit"]:last-child {
+            background-color: #f44336;
+            color: white;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        button {
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #2196F3;
+            color: white;
+            border: none;
+        }
+
+        button:hover {
+            background-color: #0b7dda;
+        }
+    </style>
+</head>
+<body>
+    <h1>科目選択</h1>
+    <form>
+        <label for="subjects">科目:</label>
+        <select id="subjects" name="subjects">
+            <option value="Java">Java応用</option>
+            <option value="Cgengo">C言語</option>
+            <option value="Html">HTML/CSS</option>
+            <option value="Javascript">JavaScript</option>
+            <option value="DB">DB応用</option>
+        </select>
+        
+        <br>
+        
+        <label for="teacher">担当教員名:</label>
+        <select id="teachers" name="teachers">
+            <option value="numa">沼田先生</option>
+            <option value="take">竹野谷先生</option>
+            <option value="wata">渡部先生</option>
+            <option value="ono">小野先生</option>
+            <option value="saku">佐久間先生</option>
+            <option value="sue">末原先生</option>
+        </select>
+        
+        <br>
+        <label for="youbi">曜日:</label>
+        <select name=”dayofweek”>
+            <option value=”getu”>月曜日</option>
+            <option value=”ka”>火曜日</option>
+            <option value=”sui”>水曜日</option>
+            <option value=”moku”>木曜日</option>
+            <option value=”kin”>金曜日</option>
+          </select>
+    
+        <br>
+
+        <label for="time">時間:</label>
+        <select name=”times”>
+            <option value=”one”>一限</option>
+            <option value=”two”>二限</option>
+            <option value=”three”>三限</option>
+          </select>
+          <br>
+
+        <label for="text-input">最大の授業回数:</label>
+        <input type="text" id="text-input" name="text-input">
+        
+        <br>
+        <input type="submit" value="登録">
+        <input type="reset" value="クリア">
+        <br>
+        <a href="file:///C:/Users/S0521/Desktop/%E5%8D%92%E6%A5%AD%E5%88%B6%E4%BD%9C%E3%81%A7%E3%82%82/home.html">
+            <button type="button">ホーム画面</button>
+        </a>
+    </form>
+</body>
+</html>
