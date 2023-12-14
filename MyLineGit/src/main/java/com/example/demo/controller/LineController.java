@@ -1,9 +1,11 @@
 package com.example.demo.controller;
 
+import java.io.IOException;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
@@ -15,16 +17,22 @@ import org.springframework.web.client.RestTemplate;
 
 import com.example.demo.bean.Event;
 import com.example.demo.bean.LineData;
+import com.example.demo.service.CreateRichMenuService;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 @Controller
 public class LineController {
 
+	@Autowired
+	CreateRichMenuService createRichMenuService;
+	
 	//ここにチャンネルアクセストークンを貼る！
 	String channelAccessToken = "Vw8uJqKu4zdg6eJdZ0TlfH5vRbfCCEuKdKFyG+i6KpySmWKpyG5Hx/7nObmZSg21xOkxm+USjJ9Ej5jWbYxFSF87UvUhQ0jD6vhTiBCbXv9Rkh4l4q/iRZc7T7/f73eqtoLrStsoflsYVrZWErXocAdB04t89/1O/w1cDnyilFU=";
 
 	@PostMapping("/Riko")
 	@CrossOrigin(origins = "*")
-	public void postApidata(@RequestBody LineData webhookData) {
+	public void postApidata(@RequestBody LineData webhookData) throws IOException {
 		for (Event event : webhookData.getEvents()) {
 
 			//メッセージを送ってきたアカウント情報を変数「replyToken」に格納する。
@@ -35,7 +43,8 @@ public class LineController {
 			String replyText = event.getMessage().getText();
 
 			if (replyText.equals("月曜日の日課")) {
-
+				
+				chooseArea(replyToken,"test");
 				replyMessage(replyToken, "月曜日の日課だよ！！\n 1限目　データベース応用 \n 2限目　React演習 \n 3限目　デジタル法制度");
 
 			} else if (replyText.equals("火曜日の日課")) {
@@ -82,4 +91,26 @@ public class LineController {
 	}
 
 	////↑ここに貼る////
+	public void chooseArea(String replyToken, String todohu) throws IOException {
+		final String LINE_MESSAGE_API_ENDPOINT = "https://api.line.me/v2/bot/message/reply";
+
+		HttpHeaders headers = new HttpHeaders();
+		headers.setContentType(MediaType.APPLICATION_JSON);
+		headers.setBearerAuth(channelAccessToken);
+
+		// 上記のFlex Message JSONを作成する部分を追加
+		ObjectMapper objectMapper = new ObjectMapper();
+		JsonNode loadedJson = objectMapper.readTree(createRichMenuService.loadFlexMessageJson(todohu));
+		JsonNode innerMessages = loadedJson.get("messages");
+
+		String requestBody = String.format("{"
+				+ "\"replyToken\": \"%s\","
+				+ "\"messages\": %s"
+				+ "}", replyToken, innerMessages.toString());
+
+		HttpEntity<String> request = new HttpEntity<>(requestBody, headers);
+		RestTemplate restTemplate = new RestTemplate();
+		restTemplate.postForObject(LINE_MESSAGE_API_ENDPOINT, request, String.class);
+	}
+
 }
