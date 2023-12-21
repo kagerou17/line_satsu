@@ -42,16 +42,16 @@ public class LineController {
 			/////////////変数「replyText」に送られてきたメッセージが格納されている
 			String replyText = event.getMessage().getText();
 
-			if (replyText.equals("月曜日の日課")) {
+			if (replyText.equals("ノートが選択されました")) {
 				
 				chooseArea(replyToken,"test");
 				replyMessage(replyToken, "月曜日の日課だよ！！\n 1限目　データベース応用 \n 2限目　React演習 \n 3限目　デジタル法制度");
 
-			} else if (replyText.equals("火曜日の日課")) {
+			} else if (replyText.equals("イベントが選択されました")) {
 				replyMessage(replyToken, "火曜日の日課だよ！！\n 1限目　なし \n 2限目　JAVAフレームワーク \n 3限目　卒業制作");
-			} else if (replyText.equals("水曜日の日課")) {
+			} else if (replyText.equals("時間割が選択されました。")) {
 				replyMessage(replyToken, "水曜日の日課だよ！！\n 1限目　卒業制作 \n 2限目　テスト技法 \n 3限目　なし");
-			} else if (replyText.equals("木曜日の日課")) {
+			} else if (replyText.equals("その他が選択されました。")) {
 				replyMessage(replyToken, "木曜日の日課だよ！！\n 1限目　AI演習 \n 2限目　C#演習 \n 3限目　卒業制作");
 			} else if (replyText.equals("金曜日の日課")) {
 				replyMessage(replyToken, "金曜日の日課だよ！！\n 1限目　卒業制作 \n 2限目　C言語検定 \n 3限目　JAVAフレームワーク");

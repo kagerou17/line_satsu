@@ -2,7 +2,7 @@
 	"messages": [
 		{
 			"type": "flex",
-			"altText": "都道府県を選択してください",
+			"altText": "科目登録選択をしてください。",
 			"contents": {
 				"type": "bubble",
 				"hero": {
