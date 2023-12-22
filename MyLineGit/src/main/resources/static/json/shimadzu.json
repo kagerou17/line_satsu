@@ -16,103 +16,126 @@
 						"uri": "http://linecorp.com/"
 					}
 				},
-				"body": {
-					"type": "box",
-					"layout": "vertical",
-					"contents": [
-						{
-							"type": "text",
-							"text": "科目選択",
-							"weight": "bold",
-							"size": "xl"
-						}
-					]
-				},
-				"footer": {
-					"type": "box",
-					"layout": "vertical",
-					"spacing": "sm",
-					"contents": [
-						{
-							"type": "button",
-							"style": "link",
-							"height": "sm",
-							"action": {
-								"type": "message",
-								"label": "フレームワーク",
-								"text": "フレームワークが選択されました"
-							}
-						},
-						{
-							"type": "button",
-							"style": "link",
-							"height": "sm",
-							"action": {
-								"type": "message",
-								"label": "DB応用",
-								"text": "DB応用が選択されました"
-							}
-						},
-						{
-							"type": "button",
-							"action": {
-								"type": "message",
-								"label": "React演習",
-								"text": "React演習が選択されました"
-							}
-						},
-						{
-							"type": "button",
-							"action": {
-								"type": "message",
-								"label": "デジタル法制度",
-								"text": "デジタル法制度が選択されました"
-							}
-						},
-						{
-							"type": "button",
-							"action": {
-								"type": "message",
-								"label": "卒業制作",
-								"text": "卒業制作が選択されました"
-							}
-						},
-						{
-							"type": "button",
-							"action": {
-								"type": "message",
-								"label": "テスト技法",
-								"text": "テスト技法が選択されました"
-							}
-						},
-						{
-							"type": "button",
-							"action": {
-								"type": "message",
-								"label": "AI演習",
-								"text": "AI演習が選択されました"
-							}
-						},
-						{
-							"type": "button",
-							"action": {
-								"type": "message",
-								"label": "C＃演習",
-								"text": "C＃演習が選択されました"
-							}
-						},
-						{
-							"type": "button",
-							"action": {
-								"type": "message",
-								"label": "C言語検定",
-								"text": "C言語検定が選択されました"
-							}
-						}
-					],
-					"flex": 0
-				}
-			}
+				
+  "type": "bubble",
+  "hero": {
+    "type": "image",
+    "url": "https://www.pakutaso.com/shared/img/thumb/HIGA62_notepen.jpg",
+    "size": "full",
+    "aspectRatio": "20:13",
+    "aspectMode": "cover",
+    "action": {
+      "type": "uri",
+      "uri": "http://linecorp.com/"
+    }
+  },
+  "body": {
+    "type": "box",
+    "layout": "vertical",
+    "contents": [
+      {
+        "type": "text",
+        "text": "科目選択",
+        "weight": "bold",
+        "size": "xl"
+      }
+    ]
+  },
+  "footer": {
+    "type": "box",
+    "layout": "vertical",
+    "spacing": "sm",
+    "contents": [
+      {
+        "type": "button",
+        "style": "link",
+        "height": "sm",
+        "action": {
+          "type": "postback",
+          "label": "フレームワーク",
+          "data": "framework",
+          "displayText": "フレームワークが選択されました"
+        }
+      },
+      {
+        "type": "button",
+        "style": "link",
+        "height": "sm",
+        "action": {
+          "type": "postback",
+          "label": "DB応用",
+          "data": "DBouyou",
+          "displayText": "DB応用が選択されました"
+        }
+      },
+      {
+        "type": "button",
+        "action": {
+          "type": "postback",
+          "label": "React演習",
+          "data": "React",
+          "displayText": "React演習が選択されました"
+        }
+      },
+      {
+        "type": "button",
+        "action": {
+          "type": "postback",
+          "label": "デジタル法制度",
+          "data": "degital",
+          "displayText": "デジタル法制度が選択されました"
+        }
+      },
+      {
+        "type": "button",
+        "action": {
+          "type": "postback",
+          "label": "卒業制作",
+          "data": "sotugyouseisaku",
+          "displayText": "卒業制作が選択されました"
+        }
+      },
+      {
+        "type": "button",
+        "action": {
+          "type": "postback",
+          "label": "テスト技法",
+          "data": "testtech",
+          "displayText": "テスト技法が選択されました"
+        }
+      },
+      {
+        "type": "button",
+        "action": {
+          "type": "postback",
+          "label": "AI演習",
+          "data": "AI",
+          "displayText": "AI演習が選択されました"
+        }
+      },
+      {
+        "type": "button",
+        "action": {
+          "type": "postback",
+          "label": "C＃演習",
+          "data": "Csharp",
+          "displayText": "C＃演習が選択されました"
+        }
+      },
+      {
+        "type": "button",
+        "action": {
+          "type": "postback",
+          "label": "C言語検定",
+          "data": "Clangage",
+          "displayText": "C言語検定が選択されました"
+        }
+      }
+    ],
+    "flex": 0
+  }
+}
+			
 		}
 	]
 }

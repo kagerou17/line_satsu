@@ -41,22 +41,42 @@ public class LineController {
 			///////////////☆☆重要☆☆///////////////////
 			/////////////変数「replyText」に送られてきたメッセージが格納されている
 			String replyText = event.getMessage().getText();
-
+			//ricgmenuメイン
 			if (replyText.equals("ノートが選択されました")) {
 				
 				chooseArea(replyToken,"test");
-				replyMessage(replyToken, "月曜日の日課だよ！！\n 1限目　データベース応用 \n 2限目　React演習 \n 3限目　デジタル法制度");
+				
 
 			} else if (replyText.equals("イベントが選択されました")) {
-				replyMessage(replyToken, "火曜日の日課だよ！！\n 1限目　なし \n 2限目　JAVAフレームワーク \n 3限目　卒業制作");
+				chooseArea1(replyToken,"test");
+				
 			} else if (replyText.equals("時間割が選択されました。")) {
-				replyMessage(replyToken, "水曜日の日課だよ！！\n 1限目　卒業制作 \n 2限目　テスト技法 \n 3限目　なし");
+				chooseArea2(replyToken,"test");
+				
 			} else if (replyText.equals("その他が選択されました。")) {
-				replyMessage(replyToken, "木曜日の日課だよ！！\n 1限目　AI演習 \n 2限目　C#演習 \n 3限目　卒業制作");
-			} else if (replyText.equals("金曜日の日課")) {
-				replyMessage(replyToken, "金曜日の日課だよ！！\n 1限目　卒業制作 \n 2限目　C言語検定 \n 3限目　JAVAフレームワーク");
-			}
 
+			} 
+			//時間割リプライ
+			else if (replyText.equals("月曜日課")) {
+				replyMessage(replyToken, "月曜日の日課だよ！！\n 1限目　データベース応用 \n 2限目　React演習 \n 3限目　デジタル法制度");
+			}else if (replyText.equals("火曜日課")) {
+				replyMessage(replyToken, "火曜日の日課だよ！！\n 1限目　なし \n 2限目　JAVAフレームワーク \n 3限目　卒業制作");
+				}else if (replyText.equals("水曜日課")) {
+					replyMessage(replyToken, "水曜日の日課だよ！！\n 1限目　卒業制作 \n 2限目　テスト技法 \n 3限目　なし");
+				}else if (replyText.equals("木曜日課")) {
+					replyMessage(replyToken, "木曜日の日課だよ！！\n 1限目　AI演習 \n 2限目　C#演習 \n 3限目　卒業制作");
+				}else if (replyText.equals("金曜日課")) {
+					replyMessage(replyToken, "金曜日の日課だよ！！\n 1限目　卒業制作 \n 2限目　C言語検定 \n 3限目　JAVAフレームワーク");
+				}
+			
+			
+			
+			
+			
+			
+			
+			
+			
 			//////////////ここまでを見てね。///////////////////////
 		}
 	}
@@ -112,5 +132,49 @@ public class LineController {
 		RestTemplate restTemplate = new RestTemplate();
 		restTemplate.postForObject(LINE_MESSAGE_API_ENDPOINT, request, String.class);
 	}
+	
+	
+	public void chooseArea1(String replyToken, String todohu) throws IOException {
+		final String LINE_MESSAGE_API_ENDPOINT = "https://api.line.me/v2/bot/message/reply";
 
+		HttpHeaders headers = new HttpHeaders();
+		headers.setContentType(MediaType.APPLICATION_JSON);
+		headers.setBearerAuth(channelAccessToken);
+
+		// 上記のFlex Message JSONを作成する部分を追加
+		ObjectMapper objectMapper = new ObjectMapper();
+		JsonNode loadedJson = objectMapper.readTree(createRichMenuService.loadFlexMessageJson1(todohu));
+		JsonNode innerMessages = loadedJson.get("messages");
+
+		String requestBody = String.format("{"
+				+ "\"replyToken\": \"%s\","
+				+ "\"messages\": %s"
+				+ "}", replyToken, innerMessages.toString());
+
+		HttpEntity<String> request = new HttpEntity<>(requestBody, headers);
+		RestTemplate restTemplate = new RestTemplate();
+		restTemplate.postForObject(LINE_MESSAGE_API_ENDPOINT, request, String.class);
+	}
+
+	public void chooseArea2(String replyToken, String todohu) throws IOException {
+		final String LINE_MESSAGE_API_ENDPOINT = "https://api.line.me/v2/bot/message/reply";
+
+		HttpHeaders headers = new HttpHeaders();
+		headers.setContentType(MediaType.APPLICATION_JSON);
+		headers.setBearerAuth(channelAccessToken);
+
+		// 上記のFlex Message JSONを作成する部分を追加
+		ObjectMapper objectMapper = new ObjectMapper();
+		JsonNode loadedJson = objectMapper.readTree(createRichMenuService.loadFlexMessageJson2(todohu));
+		JsonNode innerMessages = loadedJson.get("messages");
+
+		String requestBody = String.format("{"
+				+ "\"replyToken\": \"%s\","
+				+ "\"messages\": %s"
+				+ "}", replyToken, innerMessages.toString());
+
+		HttpEntity<String> request = new HttpEntity<>(requestBody, headers);
+		RestTemplate restTemplate = new RestTemplate();
+		restTemplate.postForObject(LINE_MESSAGE_API_ENDPOINT, request, String.class);
+	}
 }

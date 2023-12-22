@@ -15,4 +15,14 @@ public class CreateRichMenuService {
 		ClassPathResource resource = new ClassPathResource(jsonName);
 		return new String(Files.readAllBytes(resource.getFile().toPath()), StandardCharsets.UTF_8);
 	}
+	public String loadFlexMessageJson1(String fileName) throws IOException {
+		String jsonName = "/static/json/event.json";
+		ClassPathResource resource = new ClassPathResource(jsonName);
+		return new String(Files.readAllBytes(resource.getFile().toPath()), StandardCharsets.UTF_8);
+	}
+	public String loadFlexMessageJson2(String fileName) throws IOException {
+		String jsonName = "/static/json/timeschedule.json";
+		ClassPathResource resource = new ClassPathResource(jsonName);
+		return new String(Files.readAllBytes(resource.getFile().toPath()), StandardCharsets.UTF_8);
+	}
 }
