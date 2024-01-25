@@ -80,9 +80,10 @@ public class LineController {
 					String kamoku = "フレームワーク";
 					
 					List<Map<String, Object>> resultlist;
-					resultlist = jdbcTemplate.queryForList("select kamokumei from kamoku where kamokumei = ?", kamoku);
+					resultlist = jdbcTemplate.queryForList("select * from kamoku where kamokumei = ?", kamoku);
 					String kamokumei = (String) resultlist.get(0).get("kamokumei");
-					replyMessage(replyToken, kamokumei);
+					String id = (String) resultlist.get(0).get("id");
+					replyMessage(replyToken, "この授業のidは"+id+"です。\n授業名は"+kamokumei+"です。");
 				}
 			
 			
