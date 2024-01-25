@@ -75,14 +75,14 @@ public class LineController {
 					replyMessage(replyToken, "金曜日の日課だよ！！\n 1限目　卒業制作 \n 2限目　C言語検定 \n 3限目　JAVAフレームワーク");
 				}
 
-			//kamoku
+			//kamokuテーブルからkamokumeiを取得する。この際replyTextにはkamokumeiが入っている。その後replyMessageで送信する。
 				else if(replyText.equals("フレームワークが選択されました")) {
+					String kamoku = "フレームワーク";
 					
-					List<Map<String, Object>> resultList;
-					resultList = jdbcTemplate.queryForList("SELECT * FROM kamoku WHERE kamokumei = ?",replyText);
-					model.addAttribute("resultList", resultList);
-					System.out.print(resultList);
-					replyMessage(replyToken,resultList.toString());
+					List<Map<String, Object>> resultlist;
+					resultlist = jdbcTemplate.queryForList("select kamokumei from kamoku where kamokumei = ?", kamoku);
+					String kamokumei = (String) resultlist.get(0).get("kamokumei");
+					replyMessage(replyToken, kamokumei);
 				}
 			
 			
