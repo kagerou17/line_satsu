@@ -17,6 +17,7 @@
 					}
 				},
 				
+
   "type": "bubble",
   "hero": {
     "type": "image",
@@ -51,10 +52,9 @@
         "style": "link",
         "height": "sm",
         "action": {
-          "type": "postback",
+          "type": "message",
           "label": "フレームワーク",
-          "data": "framework",
-          "displayText": "フレームワークが選択されました"
+          "text": "フレームワークが選択されました"
         }
       },
       {
@@ -62,73 +62,65 @@
         "style": "link",
         "height": "sm",
         "action": {
-          "type": "postback",
+          "type": "message",
           "label": "DB応用",
-          "data": "DBouyou",
-          "displayText": "DB応用が選択されました"
+          "text": "DB応用が選択されました"
         }
       },
       {
         "type": "button",
         "action": {
-          "type": "postback",
+          "type": "message",
           "label": "React演習",
-          "data": "React",
-          "displayText": "React演習が選択されました"
+          "text": "React演習が選択されました"
         }
       },
       {
         "type": "button",
         "action": {
-          "type": "postback",
+          "type": "message",
           "label": "デジタル法制度",
-          "data": "degital",
-          "displayText": "デジタル法制度が選択されました"
+          "text": "デジタル法制度が選択されました"
         }
       },
       {
         "type": "button",
         "action": {
-          "type": "postback",
+          "type": "message",
           "label": "卒業制作",
-          "data": "sotugyouseisaku",
-          "displayText": "卒業制作が選択されました"
+          "text": "卒業制作が選択されました"
         }
       },
       {
         "type": "button",
         "action": {
-          "type": "postback",
+          "type": "message",
           "label": "テスト技法",
-          "data": "testtech",
-          "displayText": "テスト技法が選択されました"
+          "text": "テスト技法が選択されました"
         }
       },
       {
         "type": "button",
         "action": {
-          "type": "postback",
+          "type": "message",
           "label": "AI演習",
-          "data": "AI",
-          "displayText": "AI演習が選択されました"
+          "text": "AI演習が選択されました"
         }
       },
       {
         "type": "button",
         "action": {
-          "type": "postback",
+          "type": "message",
           "label": "C＃演習",
-          "data": "Csharp",
-          "displayText": "C＃演習が選択されました"
+          "text": "C＃演習が選択されました"
         }
       },
       {
         "type": "button",
         "action": {
-          "type": "postback",
+          "type": "message",
           "label": "C言語検定",
-          "data": "Clangage",
-          "displayText": "C言語検定が選択されました"
+          "text": "C言語検定が選択されました"
         }
       }
     ],

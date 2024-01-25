@@ -3,13 +3,16 @@ package com.example.demo.controller;
 import java.io.IOException;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -25,6 +28,9 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 public class LineController {
 
 	@Autowired
+	JdbcTemplate jdbcTemplate;
+	
+	@Autowired
 	CreateRichMenuService createRichMenuService;
 	
 	//ここにチャンネルアクセストークンを貼る！
@@ -32,7 +38,7 @@ public class LineController {
 
 	@PostMapping("/Riko")
 	@CrossOrigin(origins = "*")
-	public void postApidata(@RequestBody LineData webhookData) throws IOException {
+	public void postApidata(@RequestBody LineData webhookData,Model model) throws IOException {
 		for (Event event : webhookData.getEvents()) {
 
 			//メッセージを送ってきたアカウント情報を変数「replyToken」に格納する。
@@ -68,6 +74,17 @@ public class LineController {
 				}else if (replyText.equals("金曜日課")) {
 					replyMessage(replyToken, "金曜日の日課だよ！！\n 1限目　卒業制作 \n 2限目　C言語検定 \n 3限目　JAVAフレームワーク");
 				}
+
+			//kamoku
+				else if(replyText.equals("フレームワークが選択されました")) {
+					
+					List<Map<String, Object>> resultList;
+					resultList = jdbcTemplate.queryForList("SELECT * FROM kamoku WHERE kamokumei = ?",replyText);
+					model.addAttribute("resultList", resultList);
+					System.out.print(resultList);
+					replyMessage(replyToken,resultList.toString());
+				}
+			
 			
 			
 			

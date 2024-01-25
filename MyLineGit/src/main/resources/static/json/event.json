@@ -2,7 +2,7 @@
 	"messages": [
 		{
 			"type": "flex",
-			"altText": "イヴェント選択をしてください。",
+			"altText": "イべント選択をしてください。",
 			"contents": {
 				"type": "bubble",
 				"hero": {
