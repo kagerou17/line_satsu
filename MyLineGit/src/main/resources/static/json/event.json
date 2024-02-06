@@ -16,10 +16,11 @@
 						"uri": "http://linecorp.com/"
 					}
 				},
-   "type": "bubble",
+   
+  "type": "bubble",
   "hero": {
     "type": "image",
-    "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png",
+    "url": "https://thumb.ac-illust.com/77/77c183858f0ce4c87c6738ba41193b65_t.jpeg",
     "size": "full",
     "aspectRatio": "20:13",
     "aspectMode": "cover",
@@ -30,35 +31,13 @@
   },
   "body": {
     "type": "box",
-    "layout": "vertical",
+    "layout": "baseline",
     "contents": [
       {
         "type": "text",
         "text": "イベント",
         "weight": "bold",
         "size": "xl"
-      },
-      {
-        "type": "box",
-        "layout": "vertical",
-        "margin": "lg",
-        "spacing": "sm",
-        "contents": [
-          {
-            "type": "box",
-            "layout": "baseline",
-            "spacing": "sm",
-            "contents": [
-              {
-                "type": "text",
-                "text": "登録・削除・年間行事を確認できます",
-                "color": "#aaaaaa",
-                "size": "sm",
-                "flex": 1
-              }
-            ]
-          }
-        ]
       }
     ]
   },
@@ -68,36 +47,37 @@
     "spacing": "sm",
     "contents": [
       {
-        "type": "separator"
+        "type": "button",
+        "style": "link",
+        "height": "sm",
+        "action": {
+          "type": "uri",
+          "label": "イベント登録へ",
+          "uri": "https://linecorp.com"
+        }
       },
       {
         "type": "button",
+        "style": "link",
+        "height": "sm",
         "action": {
           "type": "uri",
-          "label": "登録",
-          "uri": "https://shioya4011.wixsite.com/salt"
+          "label": "年間行事確認へ",
+          "uri": "https://docs.google.com/spreadsheets/d/1OT23FFSq5LxspyToAAoLP1SX2AJN5lxn/edit#gid=1921243203"
         }
       },
       {
         "type": "button",
         "action": {
-          "type": "uri",
-          "label": "削除",
-          "uri": "http://linecorp.com/"
-        }
-      },
-      {
-        "type": "button",
-        "action": {
-          "type": "uri",
-          "label": "年間行事",
-          "uri": "https://docs.google.com/spreadsheets/d/1lr0Mw6hpjXvV_msuPpJU5AWR0y_vqowOzY5xd9jwku8/edit#gid=1921243203"
+          "type": "message",
+          "label": "あなたの予定",
+          "text": "予定確認"
         }
       }
     ],
     "flex": 0
- }
-			}
+  }
+}
 		}
 	]
 }

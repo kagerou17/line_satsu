@@ -60,8 +60,11 @@ public class LineController {
 				chooseArea2(replyToken,"test");
 				
 			} else if (replyText.equals("その他が選択されました。")) {
-
+				chooseArea3(replyToken,"test");
 			} 
+		 else if (replyText.equals("予定確認")) {
+			chooseArea4(replyToken,"test");
+		} 
 			//時間割リプライ
 			else if (replyText.equals("月曜日課")) {
 				replyMessage(replyToken, "月曜日の日課だよ！！\n 1限目　データベース応用 \n 2限目　React演習 \n 3限目　デジタル法制度");
@@ -85,8 +88,7 @@ public class LineController {
 					String id = (String) resultlist.get(0).get("id");
 					replyMessage(replyToken, "この授業のidは"+id+"です。\n授業名は"+kamokumei+"です。");
 				}
-			
-			
+				
 			
 			
 			
@@ -184,6 +186,48 @@ public class LineController {
 		// 上記のFlex Message JSONを作成する部分を追加
 		ObjectMapper objectMapper = new ObjectMapper();
 		JsonNode loadedJson = objectMapper.readTree(createRichMenuService.loadFlexMessageJson2(todohu));
+		JsonNode innerMessages = loadedJson.get("messages");
+
+		String requestBody = String.format("{"
+				+ "\"replyToken\": \"%s\","
+				+ "\"messages\": %s"
+				+ "}", replyToken, innerMessages.toString());
+
+		HttpEntity<String> request = new HttpEntity<>(requestBody, headers);
+		RestTemplate restTemplate = new RestTemplate();
+		restTemplate.postForObject(LINE_MESSAGE_API_ENDPOINT, request, String.class);
+	}
+	public void chooseArea3(String replyToken, String todohu) throws IOException {
+		final String LINE_MESSAGE_API_ENDPOINT = "https://api.line.me/v2/bot/message/reply";
+
+		HttpHeaders headers = new HttpHeaders();
+		headers.setContentType(MediaType.APPLICATION_JSON);
+		headers.setBearerAuth(channelAccessToken);
+
+		// 上記のFlex Message JSONを作成する部分を追加
+		ObjectMapper objectMapper = new ObjectMapper();
+		JsonNode loadedJson = objectMapper.readTree(createRichMenuService.loadFlexMessageJson3(todohu));
+		JsonNode innerMessages = loadedJson.get("messages");
+
+		String requestBody = String.format("{"
+				+ "\"replyToken\": \"%s\","
+				+ "\"messages\": %s"
+				+ "}", replyToken, innerMessages.toString());
+
+		HttpEntity<String> request = new HttpEntity<>(requestBody, headers);
+		RestTemplate restTemplate = new RestTemplate();
+		restTemplate.postForObject(LINE_MESSAGE_API_ENDPOINT, request, String.class);
+	}
+	public void chooseArea4(String replyToken, String todohu) throws IOException {
+		final String LINE_MESSAGE_API_ENDPOINT = "https://api.line.me/v2/bot/message/reply";
+
+		HttpHeaders headers = new HttpHeaders();
+		headers.setContentType(MediaType.APPLICATION_JSON);
+		headers.setBearerAuth(channelAccessToken);
+
+		// 上記のFlex Message JSONを作成する部分を追加
+		ObjectMapper objectMapper = new ObjectMapper();
+		JsonNode loadedJson = objectMapper.readTree(createRichMenuService.loadFlexMessageJson4(todohu));
 		JsonNode innerMessages = loadedJson.get("messages");
 
 		String requestBody = String.format("{"

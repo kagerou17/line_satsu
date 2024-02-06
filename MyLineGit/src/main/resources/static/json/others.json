@@ -2,7 +2,7 @@
 	"messages": [
 		{
 			"type": "flex",
-			"altText": "科目登録選択をしてください。",
+			"altText": "管理画面",
 			"contents": {
 				"type": "bubble",
 				"hero": {
@@ -16,11 +16,10 @@
 						"uri": "http://linecorp.com/"
 					}
 				},
-  
   "type": "bubble",
   "hero": {
     "type": "image",
-    "url": "https://www.pakutaso.com/shared/img/thumb/HIGA62_notepen.jpg",
+    "url": "https://thumb.ac-illust.com/77/77c183858f0ce4c87c6738ba41193b65_t.jpeg",
     "size": "full",
     "aspectRatio": "20:13",
     "aspectMode": "cover",
@@ -35,7 +34,7 @@
     "contents": [
       {
         "type": "text",
-        "text": "ノート",
+        "text": "その他",
         "weight": "bold",
         "size": "xl"
       }
@@ -52,7 +51,7 @@
         "height": "sm",
         "action": {
           "type": "uri",
-          "label": "ノート登録",
+          "label": "アカウント再登録",
           "uri": "https://linecorp.com"
         }
       },
@@ -62,15 +61,22 @@
         "height": "sm",
         "action": {
           "type": "uri",
-          "label": "ノート確認",
+          "label": "アカウント情報表示",
           "uri": "https://docs.google.com/spreadsheets/d/1OT23FFSq5LxspyToAAoLP1SX2AJN5lxn/edit#gid=1921243203"
+        }
+      },
+      {
+        "type": "button",
+        "action": {
+          "type": "uri",
+          "label": "退会",
+          "uri": "http://linecorp.com/"
         }
       }
     ],
     "flex": 0
   }
-}
-			
+			}
 		}
 	]
 }
