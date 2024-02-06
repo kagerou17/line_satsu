@@ -15,21 +15,26 @@ public class HtmlController {
 
 		return "homedemo";
 	}
-	@RequestMapping(path = "/kamoku", method = RequestMethod.GET)
-	public String kamoku() {
-
-		return "kamoku";
-	}
-	
-	
-	
-	
-	
 	@RequestMapping(path = "/event", method = RequestMethod.GET)
 	public String event() {
 
 		return "event";
 	}
+	@RequestMapping(path = "/kamokutouroku", method = RequestMethod.GET)
+	public String kamokutouroku() {
+
+		return "kamokutouroku";
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	@RequestMapping(path = "/eventtest", method = RequestMethod.POST)
 	public String mhp(HttpSession session, String username) {
