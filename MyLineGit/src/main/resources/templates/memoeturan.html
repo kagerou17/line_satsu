@@ -7,17 +7,115 @@
     <title>メモ閲覧画面</title>
     <style>
         body {
-            background-color: skyblue;
             text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        form {
+            max-width: 400px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
-        .large-input {
-            width: 300px;
-            height: 350px;
+        h1 {
+            color: #333;
         }
 
-        .clicked {
-            background-color: lightcoral;
+        a {
+            text-decoration: none;
+        }
+
+        button {
+            padding: 10px;
+            font-size: 16px;
+            margin: 10px;
+            cursor: pointer;
+            background-color: #4caf50; /* Blue */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049; /* Slightly darker shade on hover */
+        }
+        /* Add this to your CSS */
+button.clicked {
+    background-color: #ff0000; /* Slightly darker shade when clicked */
+    color: white;
+}
+
+
+        .area {
+            width: 80%;
+            margin: auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .tab_class {
+            width: calc(100% / 5); /* Set to 2 to divide the width in half */
+            height: 50px;
+            background-color: darkgrey;
+            line-height: 50px;
+            font-size: 15px;
+            text-align: center;
+            display: block;
+            float: left;
+            order: -1;
+            cursor: pointer;
+        }
+
+        input[type="date"],
+        input[type="text"] {
+            width: calc(100% - 20px); /* Full width for input fields with padding adjustment */
+            padding: 10px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        input[name="tab_name"] {
+            display: none;
+        }
+
+        input:checked + .tab_class {
+            background-color: #4caf50;
+            color: aliceblue;
+        }
+
+        .content_class {
+          
+            display: none;
+            width: 100%; /* Set to 100% to fill the available space */
+            text-align: center;
+            padding: 20px; /* Add padding for content */
+        }
+
+        input:checked + .tab_class + .content_class {
+            display: block;
+        }
+
+        .content_class p {
+            margin: 10px 0;
+        }
+
+        .content_class img {
+            margin: 5px;
+            border: 1px solid #ddd; /* Add border for images */
+            border-radius: 5px;
+            padding: 5px;
+            background-color: #f8f8f8; /* Light background for images */
+            max-width: 100%; /* Ensure images don't exceed container width */
+            height: auto; /* Maintain aspect ratio */
         }
     </style>
 </head>
@@ -29,18 +127,11 @@
         <br>
         <br>
 
-        <label for="date">日時:</label>
-        <input type="date" id="date" name="date">
+        <label for="insert-date">日時:</label>
+        <input type="date" id="insert-date" name="insert-date">
+       <br>
         <br>
-        <br>
-        <label for="subjects">科目:</label>
-        <select id="subjects" name="subjects">
-            <option value="Java">Java応用</option>
-            <option value="Cgengo">C言語</option>
-            <option value="Html">HTML/CSS</option>
-            <option value="Javascript">JavaScript</option>
-            <option value="DB">DB応用</option>
-        </select>
+        
         <br>
         <br>
         <label for="subjects">公開設定:</label>
@@ -50,32 +141,37 @@
         <br>
         <br>
         <a>
-            <input type="button" value="検索" onclick="Click_Sub()">
+            <button type="button" onclick="saveMemo()">登録</button>
         </a>
         <hr>
 
         <label for="memo">メモ:</label>
         <br>
-        <div id="div1" style="display: none;">Java != JavaScript</div>
+        <div id="div1" style="display: none;">C言語</div>
         <br>
         <br>
 
-        <a href="home.html">
+        <a href="file:///C:/Users/S0521/Desktop/%E3%83%87%E3%83%A2/homedemo.html">
             <button type="button">ホーム画面</button>
         </a>
     </form>
 
     <script language="Javascript">
+        //公開設定のボタンのクリック処理
         // ボタンのクリック時の処理
         function handleButtonClick(button) {
             // ボタンがクリックされた状態を切り替える
-            if (button.classList.contains('clicked')) {
-                button.classList.remove('clicked');
-            } else {
-                button.classList.add('clicked');
-            }
-            // 状態をローカルストレージに保存
-            saveButtonState(button.id, button.classList.contains('clicked'));
+        button.classList.toggle('clicked');
+
+        // もう一方のボタンの状態をリセットする
+        const otherButton = button.id === 'onButton' ? 'offButton' : 'onButton';
+        const otherButtonElement = document.getElementById(otherButton);
+        if (otherButtonElement.classList.contains('clicked')) {
+            otherButtonElement.classList.remove('clicked');
+            saveButtonState(otherButton, false);
+        }
+        // 状態をローカルストレージに保存
+        saveButtonState(button.id, button.classList.contains('clicked'));
         }
 
         // ページ読み込み時にボタンの状態を復元
@@ -106,6 +202,16 @@
             } else {
                 div1.style.display = "none";
             }
+        }
+        function saveMemo() {
+         // 入力された日時を取得
+            var selectedDate = document.getElementById('insert-date').value;
+
+         // 日時が空の場合、アラートを表示して処理を中断
+            if (selectedDate.trim() === '') {
+             alert('日時を選択してください');
+             return;
+         }
         }
     </script>
 </body>

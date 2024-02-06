@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>メモ登録</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        select,
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>メモ登録</h1>
+
+    <form>
+        <!-- 学科の選択 -->
+        <label for="dropdown1"></label>
+        <select id="dropdown1" name="Department" required>
+            <option value="">学科を選択してください</option>
+            <option>ITスペシャリスト科</option>
+            <option>高度情報処理科</option>
+            <option>情報システム科</option>
+            <option>ゲームクリエイター科</option>
+            <option>Web・CGデザイン科</option>
+            <option>建築設計科</option>
+            <option>建築士専攻科</option>
+        </select>
+
+        <!-- 学年の選択 -->
+        <label for="dropdown2"></label>
+        <select id="dropdown2" name="Grade" required>
+            <option value="">学年を選択してください</option>
+            <option>1年</option>
+            <option>2年</option>
+            <option>3年</option>
+            <option>4年</option>
+        </select>
+
+        <!-- 学年の選択 -->
+        <label for="dropdown3"></label>
+        <select id="dropdown3" name="Class" required>
+            <option value="">クラスを選択してください</option>
+            <option>A</option>
+            <option>B</option>
+            <option>C</option>
+            <option>D</option>
+            <option>E</option>
+            <option>F</option>
+            <option>G</option>
+            <option>H</option>
+            <option>N</option>
+        </select>
+
+
+        <!-- 科目選択へのボタン -->
+        <button type="button" onclick="validateAndRedirect()">メモ登録へ</button>
+
+        <!-- ホーム画面へのリンク -->
+        <a href="file:///C:/Users/S0521/Desktop/%E3%83%87%E3%83%A2/homedemo.html">
+            <button type="button">ホーム画面</button>
+        </a>
+    </form>
+
+    <script>
+        function validateAndRedirect() {
+            var dropdown1 = document.getElementById("dropdown1");
+            var dropdown2 = document.getElementById("dropdown2");
+            var dropdown3 = document.getElementById("dropdown3");
+
+            if (dropdown1.value === "" || dropdown2.value === "" || dropdown3.value === "") {
+                alert("エラー: 学科と学年とクラスを選択してください。");
+            } else {
+                window.location.href = "file:///C:/Users/S0521/Desktop/%E3%83%87%E3%83%A2/memo.html";
+            }
+        }
+    </script>
+</body>
+
+</html>

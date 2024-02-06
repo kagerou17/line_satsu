@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>イベント登録</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            text-align: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 50px;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: inline-block;
+            text-align: left;
+            width: 30%; /* Adjusted form width */
+            margin: auto; /* Center the form */
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin: 10px 0;
+            font-size: 16px;
+            color: #333;
+        }
+
+        input[type="date"],
+        input[type="text"] {
+            width: calc(100% - 20px); /* Full width for input fields with padding adjustment */
+            padding: 10px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        input[type="submit"],
+        input[type="button"] {
+            padding: 12px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #4caf50; /* Blue */
+           
+            color: white;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        input[type="submit"]:hover,
+        input[type="button"]:hover {
+            background-color: #4caf50; /* Blue */
+           
+        }
+
+        hr {
+            margin: 30px 0;
+            border: none;
+            border-top: 1px solid #ccc;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        button {
+            padding: 12px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #4caf50; /* Blue */
+           
+            color: white;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #4caf50; /* Blue */
+            
+        }
+        
+        .clicked {
+            background-color: lightcoral;
+        }
+    </style>
+</head>
+<body>
+    <h1>イベントの挿入</h1>
+    <form>
+        <label for="insert-date">日時:</label>
+        <input type="date" id="insert-date" name="insert-date">
+        <br>
+        <label for="insert-text">登録内容:</label>
+        <input type="text" id="insert-text" name="insert-text">
+        <br>
+        <button type="button" onclick="saveMemo()">登録</button>
+        
+        <hr>
+
+        <h1>イベントの削除</h1>
+        <label for="delete-date">日時:</label>
+        <input type="date" id="delete-date" name="delete-date">
+        <br>
+        <input type="button" value="検索" onclick="Click_Sub()">
+        <br>
+        <br>
+        <label for="delete-content">削除内容:</label>
+        <br>
+        <div id="div1" style="display: none;">応用情報技術者試験</div>
+        <br>
+        <br>
+        <input type="submit" value="削除">
+        <hr>
+        <h1>年間スケジュール</h1>
+        <br>
+        <p><a href="https://docs.google.com/spreadsheets/d/1lr0Mw6hpjXvV_msuPpJU5AWR0y_vqowOzY5xd9jwku8/edit#gid=1921243203">SpreadSheet</a></p>
+        <br>
+        <hr>
+        <br>
+        <a href="file:///C:/Users/S0521/Desktop/%E3%83%87%E3%83%A2/homedemo.html">
+            <button type="button">ホーム画面</button>
+        </a>
+    </form>
+    <script language="Javascript">
+        function Click_Sub() {
+            var div1 = document.getElementById("div1");
+
+            div1.style.display = (div1.style.display === "none" || div1.style.display === "") ? "block" : "none";
+        }
+
+        function saveMemo() {
+         // 入力された日時を取得
+            var selectedDate = document.getElementById('insert-date').value;
+
+         // 日時が空の場合、アラートを表示して処理を中断
+            if (selectedDate.trim() === '') {
+             alert('日時を選択してください');
+             return;
+         }
+        }
+    </script>
+</body>
+</html>

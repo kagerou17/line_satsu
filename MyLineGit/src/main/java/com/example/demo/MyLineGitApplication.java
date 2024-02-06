@@ -10,4 +10,5 @@ public class MyLineGitApplication {
 		SpringApplication.run(MyLineGitApplication.class, args);
 	}
 
+	
 }

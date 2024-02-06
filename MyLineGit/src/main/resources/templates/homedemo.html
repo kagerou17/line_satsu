@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ホーム</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        button {
+            padding: 10px;
+            font-size: 16px;
+            margin: 10px;
+            cursor: pointer;
+            background-color: #4caf50; /* Blue */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049; /* Slightly darker shade on hover */
+        }
+
+        .area {
+            width: 80%;
+            margin: auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .tab_class {
+            width: calc(100% / 5); /* Set to 2 to divide the width in half */
+            height: 50px;
+            background-color: darkgrey;
+            line-height: 50px;
+            font-size: 15px;
+            text-align: center;
+            display: block;
+            float: left;
+            order: -1;
+            cursor: pointer;
+        }
+
+        input[name="tab_name"] {
+            display: none;
+        }
+
+        input:checked + .tab_class {
+            background-color: #4caf50;
+            color: aliceblue;
+        }
+
+        .content_class {
+          
+            display: none;
+            width: 100%; /* Set to 100% to fill the available space */
+            text-align: center;
+            padding: 20px; /* Add padding for content */
+        }
+
+        input:checked + .tab_class + .content_class {
+            display: block;
+        }
+
+        .content_class p {
+            margin: 10px 0;
+        }
+
+        .content_class img {
+            margin: 5px;
+            border: 1px solid #ddd; /* Add border for images */
+            border-radius: 5px;
+            padding: 5px;
+            background-color: #f8f8f8; /* Light background for images */
+            max-width: 100%; /* Ensure images don't exceed container width */
+            height: auto; /* Maintain aspect ratio */
+        }
+    </style>
+</head>
+
+<body>
+    <h1>ホーム</h1>
+    <div class="area">
+        <input type="radio" name="tab_name" id="tab1" checked>
+        <label class="tab_class" for="tab1">ホーム</label>
+        <div class="content_class">
+            <a href="http://localhost:8080/kamoku">
+                <button type="button">科目登録</button>
+            </a>
+            <a href="file:///C:/Users/S0521/Desktop/%E3%83%87%E3%83%A2/nikka.html">
+                <button type="button">日課表登録</button>
+            </a>
+            <a href="file:///C:/Users/S0521/Desktop/%E3%83%87%E3%83%A2/event.html">
+                <button type="button">イベント登録</button>
+            </a>
+            <a href="file:///C:/Users/S0521/Desktop/%E3%83%87%E3%83%A2/memosentaku.html">
+                <button type="button">メモ登録</button>
+            </a>
+            <a href="file:///C:/Users/S0521/Desktop/%E3%83%87%E3%83%A2/memoeturan.html">
+                <button type="button">メモ閲覧</button>
+            </a>
+        </div>
+        <input type="radio" name="tab_name" id="tab2">
+        <label class="tab_class" for="tab2">科目</label>
+        <div class="content_class">
+            <p><img src="images/getuyoubi.png" alt="月曜日" width="100" height="100">
+                <img src="images/kayoubi.png" alt="火曜日" width="100" height="100">
+                <img src="images/suiyoubi.png" alt="水曜日" width="100" height="100"></p>
+
+            <p><img src="images/mokuyoubi.png" alt="木曜日" width="100" height="100">
+                <img src="images/kinyoubi.png" alt="金曜日" width="100" height="100"></p>
+        </div>
+    </div>
+</body>
+
+</html>
