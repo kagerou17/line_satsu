@@ -25,6 +25,17 @@ public class HtmlController {
 
 		return "kamokutouroku";
 	}
+	@RequestMapping(path = "/memo", method = RequestMethod.GET)
+	public String memo() {
+
+		return "memo";
+	}
+	
+	@RequestMapping(path = "/nikkasentaku", method = RequestMethod.GET)
+	public String nikka() {
+
+		return "nikkasentaku";
+	}
 	
 	
 	
