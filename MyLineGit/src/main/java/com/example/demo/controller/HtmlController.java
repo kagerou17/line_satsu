@@ -10,40 +10,29 @@ import jakarta.servlet.http.HttpSession;
 public class HtmlController {
 
 	
-	@RequestMapping(path = "/homedemo", method = RequestMethod.GET)
-	public String home() {
+	@RequestMapping(path = "/memoeturan", method = RequestMethod.GET)
+	public String nikka() {
 
-		return "homedemo";
+		return "memoeturan";
 	}
 	@RequestMapping(path = "/event", method = RequestMethod.GET)
 	public String event() {
 
 		return "event";
 	}
-	@RequestMapping(path = "/kamokutouroku", method = RequestMethod.GET)
-	public String kamokutouroku() {
+	
+	
+	
+	
+//	@RequestMapping(path = "/kamokutouroku", method = RequestMethod.GET)
+//	public String kamoku() {
+//
+//		return "kamokutouroku";
+//	}
+	
+	
+	
 
-		return "kamokutouroku";
-	}
-	@RequestMapping(path = "/memo", method = RequestMethod.GET)
-	public String memo() {
-
-		return "memo";
-	}
-	
-	@RequestMapping(path = "/nikkasentaku", method = RequestMethod.GET)
-	public String nikka() {
-
-		return "nikkasentaku";
-	}
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	
 	
