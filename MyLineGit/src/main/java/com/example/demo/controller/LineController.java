@@ -40,7 +40,8 @@ public class LineController {
 	@CrossOrigin(origins = "*")
 	public void postApidata(@RequestBody LineData webhookData,Model model) throws IOException {
 		for (Event event : webhookData.getEvents()) {
-
+//timerメソッド実装
+			
 			//メッセージを送ってきたアカウント情報を変数「replyToken」に格納する。
 			String replyToken = event.getReplyToken();
 
