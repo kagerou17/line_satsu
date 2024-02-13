@@ -16,7 +16,7 @@ private String subject_time;
 @Column(name="subject")
 private String subject;
 @Column(name="note")
-private String note;
+private int note;
 public int getNote_id() {
 	return note_id;
 }
@@ -35,10 +35,10 @@ public String getSubject() {
 public void setSubject(String subject) {
 	this.subject = subject;
 }
-public String getNote() {
+public int getNote() {
 	return note;
 }
-public void setNote(String note) {
+public void setNote(int note) {
 	this.note = note;
 }
 

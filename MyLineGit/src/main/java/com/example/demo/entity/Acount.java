@@ -18,7 +18,7 @@ private String line_id;
 @Column(name="pass")
 private String pass;
 @Column(name="authority")
-private String authority;
+private int authority;
 @Column(name="nikkatime")
 private String nikkatime;
 public int getAcount_id() {
@@ -45,10 +45,10 @@ public String getPass() {
 public void setPass(String pass) {
 	this.pass = pass;
 }
-public String getAuthority() {
+public int getAuthority() {
 	return authority;
 }
-public void setAuthority(String authority) {
+public void setAuthority(int authority) {
 	this.authority = authority;
 }
 public String getNikkatime() {
