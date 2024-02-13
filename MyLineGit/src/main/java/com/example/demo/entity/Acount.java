@@ -15,6 +15,8 @@ private int acount_id;
 private String acount_name;
 @Column(name="line_id")
 private String line_id;
+@Column(name="pass")
+private String pass;
 @Column(name="authority")
 private String authority;
 @Column(name="nikkatime")
@@ -37,6 +39,12 @@ public String getLine_id() {
 public void setLine_id(String line_id) {
 	this.line_id = line_id;
 }
+public String getPass() {
+	return pass;
+}
+public void setPass(String pass) {
+	this.pass = pass;
+}
 public String getAuthority() {
 	return authority;
 }
@@ -50,6 +58,4 @@ public void setNikkatime(String nikkatime) {
 	this.nikkatime = nikkatime;
 }
 
-
-	
 }
