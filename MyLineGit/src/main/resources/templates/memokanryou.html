@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>メモ入力フォーム</title>
+    <title>ノート入力フォーム</title>
     <style>
         body {
             text-align: center;
@@ -48,16 +48,32 @@
         input[type="submit"]:hover {
             background-color: #45a049;
         }
+        header {
+    background-color: #45a049;
+    padding: 10px;
+    margin: 0; /* 上下左右の余白をゼロに設定 */
+}
+
+header h1 {
+    color: #fff;
+    text-align: left;
+    padding-left: 20px;
+    margin: 0; /* 上下左右の余白をゼロに設定 */
+}
+
     </style>
 </head>
 <body>
 
-    <h2>メモの登録ができました</h2>
+    <header>
+        <h1>学生支援システムRIKO</h1>
+    </header>
+    <h2>ノートの登録ができました</h2>
 
     <form id="gradeForm">
         <div>
 					<a href="file:///C:/Users/S0521/Desktop/%E3%83%87%E3%83%A2/memosentaku.html">
-						<button type="button">メモ登録</button>
+						<button type="button">ノート登録</button>
 				</a>
 
             <!-- ホーム画面へのリンク -->

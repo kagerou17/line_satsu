@@ -93,16 +93,32 @@
             max-width: 100%; /* Ensure images don't exceed container width */
             height: auto; /* Maintain aspect ratio */
         }
+        header {
+    background-color: #45a049;
+    padding: 10px;
+    margin: 0; /* 上下左右の余白をゼロに設定 */
+}
+
+header h1 {
+    color: #fff;
+    text-align: left;
+    padding-left: 20px;
+    margin: 0; /* 上下左右の余白をゼロに設定 */
+}
+
     </style>
 </head>
 
 <body>
+    <header style="background-color: #45a049; padding: 10px;">
+        <h1>学生支援システムRIKO</h1>
+    </header>
     <h1>ホーム</h1>
     <div class="area">
         <input type="radio" name="tab_name" id="tab1" checked>
         <label class="tab_class" for="tab1">ホーム</label>
         <div class="content_class">
-            <a href="http://localhost:8080/kamoku">
+            <a href="file:///C:/Users/S0521/Desktop/%E3%83%87%E3%83%A2/kamoku.html">
                 <button type="button">科目登録</button>
             </a>
             <a href="file:///C:/Users/S0521/Desktop/%E3%83%87%E3%83%A2/nikka.html">
@@ -112,10 +128,10 @@
                 <button type="button">イベント登録</button>
             </a>
             <a href="file:///C:/Users/S0521/Desktop/%E3%83%87%E3%83%A2/memosentaku.html">
-                <button type="button">メモ登録</button>
+                <button type="button">ノート登録</button>
             </a>
-            <a href="file:///C:/Users/S0521/Desktop/%E3%83%87%E3%83%A2/memoeturan.html">
-                <button type="button">メモ閲覧</button>
+            <a href="file:///C:/Users/S0521/Desktop/%E3%83%87%E3%83%A2/no-tokensaku.html">
+                <button type="button">ノート閲覧</button>
             </a>
         </div>
         <input type="radio" name="tab_name" id="tab2">

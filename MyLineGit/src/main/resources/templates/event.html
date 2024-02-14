@@ -9,7 +9,7 @@
             background-color: #f4f4f4;
             text-align: center;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 50px;
+            margin: 0; /* Removed margin */
         }
 
         h1 {
@@ -20,8 +20,8 @@
         form {
             display: inline-block;
             text-align: left;
-            width: 30%; /* Adjusted form width */
-            margin: auto; /* Center the form */
+            width: 30%;
+            margin: auto;
             background-color: #fff;
             padding: 20px;
             border-radius: 10px;
@@ -37,7 +37,7 @@
 
         input[type="date"],
         input[type="text"] {
-            width: calc(100% - 20px); /* Full width for input fields with padding adjustment */
+            width: calc(100% - 20px);
             padding: 10px;
             margin: 8px 0;
             box-sizing: border-box;
@@ -51,8 +51,7 @@
             padding: 12px 20px;
             font-size: 16px;
             cursor: pointer;
-            background-color: #4caf50; /* Blue */
-           
+            background-color: #4caf50;
             color: white;
             border: none;
             border-radius: 5px;
@@ -61,8 +60,7 @@
 
         input[type="submit"]:hover,
         input[type="button"]:hover {
-            background-color: #4caf50; /* Blue */
-           
+            background-color: #4caf50;
         }
 
         hr {
@@ -79,8 +77,7 @@
             padding: 12px 20px;
             font-size: 16px;
             cursor: pointer;
-            background-color: #4caf50; /* Blue */
-           
+            background-color: #4caf50;
             color: white;
             border: none;
             border-radius: 5px;
@@ -88,17 +85,32 @@
         }
 
         button:hover {
-            background-color: #4caf50; /* Blue */
-            
+            background-color: #4caf50;
         }
-        
+
         .clicked {
             background-color: lightcoral;
+        }
+
+        header {
+            background-color: #45a049;
+            padding: 10px;
+            margin: 0; /* Removed margin */
+        }
+
+        header h1 {
+            color: #fff;
+            text-align: left;
+            padding-left: 20px;
+            margin: 0; /* Removed margin */
         }
     </style>
 </head>
 <body>
-    <h1>イベントの登録</h1>
+    <header style="background-color: #45a049; padding: 10px;">
+        <h1>学生支援システムRIKO</h1>
+    </header>
+    <h1>イベントの挿入</h1>
     <form>
         <label for="insert-date">日時:</label>
         <input type="date" id="insert-date" name="insert-date">
@@ -126,7 +138,10 @@
         <hr>
         <h1>年間スケジュール</h1>
         <br>
-        <p><a href="https://docs.google.com/spreadsheets/d/1lr0Mw6hpjXvV_msuPpJU5AWR0y_vqowOzY5xd9jwku8/edit#gid=1921243203">SpreadSheet</a></p>
+        <a href="https://docs.google.com/spreadsheets/d/1lr0Mw6hpjXvV_msuPpJU5AWR0y_vqowOzY5xd9jwku8/edit#gid=1921243203">
+            <button type="button">SpreadSheet</button>
+        </a>
+        
         <br>
         <hr>
         <br>

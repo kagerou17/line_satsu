@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ノート登録画面</title>
+    <title>科目選択画面</title>
     <style>
         body {
             text-align: center;
@@ -13,6 +13,7 @@
             margin: 0;
             padding: 0;
         }
+
         form {
             max-width: 400px;
             margin: 20px auto;
@@ -26,16 +27,12 @@
             color: #333;
         }
 
-        a {
-            text-decoration: none;
-        }
-
         button {
             padding: 10px;
             font-size: 16px;
             margin: 10px;
             cursor: pointer;
-            background-color: #4caf50; /* Blue */
+            background-color: #4caf50;
             color: white;
             border: none;
             border-radius: 5px;
@@ -43,14 +40,8 @@
         }
 
         button:hover {
-            background-color: #45a049; /* Slightly darker shade on hover */
+            background-color: #45a049;
         }
-        /* Add this to your CSS */
-        button.clicked {
-            background-color: #ff0000; /* Slightly darker shade when clicked */
-            color: white;
-        }
-
 
         .area {
             width: 80%;
@@ -61,7 +52,7 @@
         }
 
         .tab_class {
-            width: calc(100% / 5); /* Set to 2 to divide the width in half */
+            width: calc(100% / 5);
             height: 50px;
             background-color: darkgrey;
             line-height: 50px;
@@ -75,7 +66,7 @@
 
         input[type="date"],
         input[type="text"] {
-            width: calc(100% - 20px); /* Full width for input fields with padding adjustment */
+            width: calc(100% - 20px);
             padding: 10px;
             margin: 8px 0;
             box-sizing: border-box;
@@ -83,6 +74,7 @@
             border-radius: 5px;
             font-size: 14px;
         }
+
         input[name="tab_name"] {
             display: none;
         }
@@ -93,11 +85,10 @@
         }
 
         .content_class {
-          
             display: none;
-            width: 100%; /* Set to 100% to fill the available space */
+            width: 100%;
             text-align: center;
-            padding: 20px; /* Add padding for content */
+            padding: 20px;
         }
 
         input:checked + .tab_class + .content_class {
@@ -110,55 +101,41 @@
 
         .content_class img {
             margin: 5px;
-            border: 1px solid #ddd; /* Add border for images */
+            border: 1px solid #ddd;
             border-radius: 5px;
             padding: 5px;
-            background-color: #f8f8f8; /* Light background for images */
-            max-width: 100%; /* Ensure images don't exceed container width */
-            height: auto; /* Maintain aspect ratio */
+            background-color: #f8f8f8;
+            max-width: 100%;
+            height: auto;
         }
-        .large-input {
-            width: 300px;
-            height: 350px;
+        header {
+            background-color: #45a049;
+            padding: 10px;
+            margin: 0;
         }
-       
-        
+
+        header h1 {
+            color: #fff;
+            text-align: left;
+            padding-left: 20px;
+            margin: 0;
+        }
     </style>
 </head>
 
 <body>
-    <h1>ノート</h1>
+    <header>
+        <h1>学生支援システムRIKO</h1>
+    </header>
+    <h1>メモ</h1>
     <form>
-        <br>
-        <br>
-        <br>
-
         <label for="insert-date">日時:</label>
         <input type="date" id="insert-date" name="insert-date">
-        <br>
-        <br>
-
-       
-        
-
-        <label for="subjects">公開設定:</label>
-        <button id="onButton" onclick="handleButtonClick(this)">On</button>
-        <label for="subjects">/</label>
-        <button id="offButton" onclick="handleButtonClick(this)">Off</button>
-        <br>
-        <br>
-
+        <br><br>
         <label for="memo">登録したい内容を入力してください:</label>
-    <textarea id="memo" rows="4" cols="50"></textarea>
-        <br>
-        <br>
-
+        <textarea id="memo" rows="4" cols="50"></textarea>
+        <br><br>
         <button type="button" onclick="saveMemo()">保存</button>
-
-        <script src="app.js"></script>
-        <br>
-        <br>
-
         <hr>
         <a href="file:///C:/Users/S0521/Desktop/%E3%83%87%E3%83%A2/homedemo.html">
             <button type="button">ホーム画面</button>
@@ -166,77 +143,25 @@
     </form>
 
     <script>
-         //公開設定のボタンのクリック処理
-        // ボタンのクリック時の処理
-        function handleButtonClick(button) {
-            // ボタンがクリックされた状態を切り替える
-        button.classList.toggle('clicked');
-
-        // もう一方のボタンの状態をリセットする
-        const otherButton = button.id === 'onButton' ? 'offButton' : 'onButton';
-        const otherButtonElement = document.getElementById(otherButton);
-        if (otherButtonElement.classList.contains('clicked')) {
-            otherButtonElement.classList.remove('clicked');
-            saveButtonState(otherButton, false);
-        }
-        // 状態をローカルストレージに保存
-        saveButtonState(button.id, button.classList.contains('clicked'));
-        }
-
-        // ページ読み込み時にボタンの状態を復元
-        document.addEventListener('DOMContentLoaded', function () {
-            restoreButtonState('onButton');
-            restoreButtonState('offButton');
-        });
-
-        // ボタンの状態をローカルストレージに保存
-        function saveButtonState(buttonId, isClicked) {
-            localStorage.setItem(buttonId, isClicked);
-        }
-
-        // ローカルストレージからボタンの状態を復元
-        function restoreButtonState(buttonId) {
-            const isClicked = localStorage.getItem(buttonId) === 'true';
-            const button = document.getElementById(buttonId);
-            if (isClicked) {
-                button.classList.add('clicked');
+        function saveMemo() {
+            var selectedDate = document.getElementById('insert-date').value;
+            if (selectedDate.trim() === '') {
+                alert('日時を選択してください');
+                return;
+            }
+            var memoText = document.getElementById('memo').value;
+            if (memoText.trim() !== '') {
+                var memoData = {
+                    text: memoText,
+                    timestamp: new Date().toLocaleString()
+                };
+                console.log('メモが保存されました:', memoData);
+                document.getElementById('memo').value = '';
+                window.location.href = 'file:///C:/Users/S0521/Desktop/%E3%83%87%E3%83%A2/memokanryou.html';
+            } else {
+                alert('メモを入力してください');
             }
         }
-
-        
-        function saveMemo() {
-    // 入力された日時を取得
-    var selectedDate = document.getElementById('insert-date').value;
-
-    // 日時が空の場合、アラートを表示して処理を中断
-    if (selectedDate.trim() === '') {
-        alert('日時を選択してください');
-        return;
-    }
-
-    // 入力されたメモを取得
-    var memoText = document.getElementById('memo').value;
-
-    // メモが空でない場合のみ保存処理を行う
-    if (memoText.trim() !== '') {
-        // 仮想的にデータベースに保存する（リアルなアプリではサーバーサイドで行う）
-        var memoData = {
-            text: memoText,
-            timestamp: new Date().toLocaleString()
-        };
-
-        // 保存成功時の処理（ここではコンソールに表示）
-        console.log('メモが保存されました:', memoData);
-
-        // 保存後、テキストエリアをクリアする
-        document.getElementById('memo').value = '';
-
-        // ページを遷移させる
-        window.location.href = 'file:///C:/Users/S0521/Desktop/%E3%83%87%E3%83%A2/memokanryou.html';
-    } else {
-        alert('メモを入力してください');
-    }
-}
     </script>
 </body>
 

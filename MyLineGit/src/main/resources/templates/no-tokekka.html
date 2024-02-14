@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ノート閲覧画面</title>
+    <title>ノート閲覧検索画面</title>
     <style>
         body {
             text-align: center;
@@ -130,52 +130,34 @@ header h1 {
     padding-left: 20px;
     margin: 0; /* 上下左右の余白をゼロに設定 */
 }
-
     </style>
 </head>
 
 <body>
+
     <header>
         <h1>学生支援システムRIKO</h1>
     </header>
     <h1>ノート閲覧</h1>
     <form>
-        <br>
-        <br>
-        <br>
-
-        <label for="insert-date">日時:</label>
-        <input type="date" id="insert-date" name="insert-date">
-       <br>
-        <br>
-        <!-- 科目の選択 -->
-        <label for="dropdown1"></label>
-        <!-- idでjavaScriptのメソッドに行っている -->
-        <select id="dropdown1" name="kamoku" required>
-            <option value="" disabled selected style="display:none;">科目を選択してください</option>
-            <option value="option1">DB応用</option>
-            <option value="option2">React</option>
-            <option value="option3">デジタル法制度</option>
-            <option value="option4">Javaフレームワーク</option>
-            <option value="option5">卒業制作</option>
-            <option value="option6">テスト技法</option>
-            <option value="option7">AI演習</option>
-            <option value="option8">C#</option>
-            <option value="option9">C言語対策</option>
-        </select>
-        <br>
-        <br>
         
-        <br>
-        <a href="file:///C:/Users/S0521/Desktop/%E3%83%87%E3%83%A2/no-tokensaku.html">
-            <button type="button">ノート登録</button>
-    </a>
 
-        <br>
+			<h3>Entityとは</h3>
 
-        <a href="file:///C:/Users/S0521/Desktop/%E3%83%87%E3%83%A2/homedemo.html">
-            <button type="button">ホーム画面</button>
-        </a>
+			<p>Entityはテーブルを模倣したクラス<br>
+				➀privateな変数(テーブルの列を表す)<br>
+				➁変数に対するgetter/setter<br>
+				➂アノテーション(実DBとの紐づけ)
+			</p>
+        
+      <br>
+      <br>
+			<br>
+			<a href="file:///C:/Users/S0521/Desktop/%E3%83%87%E3%83%A2/homedemo.html">
+				<button type="button">ノート検索画面</button>
+		</a>
+
+        
     </form>
 </body>
 
