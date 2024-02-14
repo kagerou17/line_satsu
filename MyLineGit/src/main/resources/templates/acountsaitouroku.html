@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>アカウント再登録</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    form {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 400px;
+      box-sizing: border-box;
+    }
+    header h1 {
+      color: #fff;
+      text-align: left;
+      padding-left: 20px;
+    }
+    label, input {
+      display: block;
+      width: 100%;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+    }
+    input {
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+    button {
+      padding: 12px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    header {
+      background-color: #45a049; /* Change to green color */
+      padding: 10px 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000; /* 他の要素の上に表示 */
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>学生支援システムRIKO</h1>
+  </header>
+  <form id="registrationForm" onsubmit="validateAndSubmit(event)">
+    <label for="username">ユーザー名:</label>
+    <input type="text" id="username" name="username" required>
+
+    <label for="email">メールアドレス:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="password">パスワード:</label>
+    <input type="password" id="password" name="password" required>
+
+    <button type="submit">登録</button>
+  </form>
+
+  <script>
+    function validateAndSubmit(event) {
+      event.preventDefault(); // フォームのデフォルトの送信を防ぐ
+
+      var username = document.getElementById('username').value;
+      var email = document.getElementById('email').value;
+      var password = document.getElementById('password').value;
+
+      // 入力が空でないか確認
+      if (username.trim() === '' || email.trim() === '' || password.trim() === '') {
+        alert('全ての入力欄に値を入力してください。');
+        return; // 空の場合は処理を中断
+      }
+
+      // フォームデータをサーバーに送信する処理をここに追加
+
+      alert('アカウントが再登録されました。');
+    }
+  </script>
+</body>
+</html>

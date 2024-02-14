@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>退会ページ</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        header {
+            background-color: #4caf50;
+            color: white;
+            text-align: center;
+            padding: 1em;
+        }
+
+        main {
+            max-width: 400px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        p {
+            color: #333;
+        }
+
+        .confirmation-button {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+
+        .confirmation-button:hover {
+            background-color: #4caf50;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1em;
+            background-color: #333;
+            color: white;
+        }
+    </style>
+    <script>
+        function confirmUnsubscribe() {
+            var confirmed = confirm("本当に退会しますか？");
+            return confirmed;
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>退会ページ</h1>
+    </header>
+
+    <main>
+        <p>本当に退会しますか？</p>
+
+        <form action="/process-unsubscribe" method="post" onsubmit="return confirmUnsubscribe();">
+            <!-- 退会に関するフォームの要素をここに追加 -->
+            <input type="submit" class="confirmation-button" value="退会する">
+        </form>
+    </main>
+
+    
+</body>
+</html>
