@@ -137,7 +137,7 @@
         <br><br>
         <button type="button" onclick="saveMemo()">保存</button>
         <hr>
-        <a href="file:///C:/Users/S0521/Desktop/%E3%83%87%E3%83%A2/homedemo.html">
+        <a th:href="@{/homedemo}">
             <button type="button">ホーム画面</button>
         </a>
     </form>
@@ -157,7 +157,8 @@
                 };
                 console.log('メモが保存されました:', memoData);
                 document.getElementById('memo').value = '';
-                window.location.href = 'file:///C:/Users/S0521/Desktop/%E3%83%87%E3%83%A2/memokanryou.html';
+                //window.location.href = 'file:///C:/Users/S0521/Desktop/%E3%83%87%E3%83%A2/memokanryou.html';
+                th:href="@{/memokanryou}";
             } else {
                 alert('メモを入力してください');
             }
