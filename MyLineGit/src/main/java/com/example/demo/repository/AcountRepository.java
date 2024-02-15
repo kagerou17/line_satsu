@@ -7,6 +7,6 @@ import com.example.demo.entity.Acount;
 
 @Repository
 public interface AcountRepository extends JpaRepository<Acount,Integer>{
-	
 
+	
 }

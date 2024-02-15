@@ -7,6 +7,5 @@ import com.example.demo.entity.Note;
 
 @Repository
 public interface NoteRepository extends JpaRepository<Note,Integer>{
-	
 
 }

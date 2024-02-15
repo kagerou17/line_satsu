@@ -7,6 +7,5 @@ import com.example.demo.entity.Event;
 
 @Repository
 public interface EventRepository extends JpaRepository<Event,Integer>{
-	
 
 }

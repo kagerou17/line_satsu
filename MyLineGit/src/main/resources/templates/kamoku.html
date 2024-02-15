@@ -74,9 +74,10 @@ header h1 {
     <form>
         <!-- 学科の選択 -->
         <label for="dropdown1"></label>
+        <form action="/kamoku" method="post" id="myForm">
         <!-- idでjavaScriptのメソッドに行っている -->
         <select id="dropdown1" name="gakka" required>
-            <option value="">学科選択してください</option>
+            <option value="" hidden>学科選択してください</option>
             <option value="option1">ITスペシャリスト科</option>
             <option value="option2">高度情報処理科</option>
             <option value="option3">情報システム科</option>
@@ -85,11 +86,11 @@ header h1 {
             <option value="option6">建築設計科</option>
             <option value="option7">建築士専攻科</option>
         </select>
-
+        
         <!-- 学年の選択 -->
         <label for="dropdown2"></label>
-        <select id="dropdown2" name="dropdown2" required>
-            <option value="">学年を選択してください</option>
+        <select id="dropdown2" name="gakunen" required>
+            <option value="" hidden>学年を選択してください</option>
             <option value="optionA">1年</option>
             <option value="optionB">2年</option>
             <option value="optionC">3年</option>
@@ -97,7 +98,7 @@ header h1 {
         </select>
 
         <!-- 科目選択へのボタン -->
-        <button type="button" onclick="validateAndRedirect()">科目選択へ</button>
+      <input type="submit" value="送信" />
 
         <!-- ホーム画面へのリンク -->
         <a th:href="@{/homedemo}">
@@ -105,18 +106,7 @@ header h1 {
         </a>
     </form>
 
-    <script>
-        function validateAndRedirect() {
-            var dropdown1 = document.getElementById("dropdown1");
-            var dropdown2 = document.getElementById("dropdown2");
-
-            if (dropdown1.value === "" || dropdown2.value === "") {
-                alert("エラー: 学科と学年を選択してください。");
-            } else {
-                window.location.href = "file:///C:/Users/S0521/Desktop/%E3%83%87%E3%83%A2/kamokutouroku.html";
-            }
-        }
-    </script>
+    
 </body>
 
 </html>

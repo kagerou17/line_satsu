@@ -7,6 +7,5 @@ import com.example.demo.entity.Nikka;
 
 @Repository
 public interface NikkaRepository extends JpaRepository<Nikka,Integer>{
-	
 
 }

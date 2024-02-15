@@ -111,12 +111,12 @@
         <h1>学生支援システムRIKO</h1>
     </header>
     <h1>イベントの挿入</h1>
-    <form>
+     <form action="/event" method="post" id="myForm">
         <label for="insert-date">日時:</label>
-        <input type="date" id="insert-date" name="insert-date">
+        <input type="date" id="insert-date" name="date">
         <br>
         <label for="insert-text">登録内容:</label>
-        <input type="text" id="insert-text" name="insert-text">
+        <input type="text" id="insert-text" name="text">
         <br>
         <button type="button" onclick="saveMemo()">登録</button>
         
@@ -156,16 +156,7 @@
             div1.style.display = (div1.style.display === "none" || div1.style.display === "") ? "block" : "none";
         }
 
-        function saveMemo() {
-         // 入力された日時を取得
-            var selectedDate = document.getElementById('insert-date').value;
-
-         // 日時が空の場合、アラートを表示して処理を中断
-            if (selectedDate.trim() === '') {
-             alert('日時を選択してください');
-             return;
-         }
-        }
+       
     </script>
 </body>
 </html>
