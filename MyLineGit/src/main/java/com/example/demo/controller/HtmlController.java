@@ -1,13 +1,25 @@
 package com.example.demo.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import com.example.demo.repository.EventRepository;
 
 import jakarta.servlet.http.HttpSession;
 
 @Controller
 public class HtmlController {
+	
+	@Autowired
+	JdbcTemplate jdbcTemplate;
+	@Autowired
+	EventRepository eventripository;
+	
 	@RequestMapping(path = "/homedemo", method = RequestMethod.GET)
 	public String homedemo() {
 
@@ -20,8 +32,30 @@ public class HtmlController {
 	@RequestMapping(path = "/event", method = RequestMethod.GET)
 	public String event() {
 
+		
 		return "event";
 	}
+//	@RequestMapping(path = "/event", method = RequestMethod.POST)
+//	public String eventgo(String date,String text,Model model) {
+//
+//		//社員テーブルにデータを登録する。
+//				//Syainのインスタンスを生成し、idとnameとemailをセットする。
+//				
+//		            Event event = new Event();
+//				syain.setId(Integer.parseInt(id));
+//				syain.setName(name);
+//				syain.setEmail(email);
+//				
+//				//社員テーブルにINSERT文を発行するRepositoryの呼び出し。
+//				syainDbRepository.save(syain);
+//		
+//		return "event";
+//	}
+	
+	
+	
+	
+	
 	
 	
 	
@@ -44,7 +78,27 @@ return "acountzyouhou";
 	@RequestMapping(path = "/kamoku", method = RequestMethod.GET)
 	public String kamoku() {
 
-return "kamoku";
+		return "kamoku";
+}
+	@RequestMapping(path = "/kamoku", method = RequestMethod.POST)
+	public String kamoku(String gakka,String gakunen,HttpSession session) {
+
+		session.setAttribute("gakka", gakka);
+		session.setAttribute("gakunen", gakunen);
+
+		return "kamoku";
+}
+	
+	
+	@RequestMapping(path = "/kamokutouroku", method = RequestMethod.GET)
+public String kamoku(HttpSession session) {
+
+	String x = (String)session.getAttribute("gakka");
+	String y = (String)session.getAttribute("gakunen");
+	
+	
+	
+return "kamokutouroku";
 }
 	@RequestMapping(path = "/kamoku2", method = RequestMethod.GET)
 	public String kamoku2() {
@@ -56,11 +110,8 @@ return "kamoku2";
 
 return "redirect:kamokukanryou";
 }
-	@RequestMapping(path = "/kamokutouroku", method = RequestMethod.GET)
-	public String kamokutouroku() {
+	
 
-return "kamokutouroku";
-}
 	@RequestMapping(path = "/memo", method = RequestMethod.GET)
 	public String memo() {
 
@@ -118,11 +169,12 @@ return "notekekka";
 
 return "notekensaku";
 }
-	@RequestMapping(path = "/sinkitouroku", method = RequestMethod.GET)
-	public String sinkitouroku() {
+	@RequestMapping(path = "/sinkitouroku/{lineUserId}", method = RequestMethod.GET)
+	public String sinkitouroku(@PathVariable String lineUserId, Model model) {
 
-return "sinkitouroku";
-}
+		model.addAttribute("lineUserId", lineUserId);
+		return "sinkitouroku";
+	}
 	@RequestMapping(path = "/taikai", method = RequestMethod.GET)
 	public String taikai() {
 

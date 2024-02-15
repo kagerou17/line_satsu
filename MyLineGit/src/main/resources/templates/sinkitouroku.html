@@ -99,7 +99,7 @@ header h1 {
       </div>
       <div class="form-group">
         <label for="line_id">LINEID:</label>
-        <input type="text" id="line_id" name="line_id">
+        <input type="text" name="lineUserId" th:value="${lineUserId}" />
       </div>
       <div class="form-group">
         <label for="permission">権限:</label>
@@ -113,6 +113,30 @@ header h1 {
         <label for="admin_password">管理者パスワード:</label>
         <input type="password" id="admin_password" name="admin_password">
       </div>
+      <div class="kamoku">
+      <label for="dropdown1">科目を選択してください</label>
+        <select id="dropdown1" name="kamoku" required>
+            <option value="" hidden>選択してください</option>
+            <option value="optionA">科目名</option>
+        </select>
+      </div>
+      <br>
+      <div class="class">
+        <label for="dropdown1">クラスを選択してください</label>
+          <select id="dropdown1" name="class" required>
+              <option value="" hidden>選択してください</option>
+              <option value="optionA">クラス名</option>
+          </select>
+        </div>
+        <br>
+        <div class="gakunen">
+          <label for="dropdown1">学年を選択してください</label>
+            <select id="dropdown1" name="gakunen" required>
+                <option value="" hidden>選択してください</option>
+                <option value="optionA">学年</option>
+            </select>
+          </div>
+          <br>
       <button type="submit">登録</button>
     </form>
   </div>

@@ -52,7 +52,7 @@
         "action": {
           "type": "uri",
           "label": "アカウント再登録",
-          "uri": "https://linecorp.com"
+          "uri": replyMessage(replyToken, "ユーザ登録をしてください：\r\n https://2e45-116-82-246-181.ngrok-free.app/sinkitouroku/" + event.getSource().getUserId());replyMessage(replyToken, "ユーザ登録をしてください：\r\n https://2e45-116-82-246-181.ngrok-free.app/sinkitouroku/" + event.getSource().getUserId());
         }
       },
       {

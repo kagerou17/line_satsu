@@ -24,6 +24,8 @@ import com.example.demo.service.CreateRichMenuService;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import jakarta.servlet.http.HttpSession;
+
 @Controller
 public class LineController {
 
@@ -38,16 +40,23 @@ public class LineController {
 
 	@PostMapping("/Riko")
 	@CrossOrigin(origins = "*")
-	public void postApidata(@RequestBody LineData webhookData,Model model) throws IOException {
+	public void postApidata(@RequestBody LineData webhookData,Model model,HttpSession session) throws IOException {
 		for (Event event : webhookData.getEvents()) {
 //timerメソッド実装
 			
 			//メッセージを送ってきたアカウント情報を変数「replyToken」に格納する。
 			String replyToken = event.getReplyToken();
 
+			
+			
 			///////////////☆☆重要☆☆///////////////////
 			/////////////変数「replyText」に送られてきたメッセージが格納されている
 			String replyText = event.getMessage().getText();
+			if (replyText.equals("初期設定")) {
+				session.setAttribute("line_id",event.getSource().getUserId() );
+				replyMessage(replyToken, "ユーザ登録をしてください：\r\n https://2e45-116-82-246-181.ngrok-free.app/sinkitouroku/" + event.getSource().getUserId()+"\n"+"登録が終了したら「登録完了」と返信をしてください");
+			}
+			
 			//ricgmenuメイン
 			if (replyText.equals("ノートが選択されました")) {
 				
@@ -63,39 +72,103 @@ public class LineController {
 			} else if (replyText.equals("その他が選択されました。")) {
 				chooseArea3(replyToken,"test");
 			} 
-		 else if (replyText.equals("予定確認")) {
-			chooseArea4(replyToken,"test");
-		} 
+		 
 			//時間割リプライ
 			else if (replyText.equals("月曜日課")) {
-				replyMessage(replyToken, "月曜日の日課だよ！！\n 1限目　データベース応用 \n 2限目　React演習 \n 3限目　デジタル法制度");
+				List<Map<String, Object>> resultlist;
+		    	resultlist = jdbcTemplate.queryForList("select getu1,getu2,getu3,getu4 from nikka where class = '?' and kamokumei = ? and gakunen = ? ",session.getAttribute("class"),session.getAttribute("kamokumei"),session.getAttribute("gakunen"));
+				String ichi =  (String)resultlist.get(0).get("getu1");
+				String ni =  (String)resultlist.get(0).get("getu2");
+				String san =  (String)resultlist.get(0).get("getu3");
+				String yon =  (String)resultlist.get(0).get("getu4");
+				replyMessage(replyToken, "月曜日の日課だよ！！\n 1限目　"+ichi+" \n 2限目　"+ni+ "\n 3限目　"+san+ "\n 4限目　"+yon);
 			}else if (replyText.equals("火曜日課")) {
-				replyMessage(replyToken, "火曜日の日課だよ！！\n 1限目　なし \n 2限目　JAVAフレームワーク \n 3限目　卒業制作");
-				}else if (replyText.equals("水曜日課")) {
-					replyMessage(replyToken, "水曜日の日課だよ！！\n 1限目　卒業制作 \n 2限目　テスト技法 \n 3限目　なし");
-				}else if (replyText.equals("木曜日課")) {
-					replyMessage(replyToken, "木曜日の日課だよ！！\n 1限目　AI演習 \n 2限目　C#演習 \n 3限目　卒業制作");
-				}else if (replyText.equals("金曜日課")) {
-					replyMessage(replyToken, "金曜日の日課だよ！！\n 1限目　卒業制作 \n 2限目　C言語検定 \n 3限目　JAVAフレームワーク");
-				}
-
-			//kamokuテーブルからkamokumeiを取得する。この際replyTextにはkamokumeiが入っている。その後replyMessageで送信する。
-				else if(replyText.equals("フレームワークが選択されました")) {
-					String kamoku = "フレームワーク";
-					
-					List<Map<String, Object>> resultlist;
-					resultlist = jdbcTemplate.queryForList("select * from kamoku where kamokumei = ?", kamoku);
-					String kamokumei = (String) resultlist.get(0).get("kamokumei");
-					String id = (String) resultlist.get(0).get("id");
-					replyMessage(replyToken, "この授業のidは"+id+"です。\n授業名は"+kamokumei+"です。");
-				}
 				
+				List<Map<String, Object>> resultlist;
+		    	resultlist = jdbcTemplate.queryForList("select ka1,ka2,ka3,ka4 from nikka where class = '?' and kamokumei = ? and gakunen = ? ",session.getAttribute("class"),session.getAttribute("kamokumei"),session.getAttribute("gakunen"));
+				String ichi =  (String)resultlist.get(0).get("ka1");
+				String ni =  (String)resultlist.get(0).get("ka2");
+				String san =  (String)resultlist.get(0).get("ka3");
+				String yon =  (String)resultlist.get(0).get("ka4");
+				replyMessage(replyToken, "火曜日の日課だよ！！\n 1限目　"+ichi+" \n 2限目　"+ni+ "\n 3限目　"+san+ "\n 4限目　"+yon);
+				}else if (replyText.equals("水曜日課")) {
+					List<Map<String, Object>> resultlist;
+			    	resultlist = jdbcTemplate.queryForList("select sui1,sui2,sui3,sui4 from nikka where class = '?' and kamokumei = ? and gakunen = ? ",session.getAttribute("class"),session.getAttribute("kamokumei"),session.getAttribute("gakunen"));
+					String ichi =  (String)resultlist.get(0).get("sui1");
+					String ni =  (String)resultlist.get(0).get("sui2");
+					String san =  (String)resultlist.get(0).get("sui3");
+					String yon =  (String)resultlist.get(0).get("sui4");
+					replyMessage(replyToken, "水曜日の日課だよ！！\n 1限目　"+ichi+" \n 2限目　"+ni+ "\n 3限目　"+san+ "\n 4限目　"+yon);
+				}else if (replyText.equals("木曜日課")) {
+					List<Map<String, Object>> resultlist;
+			    	resultlist = jdbcTemplate.queryForList("select moku1,moku2,moku3,moku4 from nikka where class = '?' and kamokumei = ? and gakunen = ? ",session.getAttribute("class"),session.getAttribute("kamokumei"),session.getAttribute("gakunen"));
+					String ichi =  (String)resultlist.get(0).get("moku1");
+					String ni =  (String)resultlist.get(0).get("moku2");
+					String san =  (String)resultlist.get(0).get("moku3");
+					String yon =  (String)resultlist.get(0).get("moku4");
+					replyMessage(replyToken, "木曜日の日課だよ！！\n 1限目　"+ichi+" \n 2限目　"+ni+ "\n 3限目　"+san+ "\n 4限目　"+yon);
+				}else if (replyText.equals("金曜日課")) {
+					List<Map<String, Object>> resultlist;
+			    	resultlist = jdbcTemplate.queryForList("select kin1,kin2,kin3,kin4 from nikka where class = '?' and kamokumei = ? and gakunen = ? ",session.getAttribute("class"),session.getAttribute("kamokumei"),session.getAttribute("gakunen"));
+					String ichi =  (String)resultlist.get(0).get("kin1");
+					String ni =  (String)resultlist.get(0).get("kin2");
+					String san =  (String)resultlist.get(0).get("kin3");
+					String yon =  (String)resultlist.get(0).get("kin4");
+					replyMessage(replyToken, "金曜日の日課だよ！！\n 1限目　"+ichi+" \n 2限目　"+ni+ "\n 3限目　"+san+ "\n 4限目　"+yon);
+				}
+			//予定確認
+				else if (replyText.equals("予定確認")) {
+					chooseArea4(replyToken,"test");
+				} 
+				else if (replyText.equals("１月の予定を表示します")) {
+
+					jdbcTemplate.queryForList("select * from event where timeschedule = MID(timeschedule,6,2) and line_id = ? ",session.getAttribute("line_id"));
+				}
+				else if (replyText.equals("２月の予定を表示します")) {
+					jdbcTemplate.queryForList("select * from event where timeschedule = MID(timeschedule,6,2) and line_id = ? ",session.getAttribute("line_id"));
+				}
+				else if (replyText.equals("３月の予定を表示します")) {
+					jdbcTemplate.queryForList("select * from event where timeschedule = MID(timeschedule,6,2) and line_id = ? ",session.getAttribute("line_id"));
+				}
+				else if (replyText.equals("４月の予定を表示します")) {
+					jdbcTemplate.queryForList("select * from event where timeschedule = MID(timeschedule,6,2) and line_id = ? ",session.getAttribute("line_id"));
+				}
+				else if (replyText.equals("５月の予定を表示します")) {
+					jdbcTemplate.queryForList("select * from event where timeschedule = MID(timeschedule,6,2) and line_id = ? ",session.getAttribute("line_id"));
+				}
+				else if (replyText.equals("６月の予定を表示します")) {
+					jdbcTemplate.queryForList("select * from event where timeschedule = MID(timeschedule,6,2) and line_id = ? ",session.getAttribute("line_id"));
+				}
+				else if (replyText.equals("７月の予定を表示します")) {
+					jdbcTemplate.queryForList("select * from event where timeschedule = MID(timeschedule,6,2) and line_id = ? ",session.getAttribute("line_id"));
+				}
+				else if (replyText.equals("８月の予定を表示します")) {
+					jdbcTemplate.queryForList("select * from event where timeschedule = MID(timeschedule,6,2) and line_id = ? ",session.getAttribute("line_id"));
+				}
 			
-			
-			
-			
-			
-			
+				else if (replyText.equals("９月の予定を表示します")) {
+					jdbcTemplate.queryForList("select * from event where timeschedule = MID(timeschedule,6,2) and line_id = ? ",session.getAttribute("line_id"));
+				}
+				else if (replyText.equals("１０月の予定を表示します")) {
+					jdbcTemplate.queryForList("select * from event where timeschedule = MID(timeschedule,6,2) and line_id = ? ",session.getAttribute("line_id"));
+					
+				}else if (replyText.equals("１１月の予定を表示します")) {
+					jdbcTemplate.queryForList("select * from event where timeschedule = MID(timeschedule,6,2) and line_id = ? ",session.getAttribute("line_id"));
+					
+				}else if (replyText.equals("１２月の予定を表示します")) {
+					jdbcTemplate.queryForList("select * from event where timeschedule = MID(timeschedule,6,2) and line_id = ? ",session.getAttribute("line_id"));
+				}
+			//sessionへ突っ込む
+			    else if (replyText.equals("登録完了")) {
+			    	List<Map<String, Object>> resultlist;
+			    	resultlist = jdbcTemplate.queryForList("select class,kamokumei,gakunen from acount where lineid = ?  ",session.getAttribute("line_id") );
+			    	session.setAttribute("class",(String) resultlist.get(0).get("class") );
+			    	session.setAttribute("kamokumei",(String) resultlist.get(0).get("kamokumei") );
+			    	session.setAttribute("gakunen",(String) resultlist.get(0).get("gakunen") );
+			    
+                    replyMessage(replyToken, "登録完了しました！");
+                }
+                
 			
 			
 			//////////////ここまでを見てね。///////////////////////
