@@ -27,8 +27,10 @@ public class Acount {
     @Column(name="authority")
     private int authority;
     
-    @Column(name="nikkatime")
-    private Timestamp nikkatime; 
+    @Column(name="nikka_hour")
+    private Timestamp nikka_hour; 
+    @Column(name="nikka_minute")
+    private Timestamp nikka_minute;
     
     @Column(name="kamokumei")
     private String kamokumei;
@@ -39,78 +41,85 @@ public class Acount {
     @Column(name="class")
     private String classs;
 
-    
-    
-    public int getAcount_id() {
-        return acount_id;
-    }
+	public int getAcount_id() {
+		return acount_id;
+	}
 
-    public void setAcount_id(int acount_id) {
-        this.acount_id = acount_id;
-    }
+	public void setAcount_id(int acount_id) {
+		this.acount_id = acount_id;
+	}
 
-    public String getAcount_name() {
-        return acount_name;
-    }
+	public String getAcount_name() {
+		return acount_name;
+	}
 
-    public void setAcount_name(String acount_name) {
-        this.acount_name = acount_name;
-    }
+	public void setAcount_name(String acount_name) {
+		this.acount_name = acount_name;
+	}
 
-    public String getLine_id() {
-        return line_id;
-    }
+	public String getLine_id() {
+		return line_id;
+	}
 
-    public void setLine_id(String line_id) {
-        this.line_id = line_id;
-    }
+	public void setLine_id(String line_id) {
+		this.line_id = line_id;
+	}
 
-    public String getPass() {
-        return pass;
-    }
+	public String getPass() {
+		return pass;
+	}
 
-    public void setPass(String pass) {
-        this.pass = pass;
-    }
+	public void setPass(String pass) {
+		this.pass = pass;
+	}
 
-    public int getAuthority() {
-        return authority;
-    }
+	public int getAuthority() {
+		return authority;
+	}
 
-    public void setAuthority(int authority) {
-        this.authority = authority;
-    }
+	public void setAuthority(int authority) {
+		this.authority = authority;
+	}
 
-    public Timestamp getNikkatime() { 
-        return nikkatime;
-    }
+	public Timestamp getNikka_hour() {
+		return nikka_hour;
+	}
 
-    public void setNikkatime(Timestamp nikkatime) { 
-        this.nikkatime = nikkatime;
-    }
+	public void setNikka_hour(Timestamp nikka_hour) {
+		this.nikka_hour = nikka_hour;
+	}
 
-    public String getKamokumei() {
-        return kamokumei;
-    }
+	public Timestamp getNikka_minute() {
+		return nikka_minute;
+	}
 
-    public void setKamokumei(String kamokumei) {
-        this.kamokumei = kamokumei;
-    }
+	public void setNikka_minute(Timestamp nikka_minute) {
+		this.nikka_minute = nikka_minute;
+	}
 
-    public String getGakunen() {
-        return gakunen;
-    }
+	public String getKamokumei() {
+		return kamokumei;
+	}
 
-    public void setGakunen(String gakunen) {
-        this.gakunen = gakunen;
-    }
+	public void setKamokumei(String kamokumei) {
+		this.kamokumei = kamokumei;
+	}
 
-    public String getClasss() {
-        return classs;
-    }
+	public String getGakunen() {
+		return gakunen;
+	}
 
-    public void setClasss(String classs) {
-        this.classs = classs;
-    }
+	public void setGakunen(String gakunen) {
+		this.gakunen = gakunen;
+	}
+
+	public String getClasss() {
+		return classs;
+	}
+
+	public void setClasss(String classs) {
+		this.classs = classs;
+	}
+
     
 }

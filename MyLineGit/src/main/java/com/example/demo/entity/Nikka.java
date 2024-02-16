@@ -21,8 +21,8 @@ public class Nikka {
 	@Column(name="class")
 	private String classs;
 	
-	@Column(name="kamokumei")
-	private String kamokumei;
+	@Column(name="gakkamei")
+	private String gakkamei;
 	
 	@Column(name="getu1")
 	private String getu1;
@@ -108,12 +108,12 @@ public class Nikka {
 		this.classs = classs;
 	}
 
-	public String getKamokumei() {
-		return kamokumei;
+	public String getGakkamei() {
+		return gakkamei;
 	}
 
-	public void setKamokumei(String kamokumei) {
-		this.kamokumei = kamokumei;
+	public void setGakkamei(String gakkamei) {
+		this.gakkamei = gakkamei;
 	}
 
 	public String getGetu1() {
@@ -275,6 +275,8 @@ public class Nikka {
 	public void setKin4(String kin4) {
 		this.kin4 = kin4;
 	}
+
+	
 
 
 	
