@@ -1,7 +1,5 @@
 package com.example.demo.entity;
 
-import java.sql.Timestamp; // timestamp型を使用するためのimport文
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -28,9 +26,9 @@ public class Acount {
     private int authority;
     
     @Column(name="nikka_hour")
-    private Timestamp nikka_hour; 
+    private int nikka_hour; 
     @Column(name="nikka_minute")
-    private Timestamp nikka_minute;
+    private int nikka_minute;
     
     @Column(name="kamokumei")
     private String kamokumei;
@@ -81,19 +79,19 @@ public class Acount {
 		this.authority = authority;
 	}
 
-	public Timestamp getNikka_hour() {
+	public int getNikka_hour() {
 		return nikka_hour;
 	}
 
-	public void setNikka_hour(Timestamp nikka_hour) {
+	public void setNikka_hour(int nikka_hour) {
 		this.nikka_hour = nikka_hour;
 	}
 
-	public Timestamp getNikka_minute() {
+	public int getNikka_minute() {
 		return nikka_minute;
 	}
 
-	public void setNikka_minute(Timestamp nikka_minute) {
+	public void setNikka_minute(int nikka_minute) {
 		this.nikka_minute = nikka_minute;
 	}
 
@@ -121,5 +119,4 @@ public class Acount {
 		this.classs = classs;
 	}
 
-    
 }

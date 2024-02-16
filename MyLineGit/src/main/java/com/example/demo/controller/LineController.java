@@ -180,11 +180,15 @@ public class LineController {
 
 	        
 			Timer timer = new Timer();
-
+			List<Map<String, Object>> resultlist;
+	    	resultlist = jdbcTemplate.queryForList("select nikka_hour,nikka_minute from acount where lineid = ?  ",session.getAttribute("line_id") );
+	    	session.setAttribute("nikka_hour", (int)resultlist.get(0).get("nikka_hour") );
+	    	session.setAttribute("nikka_minute",(int) resultlist.get(0).get("nikka_minute") );
+	    	
 	        // タスクを設定する時間
 	        Calendar calendar = Calendar.getInstance();
-	        calendar.set(Calendar.HOUR_OF_DAY, 9); // 9時に設定
-	        calendar.set(Calendar.MINUTE, 0); // 0分に設定
+	        calendar.set(Calendar.HOUR_OF_DAY, (int)session.getAttribute("nikka_hour")); // 時を設定
+	        calendar.set(Calendar.MINUTE, (int)session.getAttribute("nikka_minute")); // 分を設定
 	        calendar.set(Calendar.SECOND, 0); // 0秒に設定
 
 	        Date time = calendar.getTime();
