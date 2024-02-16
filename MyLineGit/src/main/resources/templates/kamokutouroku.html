@@ -1,59 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>科目入力フォーム</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        /* Your existing CSS styles remain unchanged */
         body {
-            text-align: center;
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
             margin: 0;
             padding: 0;
         }
 
-        h2 {
-            color: #333;
+        header {
+            background-color: #45a049;
+            color: #fff;
+            padding: 10px;
+            text-align: left;
+            margin: 0;
+        }
+
+        header h1 {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
 
         form {
-            max-width: 800px;
-            margin: 20px auto;
+            max-width: 400px;
             background-color: #fff;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 20px;
+        .form-group {
+            margin-bottom: 15px;
         }
 
-        th, td {
-            border: 1px solid #ccc;
-            padding: 10px;
-            text-align: center;
+        .form-group label {
+            display: inline-block;
+            width: 100px;
+            text-align: right;
+            margin-right: 10px;
         }
 
-        th {
-            background-color: #f2f2f2;
-        }
-
-        input {
-            width: 100%;
+        .form-group input {
+            width: calc(100% - 110px); /* 100px (label width) + 10px (margin-right) */
             padding: 8px;
-            margin-bottom: 5px;
             border: 1px solid #ccc;
             border-radius: 4px;
             box-sizing: border-box;
         }
 
-        button {
+        form input[type="submit"] {
             width: 100%;
             padding: 10px;
             background-color: #4caf50;
@@ -63,151 +71,29 @@
             cursor: pointer;
         }
 
-        button:hover {
+        form input[type="submit"]:hover {
             background-color: #45a049;
         }
-
-        .button-container {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 20px;
-        }
-        header {
-    background-color: #45a049;
-    padding: 10px;
-    margin: 0; /* 上下左右の余白をゼロに設定 */
-}
-
-header h1 {
-    color: #fff;
-    text-align: left;
-    padding-left: 20px;
-    margin: 0; /* 上下左右の余白をゼロに設定 */
-}
-
     </style>
 </head>
 
 <body>
-
     <header>
         <h1>学生支援システムRIKO</h1>
     </header>
-    <h2>科目入力フォーム</h2>
-
-    <form id="gradeForm">
-        <table>
-            <thead>
-                <tr>
-                    <th rowspan="1"></th>
-                    <th>科目</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- 一限 -->
-                <tr>
-                    <td>1</td>
-                    <td><input type="text" name="subject1" placeholder="科目名を入力してください" ></td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td><input type="text" name="subject2" ></td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td><input type="text" name="subject3" ></td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td><input type="text" name="subject4" ></td>
-                </tr>
-                <tr>
-                    <td>5</td>
-                    <td><input type="text" name="subject5" ></td>
-                </tr>
-                <tr>
-                    <td>6</td>
-                    <td><input type="text" name="subject6" ></td>
-                </tr>
-                <tr>
-                    <td>7</td>
-                    <td><input type="text" name="subject7" ></td>
-                </tr>
-                <tr>
-                    <td>8</td>
-                    <td><input type="text" name="subject8" ></td>
-                </tr>
-                <tr>
-                    <td>9</td>
-                    <td><input type="text" name="subject9" ></td>
-                </tr>
-                <tr>
-                    <td>10</td>
-                    <td><input type="text" name="subject10" ></td>
-                </tr>
-                <tr>
-                    <td>11</td>
-                    <td><input type="text" name="subject11" ></td>
-                </tr>
-                <tr>
-                    <td>12</td>
-                    <td><input type="text" name="subject12" ></td>
-                </tr>
-                <tr>
-                    <td>13</td>
-                    <td><input type="text" name="subject13" ></td>
-                </tr>
-                <tr>
-                    <td>14</td>
-                    <td><input type="text" name="subject14" ></td>
-                </tr>
-                <tr>
-                    <td>15</td>
-                    <td><input type="text" name="subject15" ></td>
-                </tr>
-                <!-- ... (other rows) ... -->
-            </tbody>
-        </table>
-
-        <div id="errorMessage" style="color: red;"></div>
-        <button type="button" onclick="submitForm()">送信</button>
-
-        <div class="button-container">
-            <a th:href="@{/kamoku}">
-                <button type="button">学科・学年選択画面</button>
-            </a>
-
-            <a th:href="@{/homedemo}">
-                <button type="button">ホーム画面</button>
-            </a>
-        </div>
-    </form>
-
-    <script>
-        function submitForm() {
-            // Get the value of the first input field
-            var firstSubject = document.getElementsByName("subject1")[0].value;
-
-            // Check if the first input field is empty
-            if (firstSubject.trim() === "") {
-                // Display an alert message
-                alert("科目名を入力してください。");
-            } else {
-                // Proceed with form submission
-                var formData = new FormData(document.getElementById("gradeForm"));
-
-                // Display form data in the console (for demonstration purposes)
-                for (var pair of formData.entries()) {
-                    console.log(pair[0] + ': ' + pair[1]);
-                }
-
-                // Redirect to another page
-                //window.location.href = "file:///C:/Users/S0521/Desktop/%E3%83%87%E3%83%A2/kamokukanryou.html";
-                th:href = "@{/kamokukanryou}";
-            }
-        }
-    </script>
-
+    <div class="container">
+        <form method="post" th:action="@{/kamokutouroku/add}">
+            <div class="form-group">
+                <label for="nikka_id">ID:</label>
+                <input type="number" id="nikka_id" name="nikka_id">
+            </div>
+            <div class="form-group">
+                <label for="kamokumei">科目名:</label>
+                <input type="text" id="kamokumei" name="kamokumei">
+            </div>
+            <input type="submit" value="登録">
+        </form>
+    </div>
 </body>
 
 </html>

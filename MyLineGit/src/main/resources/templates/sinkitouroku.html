@@ -84,23 +84,31 @@ header h1 {
   </header>
   <div class="container">
     <h2>新規登録</h2>
-    <form id="registrationForm" method="post" onsubmit="return validateForm()">
-      <div class="form-group">
-        <label for="account_id">アカウントID:</label>
-        <input type="text" id="account_id" name="account_id" required>
+    
+    
+    
+    <form method="post" th:action="@{/sinkitouroku/{lineUserId}}">
+		
+		<div class="form-group">
+        <label for="account_id" required>アカウントID:</label>
+        <input type="number" name="acount_id" required><br>
       </div>
+      
       <div class="form-group">
         <label for="account_name">アカウント名:</label>
-        <input type="text" id="account_name" name="account_name" required>
+        <input type="text" name="account_name" required><br>
       </div>
+      
       <div class="form-group">
         <label for="password">パスワード:</label>
-        <input type="password" id="password" name="password" required>
+        <input type="text" name="password" required><br>
       </div>
+      
       <div class="form-group">
         <label for="line_id">LINEID:</label>
         <input type="text" name="lineUserId" th:value="${lineUserId}" />
       </div>
+      
       <div class="form-group">
         <label for="permission">権限:</label>
         <select id="permission" name="permission" onchange="toggleAdminPassword()" required>

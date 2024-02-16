@@ -8,7 +8,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.example.demo.entity.Acount;
+import com.example.demo.entity.Nikka;
+import com.example.demo.repository.AcountRepository;
 import com.example.demo.repository.EventRepository;
+import com.example.demo.repository.NikkaRepository;
 
 import jakarta.servlet.http.HttpSession;
 
@@ -18,7 +22,11 @@ public class HtmlController {
 	@Autowired
 	JdbcTemplate jdbcTemplate;
 	@Autowired
+	AcountRepository acountripository;
+	@Autowired
 	EventRepository eventripository;
+	@Autowired
+	NikkaRepository nikkaripository;
 	
 	@RequestMapping(path = "/homedemo", method = RequestMethod.GET)
 	public String homedemo() {
@@ -28,7 +36,54 @@ public class HtmlController {
 		return "homedemo";
 	}
 	
+	
+	@RequestMapping(path = "/kamokutouroku", method = RequestMethod.GET)
+	public String kamokutouroku() {
 
+	return "kamokutouroku";
+	}
+	
+	@RequestMapping(path = "/kamokutouroku/add", method = RequestMethod.POST)
+	public String kamokutouroku1(Model model,String kamokumei,int nikka_id) {
+	
+		System.out.println("ねねねねんえねねねねねねねね");	
+		Nikka nikka = new Nikka();
+		
+		nikka.setNikka_id(nikka_id);
+		nikka.setKamokumei(kamokumei);
+		
+		//社員テーブルにINSERT文を発行するRepositoryの呼び出し。
+		nikkaripository.save(nikka);
+		System.out.println("でたよー");		
+		return "kamokukanryou";
+	}
+	
+	//新規登録のメソッド
+	@RequestMapping(path = "/sinkitouroku/{lineUserId}", method = RequestMethod.GET)
+	public String sinkitouroku(@PathVariable String lineUserId, Model model) {
+
+		model.addAttribute("lineUserId", lineUserId);
+		return "sinkitouroku";
+	}
+	@RequestMapping(path = "/sinkitouroku/{lineUserId}", method = RequestMethod.POST)
+	public String sinkitouroku1(@PathVariable String lineUserId, Model model,int acount_id,String acount_name,String password) {
+
+		model.addAttribute("lineUserId", lineUserId);
+		
+		System.out.println("あああああああああああ");	
+		Acount acount = new Acount();
+		
+		acount.setAcount_id(acount_id);
+		acount.setAcount_name(acount_name);
+		acount.setPass(password);
+		System.out.println("いけた");
+		
+		acountripository.save(acount);
+		return "sinkitouroku";
+	}
+	
+	
+	
 	@RequestMapping(path = "/event", method = RequestMethod.GET)
 	public String event() {
 
@@ -90,16 +145,7 @@ return "acountzyouhou";
 }
 	
 	
-	@RequestMapping(path = "/kamokutouroku", method = RequestMethod.GET)
-public String kamoku(HttpSession session) {
-
-	String x = (String)session.getAttribute("gakka");
-	String y = (String)session.getAttribute("gakunen");
 	
-	
-	
-return "kamokutouroku";
-}
 	@RequestMapping(path = "/kamoku2", method = RequestMethod.GET)
 	public String kamoku2() {
 
@@ -169,12 +215,8 @@ return "notekekka";
 
 return "notekensaku";
 }
-	@RequestMapping(path = "/sinkitouroku/{lineUserId}", method = RequestMethod.GET)
-	public String sinkitouroku(@PathVariable String lineUserId, Model model) {
-
-		model.addAttribute("lineUserId", lineUserId);
-		return "sinkitouroku";
-	}
+	
+	
 	@RequestMapping(path = "/taikai", method = RequestMethod.GET)
 	public String taikai() {
 

@@ -13,7 +13,7 @@ public class Nikka {
 	@Id
 	
 	@Column(name="nikka_id")
-	private int nikka_id;
+	public int nikka_id;
 	
 	@Column(name="gakunen")
 	private String gakunen;

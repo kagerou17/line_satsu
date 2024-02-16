@@ -1,116 +1,116 @@
 package com.example.demo.entity;
 
+import java.sql.Timestamp; // timestamp型を使用するためのimport文
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-
 @Table(name="acount")
 public class Acount {
 
-	@Id
-	@Column(name="acount_id")
-	private int acount_id;
+    @Id
+    @Column(name="acount_id")
+    private int acount_id;
 
-	@Column(name="acount_name")
-	private String acount_name;
-	
-	@Column(name="line_id")
-	private String line_id;
-	
-	@Column(name="pass")
-	private String pass;
-	
-	@Column(name="authority")
-	private int authority;
-	
-	@Column(name="nikkatime")
-	private int nikkatime;
-	
-	@Column(name="kamokumei")
-	private String kamokumei;
-	
-	@Column(name="gakunen")
-	private String gakunen;
-	
-	@Column(name="class")
+    @Column(name="acount_name")
+    private String acount_name;
+    
+    @Column(name="line_id")
+    private String line_id;
+    
+    @Column(name="pass")
+    private String pass;
+    
+    @Column(name="authority")
+    private int authority;
+    
+    @Column(name="nikkatime")
+    private Timestamp nikkatime; 
+    
+    @Column(name="kamokumei")
+    private String kamokumei;
+    
+    @Column(name="gakunen")
+    private String gakunen;
+    
+    @Column(name="class")
     private String classs;
 
-	
-	
-	public int getAcount_id() {
-		return acount_id;
-	}
+    
+    
+    public int getAcount_id() {
+        return acount_id;
+    }
 
-	public void setAcount_id(int acount_id) {
-		this.acount_id = acount_id;
-	}
+    public void setAcount_id(int acount_id) {
+        this.acount_id = acount_id;
+    }
 
-	public String getAcount_name() {
-		return acount_name;
-	}
+    public String getAcount_name() {
+        return acount_name;
+    }
 
-	public void setAcount_name(String acount_name) {
-		this.acount_name = acount_name;
-	}
+    public void setAcount_name(String acount_name) {
+        this.acount_name = acount_name;
+    }
 
-	public String getLine_id() {
-		return line_id;
-	}
+    public String getLine_id() {
+        return line_id;
+    }
 
-	public void setLine_id(String line_id) {
-		this.line_id = line_id;
-	}
+    public void setLine_id(String line_id) {
+        this.line_id = line_id;
+    }
 
-	public String getPass() {
-		return pass;
-	}
+    public String getPass() {
+        return pass;
+    }
 
-	public void setPass(String pass) {
-		this.pass = pass;
-	}
+    public void setPass(String pass) {
+        this.pass = pass;
+    }
 
-	public int getAuthority() {
-		return authority;
-	}
+    public int getAuthority() {
+        return authority;
+    }
 
-	public void setAuthority(int authority) {
-		this.authority = authority;
-	}
+    public void setAuthority(int authority) {
+        this.authority = authority;
+    }
 
-	public int getNikkatime() {
-		return nikkatime;
-	}
+    public Timestamp getNikkatime() { 
+        return nikkatime;
+    }
 
-	public void setNikkatime(int nikkatime) {
-		this.nikkatime = nikkatime;
-	}
+    public void setNikkatime(Timestamp nikkatime) { 
+        this.nikkatime = nikkatime;
+    }
 
-	public String getKamokumei() {
-		return kamokumei;
-	}
+    public String getKamokumei() {
+        return kamokumei;
+    }
 
-	public void setKamokumei(String kamokumei) {
-		this.kamokumei = kamokumei;
-	}
+    public void setKamokumei(String kamokumei) {
+        this.kamokumei = kamokumei;
+    }
 
-	public String getGakunen() {
-		return gakunen;
-	}
+    public String getGakunen() {
+        return gakunen;
+    }
 
-	public void setGakunen(String gakunen) {
-		this.gakunen = gakunen;
-	}
+    public void setGakunen(String gakunen) {
+        this.gakunen = gakunen;
+    }
 
-	public String getClasss() {
-		return classs;
-	}
+    public String getClasss() {
+        return classs;
+    }
 
-	public void setClasss(String classs) {
-		this.classs = classs;
-	}
-	
-	
+    public void setClasss(String classs) {
+        this.classs = classs;
+    }
+    
 }
