@@ -9,9 +9,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.example.demo.entity.Acount;
-import com.example.demo.entity.Nikka;
+import com.example.demo.entity.Kamoku;
 import com.example.demo.repository.AcountRepository;
 import com.example.demo.repository.EventRepository;
+import com.example.demo.repository.KamokuRepository;
 import com.example.demo.repository.NikkaRepository;
 
 import jakarta.servlet.http.HttpSession;
@@ -28,6 +29,9 @@ public class HtmlController {
 	@Autowired
 	NikkaRepository nikkaripository;
 	
+	@Autowired
+	KamokuRepository kamokuripository;
+	
 	@RequestMapping(path = "/homedemo", method = RequestMethod.GET)
 	public String homedemo() {
 
@@ -37,6 +41,8 @@ public class HtmlController {
 	}
 	
 	
+	
+	//科目登録html
 	@RequestMapping(path = "/kamokutouroku", method = RequestMethod.GET)
 	public String kamokutouroku() {
 
@@ -44,19 +50,31 @@ public class HtmlController {
 	}
 	
 	@RequestMapping(path = "/kamokutouroku/add", method = RequestMethod.POST)
-	public String kamokutouroku1(Model model,String kamokumei,int nikka_id) {
+	public String kamokutouroku1(Model model,Integer kamoku_id,String kamoku1,
+			String kamoku2,String kamoku3,String kamoku4,String kamoku5,
+			String kamoku6,String kamoku7) {
 	
 		System.out.println("ねねねねんえねねねねねねねね");	
-		Nikka nikka = new Nikka();
+		Kamoku kamoku = new Kamoku();
 		
-		nikka.setNikka_id(nikka_id);
-		nikka.setKamokumei(kamokumei);
-		
+		kamoku.setKamoku_id(kamoku_id);
+		kamoku.setKamoku1(kamoku1);
+		kamoku.setKamoku2(kamoku2);
+		kamoku.setKamoku3(kamoku3);
+		kamoku.setKamoku4(kamoku4);
+		kamoku.setKamoku5(kamoku5);
+		kamoku.setKamoku6(kamoku6);
+		kamoku.setKamoku7(kamoku7);
 		//社員テーブルにINSERT文を発行するRepositoryの呼び出し。
-		nikkaripository.save(nikka);
+	
+		kamokuripository.save(kamoku);
 		System.out.println("でたよー");		
 		return "kamokukanryou";
 	}
+	
+	
+	
+	
 	
 	//新規登録のメソッド
 	@RequestMapping(path = "/sinkitouroku/{lineUserId}", method = RequestMethod.GET)
@@ -128,7 +146,7 @@ public class HtmlController {
 	@RequestMapping(path = "/acountzyouhou", method = RequestMethod.GET)
 	public String acountzyouhou() {
 
-return "acountzyouhou";
+     return "acountzyouhou";
 }
 	@RequestMapping(path = "/kamoku", method = RequestMethod.GET)
 	public String kamoku() {

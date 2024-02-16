@@ -1,8 +1,13 @@
 package com.example.demo.entity;
 
 import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
+@Entity
+
+@Table(name="kamoku")
 public class Kamoku {
 
 	
@@ -14,8 +19,8 @@ public class Kamoku {
     @Column(name="gakunen")
     private String gakunen;
 
-    @Column(name="kamokumei")
-    private String kamokumei;
+    @Column(name="gakkamei")
+    private String gakkamei;
 
     @Column(name="kamoku1")
     private String kamoku1;
@@ -80,12 +85,12 @@ public class Kamoku {
 		this.gakunen = gakunen;
 	}
 
-	public String getKamokumei() {
-		return kamokumei;
+	public String getGakkamei() {
+		return gakkamei;
 	}
 
-	public void setKamokumei(String kamokumei) {
-		this.kamokumei = kamokumei;
+	public void setGakkamei(String gakkamei) {
+		this.gakkamei = gakkamei;
 	}
 
 	public String getKamoku1() {
