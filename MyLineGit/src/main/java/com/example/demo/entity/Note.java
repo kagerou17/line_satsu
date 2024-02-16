@@ -19,13 +19,13 @@ public class Note {
 	private int line_id;
 	
 	@Column(name="subject_time")
-	private int subject_time;
+	private String subject_time;
 	
 	@Column(name="subject")
 	private String subject;
 	
 	@Column(name="note")
-	private int note;
+	private String note;
 
 	public int getNote_id() {
 		return note_id;
@@ -43,11 +43,11 @@ public class Note {
 		this.line_id = line_id;
 	}
 
-	public int getSubject_time() {
+	public String getSubject_time() {
 		return subject_time;
 	}
 
-	public void setSubject_time(int subject_time) {
+	public void setSubject_time(String subject_time) {
 		this.subject_time = subject_time;
 	}
 
@@ -59,13 +59,16 @@ public class Note {
 		this.subject = subject;
 	}
 
-	public int getNote() {
+	public String getNote() {
 		return note;
 	}
 
-	public void setNote(int note) {
+	public void setNote(String note) {
 		this.note = note;
 	}
+
+	
+
 	
 	
 	

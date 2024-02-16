@@ -141,32 +141,20 @@ header h1 {
 
     <h1>ノート閲覧検索</h1>
     <form>
-        
-
-        
        <br>
-        <br>
-        <!-- 科目の選択 -->
-        <label for="dropdown1"></label>
-        <!-- idでjavaScriptのメソッドに行っている -->
-        <select id="dropdown1" name="kamoku" required>
-            <option value="" disabled selected style="display:none;">科目を選択してください</option>
-            <option value="option1">DB応用</option>
-            <option value="option2">React</option>
-            <option value="option3">デジタル法制度</option>
-            <option value="option4">Javaフレームワーク</option>
-            <option value="option5">卒業制作</option>
-            <option value="option6">テスト技法</option>
-            <option value="option7">AI演習</option>
-            <option value="option8">C#</option>
-            <option value="option9">C言語対策</option>
-        </select>
+       <div class="row">
+		<div class="col-6">
+			
+			<form method="get" th:action="@{/notekensaku}">
+				<select name="selectedEmployee">
+					<option th:each="result : ${resultList}" th:value="${result.note_id}" th:text="${result.subject}"></option>
+				</select>
+				<input type="submit" value="選択">
+			</form>
+		</div>
+	</div>
         
-        
-        
-        <a>
-            <button type="button" onclick="saveMemo()">検索</button>
-        </a>
+         
       <br>
 			<br>
 			<br>

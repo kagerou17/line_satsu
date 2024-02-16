@@ -6,87 +6,84 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>科目入力フォーム</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-    body {
-        font-family: Arial, sans-serif;
-        background-color: #f4f4f4;
-        margin: 0;
-        padding: 0;
-    }
-
-    header {
-        background-color: #45a049;
-        color: #fff;
-        padding: 10px;
-        text-align: left;
-        margin: 0;
-    }
-
-    header h1 {
-        margin: 0;
-        padding-left: 20px;
-    }
-
-    .container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-    }
-
-    form {
-        max-width: 400px;
-        background-color: #fff;
-        padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        display: flex; /* Added */
-        flex-direction: column; /* Added */
-    }
-
-    .form-group {
-        margin-bottom: 15px;
-        display: flex; /* Added */
-        flex-direction: row; /* Added */
-        align-items: center; /* Added */
-    }
-
-    .form-group label {
-        flex: 0 0 auto; /* Added */
-        width: 100px;
-        text-align: right;
-        margin-right: 10px;
-    }
-
-    .form-group input {
-        flex: 1; /* Added */
-        padding: 8px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        box-sizing: border-box;
-    }
-
-    form input[type="submit"] {
-        width: 100%;
-        padding: 10px;
-        background-color: #4caf50;
-        color: #fff;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-    }
-
-    form input[type="submit"]:hover {
-        background-color: #45a049;
-    }
-</style>
+    
 
 </head>
+<style>
+   body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+.container {
+	 display: flex;
+  justify-content: center;
+    align-items: center;
+  
+}
+header {
+    background-color: #45a049;
+    color: #fff;
+    padding: 10px;
+    text-align: left;
+    margin: 0;
+}
 
+header h1 {
+    margin: 0;
+    padding-left: 20px;
+}
+
+
+
+form {
+    max-width: 400px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    width: 100px;
+    text-align: right;
+    margin-right: 10px;
+}
+
+.form-group input {
+    width: calc(100% - 110px); /* Adjusted width to accommodate label */
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+form input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+form input[type="submit"]:hover {
+    background-color: #45a049;
+}
+</style>
 <body>
     <header>
         <h1>学生支援システムRIKO</h1>
     </header>
+    <br>
+    <br>
     <div class="container">
         <form method="post" th:action="@{/kamokutouroku/add}">
 			<!-- 入力1個目 -->
@@ -95,38 +92,105 @@
                 <input type="number" id="kamoku_id" name="kamoku_id">
             </div>
             <div class="form-group">
-                <label for="kamokumei1">科目名:</label>
+                <label for="kamokumei1">科目名1:</label>
                 <input type="text" id="kamoku1" name="kamoku1">
             </div>
             <!-- 入力2個目 -->
              <div class="form-group">
-                <label for="kamokumei2">科目名:</label>
+                <label for="kamokumei2">科目名2:</label>
                 <input type="text" id="kamoku2" name="kamoku2">
             </div>
             <!-- 入力3個目 -->
              <div class="form-group">
-                <label for="kamokumei3">科目名:</label>
+                <label for="kamokumei3">科目名3:</label>
                 <input type="text" id="kamoku3" name="kamoku3">
             </div>
+            
             <!-- 入力4個目 -->
              <div class="form-group">
-                <label for="kamokumei4">科目名:</label>
+                <label for="kamokumei4">科目名4:</label>
                 <input type="text" id="kamoku4" name="kamoku4">
             </div>
+            
             <!-- 入力5個目 -->
              <div class="form-group">
-                <label for="kamokumei5">科目名:</label>
+                <label for="kamokumei5">科目名5:</label>
                 <input type="text" id="kamoku5" name="kamoku5">
             </div>
             <!-- 入力6個目 -->
              <div class="form-group">
-                <label for="kamokumei6">科目名:</label>
+                <label for="kamokumei6">科目名6:</label>
                 <input type="text" id="kamoku6" name="kamoku6">
             </div>
              <!-- 入力7個目 -->
              <div class="form-group">
-                <label for="kamokumei7">科目名:</label>
+                <label for="kamokumei7">科目名7:</label>
                 <input type="text" id="kamoku7" name="kamoku7">
+            </div>
+            <!-- 入力8個目 -->
+             <div class="form-group">
+                <label for="kamokumei8">科目名8:</label>
+                <input type="text" id="kamoku8" name="kamoku8">
+            </div>
+             <!-- 入力9個目 -->
+             <div class="form-group">
+                <label for="kamokumei9">科目名9:</label>
+                <input type="text" id="kamoku9" name="kamoku9">
+            </div>
+            <!-- 入力10個目 -->
+             <div class="form-group">
+                <label for="kamokumei10">科目名10:</label>
+                <input type="text" id="kamoku10" name="kamoku10">
+            </div>
+            <!-- 入力11個目 -->
+             <div class="form-group">
+                <label for="kamokumei11">科目名11:</label>
+                <input type="text" id="kamoku11" name="kamoku11">
+            </div>
+             <!-- 入力12個目 -->
+             <div class="form-group">
+                <label for="kamokumei12">科目名12:</label>
+                <input type="text" id="kamoku12" name="kamoku12">
+            </div>
+            <!-- 入力13個目 -->
+             <div class="form-group">
+                <label for="kamokumei13">科目名13:</label>
+                <input type="text" id="kamoku13" name="kamoku13">
+            </div>
+            <!-- 入力14個目 -->
+             <div class="form-group">
+                <label for="kamokumei14">科目名14:</label>
+                <input type="text" id="kamoku14" name="kamoku14">
+            </div>
+            <!-- 入力15個目 -->
+             <div class="form-group">
+                <label for="kamokumei15">科目名15:</label>
+                <input type="text" id="kamoku15" name="kamoku15">
+            </div>
+            <!-- 入力16個目 -->
+             <div class="form-group">
+                <label for="kamokumei16">科目名16:</label>
+                <input type="text" id="kamoku16" name="kamoku16">
+            </div>
+             <!-- 入力17個目 -->
+             <div class="form-group">
+                <label for="kamokumei17">科目名17:</label>
+                <input type="text" id="kamoku17" name="kamoku17">
+            </div>
+            <!-- 入力18個目 -->
+             <div class="form-group">
+                <label for="kamokumei18">科目名18:</label>
+                <input type="text" id="kamoku18" name="kamoku18">
+            </div>
+             <!-- 入力19個目 -->
+             <div class="form-group">
+                <label for="kamokumei19">科目名19:</label>
+                <input type="text" id="kamoku19" name="kamoku19">
+            </div>
+            <!-- 入力20個目 -->
+             <div class="form-group">
+                <label for="kamokumei20">科目名20:</label>
+                <input type="text" id="kamoku20" name="kamoku20">
             </div>
             <input type="submit" value="登録">
         </form>

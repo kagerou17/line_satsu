@@ -1,5 +1,7 @@
 package com.example.demo.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
@@ -7,30 +9,36 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.demo.entity.Acount;
+import com.example.demo.entity.Event;
 import com.example.demo.entity.Kamoku;
+import com.example.demo.entity.Note;
 import com.example.demo.repository.AcountRepository;
 import com.example.demo.repository.EventRepository;
 import com.example.demo.repository.KamokuRepository;
 import com.example.demo.repository.NikkaRepository;
+import com.example.demo.repository.NoteRepository;
 
 import jakarta.servlet.http.HttpSession;
-
 @Controller
 public class HtmlController {
 	
 	@Autowired
 	JdbcTemplate jdbcTemplate;
 	@Autowired
-	AcountRepository acountripository;
+	AcountRepository acountrepository;
 	@Autowired
-	EventRepository eventripository;
+	EventRepository eventrepository;
 	@Autowired
-	NikkaRepository nikkaripository;
+	NikkaRepository nikkarepository;
 	
 	@Autowired
-	KamokuRepository kamokuripository;
+	KamokuRepository kamokurepository;
+	
+	@Autowired
+	NoteRepository noterepository;
 	
 	@RequestMapping(path = "/homedemo", method = RequestMethod.GET)
 	public String homedemo() {
@@ -52,7 +60,10 @@ public class HtmlController {
 	@RequestMapping(path = "/kamokutouroku/add", method = RequestMethod.POST)
 	public String kamokutouroku1(Model model,Integer kamoku_id,String kamoku1,
 			String kamoku2,String kamoku3,String kamoku4,String kamoku5,
-			String kamoku6,String kamoku7) {
+			String kamoku6,String kamoku7,String kamoku8,String kamoku9,
+			String kamoku10,String kamoku11,String kamoku12,String kamoku13,
+			String kamoku14,String kamoku15,String kamoku16,String kamoku17,String kamoku18,String kamoku19,
+			String kamoku20) {
 	
 		System.out.println("ねねねねんえねねねねねねねね");	
 		Kamoku kamoku = new Kamoku();
@@ -65,9 +76,28 @@ public class HtmlController {
 		kamoku.setKamoku5(kamoku5);
 		kamoku.setKamoku6(kamoku6);
 		kamoku.setKamoku7(kamoku7);
+		kamoku.setKamoku8(kamoku8);
+		kamoku.setKamoku9(kamoku9);
+		kamoku.setKamoku10(kamoku10);
+		kamoku.setKamoku11(kamoku11);
+		kamoku.setKamoku12(kamoku12);
+		kamoku.setKamoku13(kamoku13);
+		kamoku.setKamoku14(kamoku14);
+		kamoku.setKamoku15(kamoku15);
+		kamoku.setKamoku16(kamoku16);
+		kamoku.setKamoku17(kamoku17);
+		kamoku.setKamoku18(kamoku18);
+		kamoku.setKamoku19(kamoku19);
+		kamoku.setKamoku20(kamoku20);
 		//社員テーブルにINSERT文を発行するRepositoryの呼び出し。
 	
-		kamokuripository.save(kamoku);
+		
+//		List<Kamoku> kamokuList = kamokurepository.findAll();
+//		if (session.getAttribute("gakunen").equals(kamokuList)) {
+//		    // gakunen と kamokuList が等しい場合の処理
+//		    // ここで必要な処理を追加してください
+//		}
+		kamokurepository.save(kamoku);
 		System.out.println("でたよー");		
 		return "kamokukanryou";
 	}
@@ -96,7 +126,7 @@ public class HtmlController {
 		acount.setPass(password);
 		System.out.println("いけた");
 		
-		acountripository.save(acount);
+		acountrepository.save(acount);
 		return "sinkitouroku";
 	}
 	
@@ -108,6 +138,20 @@ public class HtmlController {
 		
 		return "event";
 	}
+	
+	@RequestMapping(path = "/event", method = RequestMethod.POST)
+	public String event1(Model model,String timeschedule,String content,Integer event_id) {
+		Event event = new Event();
+		
+		event.setEvent_id(event_id);
+		event.setTimeschedule(timeschedule);
+		event.setContent(content);
+		
+		eventrepository.save(event);
+		return "event";
+	}
+	
+	
 //	@RequestMapping(path = "/event", method = RequestMethod.POST)
 //	public String eventgo(String date,String text,Model model) {
 //
@@ -228,11 +272,36 @@ return "nikkatouroku";
 
 return "notekekka";
 }
+	
+	
+	
+	
+	
+	
 	@RequestMapping(path = "/notekensaku", method = RequestMethod.GET)
-	public String notekensaku() {
+	public String notekensaku(Model model) {
 
+		
+		//社員テーブルの全件検索
+				List<Note> resultList = noterepository.findAll();
+				
+				model.addAttribute("resultList", resultList);
+				
 return "notekensaku";
 }
+	
+	@RequestMapping(path = "/notekensaku", method = RequestMethod.POST)
+	public String notekensaku1(@RequestParam("selectedEmployee") String selectedNoteId) {
+
+		System.out.println("あああああああああああああああああああああああ");
+		System.out.println(selectedNoteId);
+		
+return "notekensaku";
+}
+	
+	
+	
+	
 	
 	
 	@RequestMapping(path = "/taikai", method = RequestMethod.GET)

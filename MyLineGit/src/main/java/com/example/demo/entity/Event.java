@@ -17,7 +17,7 @@ public class Event {
 	 private int event_id;
 
      @Column(name="timeschedule")
-     private int timeschedule;
+     private String timeschedule;
 
      @Column(name="content")
      private String content;
@@ -33,11 +33,11 @@ public class Event {
 		this.event_id = event_id;
 	}
 
-	public int getTimeschedule() {
+	public String getTimeschedule() {
 		return timeschedule;
 	}
 
-	public void setTimeschedule(int timeschedule) {
+	public void setTimeschedule(String timeschedule) {
 		this.timeschedule = timeschedule;
 	}
 
@@ -57,6 +57,6 @@ public class Event {
 		this.line_id = line_id;
 	}
 
-
+	
      
 }

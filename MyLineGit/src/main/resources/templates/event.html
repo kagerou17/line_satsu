@@ -34,7 +34,8 @@
             font-size: 16px;
             color: #333;
         }
-
+        
+        
         input[type="date"],
         input[type="text"] {
             width: calc(100% - 20px);
@@ -45,7 +46,7 @@
             border-radius: 5px;
             font-size: 14px;
         }
-
+      
         input[type="submit"],
         input[type="button"] {
             padding: 12px 20px;
@@ -57,7 +58,7 @@
             border-radius: 5px;
             transition: background-color 0.3s;
         }
-
+        
         input[type="submit"]:hover,
         input[type="button"]:hover {
             background-color: #4caf50;
@@ -111,14 +112,20 @@
         <h1>学生支援システムRIKO</h1>
     </header>
     <h1>イベントの挿入</h1>
-     <form action="/event" method="post" id="myForm">
+     
+		 <form method="post" th:action="@{/event}">
+			 <p>IDは1以上でお願いします。
+			 </p>
+			 
+        <label for="event_id">ID:</label>
+                <input type="text"  name="event_id">
         <label for="insert-date">日時:</label>
-        <input type="date" id="insert-date" name="date">
+        <input type="date"  name="timeschedule">
         <br>
         <label for="insert-text">登録内容:</label>
-        <input type="text" id="insert-text" name="text">
+        <input type="text"  name="content">
         <br>
-        <button type="button" onclick="saveMemo()">登録</button>
+       <input type="submit" value="登録">
         
         <hr>
 
