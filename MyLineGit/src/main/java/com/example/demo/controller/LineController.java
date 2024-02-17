@@ -56,7 +56,12 @@ public class LineController {
 			if (replyText.equals("初期設定")) {
 
 				replyMessage(replyToken, "ユーザ登録をしてください：\r\n https://2e45-116-82-246-181.ngrok-free.app/sinkitouroku/"
-						+ event.getSource().getUserId() + "\n" + "登録が終了したら「登録完了」と返信をしてください");
+						+ event.getSource().getUserId() );
+			}
+			if (replyText.equals("アカウント再登録")) {
+
+				replyMessage(replyToken, "再登録をしてください：\r\n https://2e45-116-82-246-181.ngrok-free.app/sinkitouroku/"
+						+ event.getSource().getUserId());
 			}
 
 			List<Map<String, Object>> resultlist3 = jdbcTemplate
@@ -147,79 +152,10 @@ public class LineController {
 				replyMessage(replyToken,
 						"金曜日の日課だよ！！\n 1限目　" + ichi + " \n 2限目　" + ni + "\n 3限目　" + san + "\n 4限目　" + yon);
 			}
-			//予定確認
-			else if (replyText.equals("予定確認")) {
-				chooseArea4(replyToken, "test");
-			} 
-			else if (replyText.equals("1月の予定を表示します")) {
-
-				jdbcTemplate.queryForList(
-						"select * from event where timeschedule = MID(timeschedule,5,2) and line_id = ? ",
-						session.getAttribute("line_id"));
-			} else if (replyText.equals("2月の予定を表示します")) {
-				jdbcTemplate.queryForList(
-						"select * from event where timeschedule = MID(timeschedule,5,2) and line_id = ? ",
-						session.getAttribute("line_id"));
-			} else if (replyText.equals("3月の予定を表示します")) {
-				jdbcTemplate.queryForList(
-						"select * from event where timeschedule = MID(timeschedule,5,2) and line_id = ? ",
-						session.getAttribute("line_id"));
-			} else if (replyText.equals("4月の予定を表示します")) {
-				jdbcTemplate.queryForList(
-						"select * from event where timeschedule = MID(timeschedule,5,2) and line_id = ? ",
-						session.getAttribute("line_id"));
-			} else if (replyText.equals("5月の予定を表示します")) {
-				jdbcTemplate.queryForList(
-						"select * from event where timeschedule = MID(timeschedule,5,2) and line_id = ? ",
-						session.getAttribute("line_id"));
-			} else if (replyText.equals("6月の予定を表示します")) {
-				jdbcTemplate.queryForList(
-						"select * from event where timeschedule = MID(timeschedule,5,2) and line_id = ? ",
-						session.getAttribute("line_id"));
-			} else if (replyText.equals("7月の予定を表示します")) {
-				jdbcTemplate.queryForList(
-						"select * from event where timeschedule = MID(timeschedule,5,2) and line_id = ? ",
-						session.getAttribute("line_id"));
-			} else if (replyText.equals("8月の予定を表示します")) {
-				jdbcTemplate.queryForList(
-						"select * from event where timeschedule = MID(timeschedule,5,2) and line_id = ? ",
-						session.getAttribute("line_id"));
 			}
-
-			else if (replyText.equals("9月の予定を表示します")) {
-				jdbcTemplate.queryForList(
-						"select * from event where timeschedule = MID(timeschedule,5,2) and line_id = ? ",
-						session.getAttribute("line_id"));
-			} else if (replyText.equals("10月の予定を表示します")) {
-				jdbcTemplate.queryForList(
-						"select * from event where timeschedule = MID(timeschedule,5,2) and line_id = ? ",
-						session.getAttribute("line_id"));
-
-			} else if (replyText.equals("11月の予定を表示します")) {
-				jdbcTemplate.queryForList(
-						"select * from event where timeschedule = MID(timeschedule,5,2) and line_id = ? ",
-						session.getAttribute("line_id"));
-
-			} else if (replyText.equals("12月の予定を表示します")) {
-				System.out.println("12月の予定を表示します");
-				List<Map<String, Object>> resultlist;
-				resultlist = jdbcTemplate.queryForList("select timeschedule,content from event where MID(timeschedule,6,2) = 12 and line_id = ? ",lineId);
-				
-				String ichi =  (String) resultlist.get(0).get("timeschedule");
-				String ni = (String) resultlist.get(0).get("content");
-				
-				replyMessage(replyToken, "12月の予定だよ！！\n 日程　" + ichi + " \n 用件　" + ni);
-			}
-			
-			
-		
 		}
-	}
-	
-		
 
 	
-
 	/*******************************************************************:
 	 * ここから↓は今は気にしないでOK!
 	 *******************************************************************/

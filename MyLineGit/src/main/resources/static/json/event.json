@@ -17,7 +17,7 @@
 					}
 				},
    
-  "type": "bubble",
+   "type": "bubble",
   "hero": {
     "type": "image",
     "url": "https://thumb.ac-illust.com/77/77c183858f0ce4c87c6738ba41193b65_t.jpeg",
@@ -69,9 +69,9 @@
       {
         "type": "button",
         "action": {
-          "type": "message",
-          "label": "あなたの予定",
-          "text": "予定確認"
+          "type": "uri",
+          "label": "予定確認",
+          "uri": "http://linecorp.com/"
         }
       }
     ],

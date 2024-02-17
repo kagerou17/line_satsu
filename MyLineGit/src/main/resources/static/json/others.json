@@ -50,10 +50,10 @@
         "style": "link",
         "height": "sm",
         "action": {
-          "type": "uri",
+          "type": "message",
           "label": "アカウント再登録",
-          "uri":  "http://linecorp.com/"
-          }        
+          "text": "アカウント再登録"
+        }
       },
       {
         "type": "button",
@@ -76,7 +76,7 @@
     ],
     "flex": 0
   }
-			}
+}
 		}
 	]
 }
