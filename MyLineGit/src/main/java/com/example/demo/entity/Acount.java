@@ -11,7 +11,7 @@ public class Acount {
 
     @Id
     @Column(name="acount_id")
-    private int acount_id;
+    private String acount_id;
 
     @Column(name="acount_name")
     private String acount_name;
@@ -25,8 +25,8 @@ public class Acount {
     @Column(name="authority")
     private int authority;
     
-    @Column(name="kamokumei")
-    private String kamokumei;
+    @Column(name="gakkamei")
+    private String gakkamei;
     
     @Column(name="gakunen")
     private String gakunen;
@@ -34,11 +34,11 @@ public class Acount {
     @Column(name="class")
     private String classs;
 
-	public int getAcount_id() {
+	public String getAcount_id() {
 		return acount_id;
 	}
 
-	public void setAcount_id(int acount_id) {
+	public void setAcount_id(String acount_id) {
 		this.acount_id = acount_id;
 	}
 
@@ -74,12 +74,12 @@ public class Acount {
 		this.authority = authority;
 	}
 
-	public String getKamokumei() {
-		return kamokumei;
+	public String getGakkamei() {
+		return gakkamei;
 	}
 
-	public void setKamokumei(String kamokumei) {
-		this.kamokumei = kamokumei;
+	public void setGakkamei(String gakkamei) {
+		this.gakkamei = gakkamei;
 	}
 
 	public String getGakunen() {
@@ -98,5 +98,4 @@ public class Acount {
 		this.classs = classs;
 	}
 
-	
 }

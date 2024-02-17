@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -41,6 +42,7 @@ public class HtmlController {
 	
 	@Autowired
 	NoteRepository noterepository;
+	private int permission1;
 	
 	@RequestMapping(path = "/homedemo", method = RequestMethod.GET)
 	public String homedemo() {
@@ -107,32 +109,40 @@ public class HtmlController {
 	
 	
 	
-	
+
 	//新規登録のメソッド
 	@RequestMapping(path = "/sinkitouroku/{lineUserId}", method = RequestMethod.GET)
 	public String sinkitouroku(@PathVariable String lineUserId, Model model) {
 
-		model.addAttribute("lineUserId", lineUserId);
+		
 		return "sinkitouroku";
 	}
 	@RequestMapping(path = "/sinkitouroku/{lineUserId}", method = RequestMethod.POST)
-	public String sinkitouroku1(@PathVariable String lineUserId, Model model,Integer acount_id,String acount_name,String password) {
-
-		model.addAttribute("lineUserId", lineUserId);
+	public String sinkitouroku1(String lineUserId,Model model,String acount_id,String acount_name,String password,String permission,String gakkamei,String classs,String gakunen, HttpSession session) {
 		
-		System.out.println("あああああああああああ");	
+		model.addAttribute(gakunen);
+		model.addAttribute(gakkamei);
+		model.addAttribute(classs);
+		
+		if(permission.equals("管理者")) {
+			permission1 = 0;
+            }else if(permission.equals("一般ユーザー")) {
+            	permission1 = 1;
+            }
+		
 		Acount acount = new Acount();
-		
+		acount.setLine_id(lineUserId);
 		acount.setAcount_id(acount_id);
 		acount.setAcount_name(acount_name);
 		acount.setPass(password);
-		System.out.println("いけた");
 		
+		acount.setAuthority(permission1);
+		acount.setGakkamei(gakkamei);
+		acount.setGakunen(gakunen);
+		acount.setClasss(classs);
 		acountrepository.save(acount);
 		return "sinkitouroku";
 	}
-	
-	
 	
 	@RequestMapping(path = "/event", method = RequestMethod.GET)
 	public String event() {
@@ -372,5 +382,22 @@ return "notekensaku";
 
 return "taikai";
 }
-
+	@RequestMapping(path="/login",method=RequestMethod.GET)
+	public String login() {
+		
+		return "login";
+	}
+	@RequestMapping(path="/login",method=RequestMethod.POST)
+	public String login1(String acount_id,String pass,Model model,HttpSession session) {
+		List<Map<String, Object>> resultlist;
+		resultlist = jdbcTemplate.queryForList("SELECT * FROM acount WHERE acount_id = ? AND pass = ?", acount_id, pass );
+		if (resultlist.size() == 1) {
+			session.setAttribute("acount_id", resultlist.get(0).get("acount_id"));
+			session.setAttribute("line_id", resultlist.get(0).get("line_id"));
+			return "homedemo";
+		} else {
+			return "login";
+		}
+		
+	}
 }
