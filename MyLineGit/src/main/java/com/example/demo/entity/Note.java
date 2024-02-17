@@ -16,7 +16,7 @@ public class Note {
 	private int note_id;
 	
 	@Column(name="line_id")
-	private int line_id;
+	private String line_id;
 	
 	@Column(name="subject_time")
 	private String subject_time;
@@ -35,11 +35,11 @@ public class Note {
 		this.note_id = note_id;
 	}
 
-	public int getLine_id() {
+	public String getLine_id() {
 		return line_id;
 	}
 
-	public void setLine_id(int line_id) {
+	public void setLine_id(String line_id) {
 		this.line_id = line_id;
 	}
 
@@ -67,9 +67,5 @@ public class Note {
 		this.note = note;
 	}
 
-	
-
-	
-	
 	
 }

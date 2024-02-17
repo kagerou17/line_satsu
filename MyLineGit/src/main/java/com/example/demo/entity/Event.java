@@ -23,7 +23,7 @@ public class Event {
      private String content;
 
      @Column(name="line_id")
-     private int line_id;
+     private String line_id;
 
 	public int getEvent_id() {
 		return event_id;
@@ -49,14 +49,13 @@ public class Event {
 		this.content = content;
 	}
 
-	public int getLine_id() {
+	public String getLine_id() {
 		return line_id;
 	}
 
-	public void setLine_id(int line_id) {
+	public void setLine_id(String line_id) {
 		this.line_id = line_id;
 	}
 
-	
      
 }

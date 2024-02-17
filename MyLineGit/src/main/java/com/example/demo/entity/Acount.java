@@ -11,7 +11,7 @@ public class Acount {
 
     @Id
     @Column(name="acount_id")
-    private int acount_id;
+    private String acount_id;
 
     @Column(name="acount_name")
     private String acount_name;
@@ -25,11 +25,6 @@ public class Acount {
     @Column(name="authority")
     private int authority;
     
-    @Column(name="nikka_hour")
-    private int nikka_hour; 
-    @Column(name="nikka_minute")
-    private int nikka_minute;
-    
     @Column(name="kamokumei")
     private String kamokumei;
     
@@ -39,11 +34,11 @@ public class Acount {
     @Column(name="class")
     private String classs;
 
-	public int getAcount_id() {
+	public String getAcount_id() {
 		return acount_id;
 	}
 
-	public void setAcount_id(int acount_id) {
+	public void setAcount_id(String acount_id) {
 		this.acount_id = acount_id;
 	}
 
@@ -79,22 +74,6 @@ public class Acount {
 		this.authority = authority;
 	}
 
-	public int getNikka_hour() {
-		return nikka_hour;
-	}
-
-	public void setNikka_hour(int nikka_hour) {
-		this.nikka_hour = nikka_hour;
-	}
-
-	public int getNikka_minute() {
-		return nikka_minute;
-	}
-
-	public void setNikka_minute(int nikka_minute) {
-		this.nikka_minute = nikka_minute;
-	}
-
 	public String getKamokumei() {
 		return kamokumei;
 	}
@@ -118,5 +97,6 @@ public class Acount {
 	public void setClasss(String classs) {
 		this.classs = classs;
 	}
+    
 
 }

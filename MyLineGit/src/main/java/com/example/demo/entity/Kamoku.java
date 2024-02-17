@@ -252,6 +252,7 @@ public class Kamoku {
 	public void setKamoku20(String kamoku20) {
 		this.kamoku20 = kamoku20;
 	}
-    
+
+	
     
 }
