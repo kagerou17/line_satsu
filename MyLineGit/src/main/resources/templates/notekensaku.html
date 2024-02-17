@@ -1,3 +1,6 @@
+notekensaku.htmlプルダウンメニューでDBから出せる
+
+
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -147,7 +150,7 @@ header h1 {
 			
 			<form method="get" th:action="@{/notekensaku}">
 				<select name="selectedEmployee">
-					<option th:each="result : ${resultList}" th:value="${result.note_id}" th:text="${result.subject}"></option>
+					<option th:each="result : ${resultList}"  th:text="${result.subject}"></option>
 				</select>
 				<input type="submit" value="選択">
 			</form>

@@ -7,9 +7,9 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.demo.entity.Acount;
 import com.example.demo.entity.Event;
@@ -33,6 +33,7 @@ public class HtmlController {
 	EventRepository eventrepository;
 	@Autowired
 	NikkaRepository nikkarepository;
+	
 	
 	@Autowired
 	KamokuRepository kamokurepository;
@@ -223,8 +224,27 @@ return "redirect:kamokukanryou";
 	@RequestMapping(path = "/memo", method = RequestMethod.GET)
 	public String memo() {
 
-return "memo";
+		
+		return "memo";
+
 }
+	@RequestMapping(path = "/memo", method = RequestMethod.POST)
+    public String saveMemo(Model model,Integer note_id,String subject_time,String subject,String note) {
+		
+		
+		Note note1 = new Note();
+		System.out.println("いいいいいいいいいいいいいい");
+		note1.setNote_id(note_id);
+		note1.setSubject_time(subject_time);
+		note1.setSubject(subject);
+		note1.setNote(note);
+		
+	System.out.println("ひあった");
+		noterepository.save(note1);
+		
+        return "redirect:memo";
+    }
+	
 	@RequestMapping(path = "/memoeturan", method = RequestMethod.GET)
 	public String memoeturan() {
 
@@ -256,11 +276,27 @@ return "nikka";
 
 return "nikkakanryou";
 }
+	
+	
+	
+	
+	
+	
 	@RequestMapping(path = "/nikkasentaku", method = RequestMethod.GET)
-	public String nikkasentaku() {
+	public String nikkasentaku(Model model) {
 
+		// データベースから科目を取得してモデルにセット
+        List<Kamoku> subjects = kamokurepository.findAll(); // これはSubjectエンティティを全て取得する例です
+        model.addAttribute("subjects", subjects);
 return "nikkasentaku";
 }
+	
+	
+	
+	
+	
+	
+	
 	@RequestMapping(path = "/nikkatouroku", method = RequestMethod.GET)
 	public String nikkatouroku() {
 
@@ -291,10 +327,12 @@ return "notekensaku";
 }
 	
 	@RequestMapping(path = "/notekensaku", method = RequestMethod.POST)
-	public String notekensaku1(@RequestParam("selectedEmployee") String selectedNoteId) {
+	public String notekensaku1(@RequestBody String selectedEmployee) {
 
 		System.out.println("あああああああああああああああああああああああ");
-		System.out.println(selectedNoteId);
+		 System.out.println("選択された従業員: " + selectedEmployee);
+		 
+		 
 		
 return "notekensaku";
 }

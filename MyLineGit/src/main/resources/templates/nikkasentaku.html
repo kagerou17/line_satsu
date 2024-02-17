@@ -93,7 +93,7 @@ header h1 {
 
     <h2>日課表入力フォーム</h2>
 
-    <h4>※授業がない場合は「なし」と入力してください</h4>
+    
     <form id="gradeForm">
         <table>
             <thead>
@@ -107,39 +107,1515 @@ header h1 {
                 </tr>
             </thead>
             <tbody>
+				
+				
+				
+				
+				
+				
                 <!-- 一限 -->
                 <tr>
                     <td>1</td>
-                    <td><input type="text" name="studentId_6" placeholder="月1"></td>
-                    <td><input type="text" name="studentName_6" placeholder="火1"></td>
-                    <td><input type="text" name="subject1_6" placeholder="水1"></td>
-                    <td><input type="text" name="subject2_6" placeholder="木1"></td>
-                    <td><input type="text" name="subject3_6" placeholder="金1"></td>
+                    <td>
+        <select name="subject1_6">
+			<!-- 月曜日1限目 -->
+            <option value="">選択してください</option>
+            <!-- 科目データを動的に挿入 -->
+            <th:block th:each="subject : ${subjects}">
+				
+                 <th:block th:if="${subject.kamoku1 != null and subject.kamoku1 != ''}">
+                     <option th:text="${subject.kamoku1}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku2 != null and subject.kamoku2 != ''}">
+                     <option th:text="${subject.kamoku2}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku3 != null and subject.kamoku3 != ''}">
+                     <option th:text="${subject.kamoku3}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku4 != null and subject.kamoku4 != ''}">
+                     <option th:text="${subject.kamoku4}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku5 != null and subject.kamoku5 != ''}">
+                     <option th:text="${subject.kamoku5}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku6 != null and subject.kamoku6 != ''}">
+                     <option th:text="${subject.kamoku6}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku7 != null and subject.kamoku7 != ''}">
+                     <option th:text="${subject.kamoku7}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku8 != null and subject.kamoku8 != ''}">
+                     <option th:text="${subject.kamoku8}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku9 != null and subject.kamoku9 != ''}">
+                     <option th:text="${subject.kamoku9}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku10 != null and subject.kamoku10 != ''}">
+                     <option th:text="${subject.kamoku10}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku11 != null and subject.kamoku11 != ''}">
+                     <option th:text="${subject.kamoku11}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku12 != null and subject.kamoku12 != ''}">
+                     <option th:text="${subject.kamoku12}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku13 != null and subject.kamoku13 != ''}">
+                     <option th:text="${subject.kamoku13}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku14 != null and subject.kamoku14 != ''}">
+                     <option th:text="${subject.kamoku14}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku15 != null and subject.kamoku15 != ''}">
+                     <option th:text="${subject.kamoku15}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku16 != null and subject.kamoku16 != ''}">
+                     <option th:text="${subject.kamoku16}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku17 != null and subject.kamoku17 != ''}">
+                     <option th:text="${subject.kamoku17}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku18 != null and subject.kamoku18 != ''}">
+                     <option th:text="${subject.kamoku8}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku19 != null and subject.kamoku19 != ''}">
+                     <option th:text="${subject.kamoku19}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku20 != null and subject.kamoku20 != ''}">
+                     <option th:text="${subject.kamoku20}"></option>
+                 </th:block>
+                 
+            </th:block>
+            <!-- 月曜日一限目終わり -->
+            
+            
+        </select>
+    </td>
+                <td>
+        <select name="subject1_6">
+			<!-- 火曜日1限目 -->
+            <option value="">選択してください</option>
+            <!-- 科目データを動的に挿入 -->
+            <th:block th:each="subject : ${subjects}">
+				
+                 <th:block th:if="${subject.kamoku1 != null and subject.kamoku1 != ''}">
+                     <option th:text="${subject.kamoku1}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku2 != null and subject.kamoku2 != ''}">
+                     <option th:text="${subject.kamoku2}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku3 != null and subject.kamoku3 != ''}">
+                     <option th:text="${subject.kamoku3}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku4 != null and subject.kamoku4 != ''}">
+                     <option th:text="${subject.kamoku4}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku5 != null and subject.kamoku5 != ''}">
+                     <option th:text="${subject.kamoku5}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku6 != null and subject.kamoku6 != ''}">
+                     <option th:text="${subject.kamoku6}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku7 != null and subject.kamoku7 != ''}">
+                     <option th:text="${subject.kamoku7}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku8 != null and subject.kamoku8 != ''}">
+                     <option th:text="${subject.kamoku8}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku9 != null and subject.kamoku9 != ''}">
+                     <option th:text="${subject.kamoku9}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku10 != null and subject.kamoku10 != ''}">
+                     <option th:text="${subject.kamoku10}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku11 != null and subject.kamoku11 != ''}">
+                     <option th:text="${subject.kamoku11}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku12 != null and subject.kamoku12 != ''}">
+                     <option th:text="${subject.kamoku12}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku13 != null and subject.kamoku13 != ''}">
+                     <option th:text="${subject.kamoku13}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku14 != null and subject.kamoku14 != ''}">
+                     <option th:text="${subject.kamoku14}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku15 != null and subject.kamoku15 != ''}">
+                     <option th:text="${subject.kamoku15}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku16 != null and subject.kamoku16 != ''}">
+                     <option th:text="${subject.kamoku16}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku17 != null and subject.kamoku17 != ''}">
+                     <option th:text="${subject.kamoku17}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku18 != null and subject.kamoku18 != ''}">
+                     <option th:text="${subject.kamoku8}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku19 != null and subject.kamoku19 != ''}">
+                     <option th:text="${subject.kamoku19}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku20 != null and subject.kamoku20 != ''}">
+                     <option th:text="${subject.kamoku20}"></option>
+                 </th:block>
+                 
+            </th:block>
+            <!-- 火曜日1限目終わり -->
+            
+            
+        </select>
+    </td>    
+               <td>
+        <select name="subject1_6">
+			<!-- 水曜日1限目 -->
+            <option value="">選択してください</option>
+            <!-- 科目データを動的に挿入 -->
+            <th:block th:each="subject : ${subjects}">
+				
+                 <th:block th:if="${subject.kamoku1 != null and subject.kamoku1 != ''}">
+                     <option th:text="${subject.kamoku1}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku2 != null and subject.kamoku2 != ''}">
+                     <option th:text="${subject.kamoku2}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku3 != null and subject.kamoku3 != ''}">
+                     <option th:text="${subject.kamoku3}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku4 != null and subject.kamoku4 != ''}">
+                     <option th:text="${subject.kamoku4}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku5 != null and subject.kamoku5 != ''}">
+                     <option th:text="${subject.kamoku5}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku6 != null and subject.kamoku6 != ''}">
+                     <option th:text="${subject.kamoku6}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku7 != null and subject.kamoku7 != ''}">
+                     <option th:text="${subject.kamoku7}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku8 != null and subject.kamoku8 != ''}">
+                     <option th:text="${subject.kamoku8}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku9 != null and subject.kamoku9 != ''}">
+                     <option th:text="${subject.kamoku9}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku10 != null and subject.kamoku10 != ''}">
+                     <option th:text="${subject.kamoku10}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku11 != null and subject.kamoku11 != ''}">
+                     <option th:text="${subject.kamoku11}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku12 != null and subject.kamoku12 != ''}">
+                     <option th:text="${subject.kamoku12}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku13 != null and subject.kamoku13 != ''}">
+                     <option th:text="${subject.kamoku13}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku14 != null and subject.kamoku14 != ''}">
+                     <option th:text="${subject.kamoku14}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku15 != null and subject.kamoku15 != ''}">
+                     <option th:text="${subject.kamoku15}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku16 != null and subject.kamoku16 != ''}">
+                     <option th:text="${subject.kamoku16}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku17 != null and subject.kamoku17 != ''}">
+                     <option th:text="${subject.kamoku17}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku18 != null and subject.kamoku18 != ''}">
+                     <option th:text="${subject.kamoku8}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku19 != null and subject.kamoku19 != ''}">
+                     <option th:text="${subject.kamoku19}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku20 != null and subject.kamoku20 != ''}">
+                     <option th:text="${subject.kamoku20}"></option>
+                 </th:block>
+                 
+            </th:block>
+            <!-- 水曜日1限目終わり -->
+            
+            
+        </select>
+    </td>         
+                 <td>
+        <select name="subject1_6">
+			<!-- 木曜日1限目 -->
+            <option value="">選択してください</option>
+            <!-- 科目データを動的に挿入 -->
+            <th:block th:each="subject : ${subjects}">
+				
+                 <th:block th:if="${subject.kamoku1 != null and subject.kamoku1 != ''}">
+                     <option th:text="${subject.kamoku1}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku2 != null and subject.kamoku2 != ''}">
+                     <option th:text="${subject.kamoku2}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku3 != null and subject.kamoku3 != ''}">
+                     <option th:text="${subject.kamoku3}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku4 != null and subject.kamoku4 != ''}">
+                     <option th:text="${subject.kamoku4}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku5 != null and subject.kamoku5 != ''}">
+                     <option th:text="${subject.kamoku5}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku6 != null and subject.kamoku6 != ''}">
+                     <option th:text="${subject.kamoku6}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku7 != null and subject.kamoku7 != ''}">
+                     <option th:text="${subject.kamoku7}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku8 != null and subject.kamoku8 != ''}">
+                     <option th:text="${subject.kamoku8}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku9 != null and subject.kamoku9 != ''}">
+                     <option th:text="${subject.kamoku9}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku10 != null and subject.kamoku10 != ''}">
+                     <option th:text="${subject.kamoku10}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku11 != null and subject.kamoku11 != ''}">
+                     <option th:text="${subject.kamoku11}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku12 != null and subject.kamoku12 != ''}">
+                     <option th:text="${subject.kamoku12}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku13 != null and subject.kamoku13 != ''}">
+                     <option th:text="${subject.kamoku13}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku14 != null and subject.kamoku14 != ''}">
+                     <option th:text="${subject.kamoku14}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku15 != null and subject.kamoku15 != ''}">
+                     <option th:text="${subject.kamoku15}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku16 != null and subject.kamoku16 != ''}">
+                     <option th:text="${subject.kamoku16}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku17 != null and subject.kamoku17 != ''}">
+                     <option th:text="${subject.kamoku17}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku18 != null and subject.kamoku18 != ''}">
+                     <option th:text="${subject.kamoku8}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku19 != null and subject.kamoku19 != ''}">
+                     <option th:text="${subject.kamoku19}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku20 != null and subject.kamoku20 != ''}">
+                     <option th:text="${subject.kamoku20}"></option>
+                 </th:block>
+                 
+            </th:block>
+            <!-- 木曜日1限目終わり -->
+            
+            
+        </select>
+    </td>       
+                      <td>
+        <select name="subject1_6">
+			<!-- 金曜日1限目 -->
+            <option value="">選択してください</option>
+            <!-- 科目データを動的に挿入 -->
+            <th:block th:each="subject : ${subjects}">
+				
+                 <th:block th:if="${subject.kamoku1 != null and subject.kamoku1 != ''}">
+                     <option th:text="${subject.kamoku1}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku2 != null and subject.kamoku2 != ''}">
+                     <option th:text="${subject.kamoku2}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku3 != null and subject.kamoku3 != ''}">
+                     <option th:text="${subject.kamoku3}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku4 != null and subject.kamoku4 != ''}">
+                     <option th:text="${subject.kamoku4}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku5 != null and subject.kamoku5 != ''}">
+                     <option th:text="${subject.kamoku5}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku6 != null and subject.kamoku6 != ''}">
+                     <option th:text="${subject.kamoku6}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku7 != null and subject.kamoku7 != ''}">
+                     <option th:text="${subject.kamoku7}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku8 != null and subject.kamoku8 != ''}">
+                     <option th:text="${subject.kamoku8}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku9 != null and subject.kamoku9 != ''}">
+                     <option th:text="${subject.kamoku9}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku10 != null and subject.kamoku10 != ''}">
+                     <option th:text="${subject.kamoku10}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku11 != null and subject.kamoku11 != ''}">
+                     <option th:text="${subject.kamoku11}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku12 != null and subject.kamoku12 != ''}">
+                     <option th:text="${subject.kamoku12}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku13 != null and subject.kamoku13 != ''}">
+                     <option th:text="${subject.kamoku13}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku14 != null and subject.kamoku14 != ''}">
+                     <option th:text="${subject.kamoku14}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku15 != null and subject.kamoku15 != ''}">
+                     <option th:text="${subject.kamoku15}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku16 != null and subject.kamoku16 != ''}">
+                     <option th:text="${subject.kamoku16}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku17 != null and subject.kamoku17 != ''}">
+                     <option th:text="${subject.kamoku17}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku18 != null and subject.kamoku18 != ''}">
+                     <option th:text="${subject.kamoku8}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku19 != null and subject.kamoku19 != ''}">
+                     <option th:text="${subject.kamoku19}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku20 != null and subject.kamoku20 != ''}">
+                     <option th:text="${subject.kamoku20}"></option>
+                 </th:block>
+                 
+            </th:block>
+            <!-- 金曜日1限目終わり -->
+            
+            
+        </select>
+    </td>  
+                    
+                    
                 </tr>
+                
+                
+                
+                
+                
                 <tr>
                     <td>2</td>
-                    <td><input type="text" name="studentId_4" placeholder="月2"></td>
-                    <td><input type="text" name="studentName_4" placeholder="火2"></td>
-                    <td><input type="text" name="subject1_4" placeholder="水2"></td>
-                    <td><input type="text" name="subject2_4" placeholder="木2"></td>
-                    <td><input type="text" name="subject3_4" placeholder="金2"></td>
-                </tr>
-                <tr>
+                    <td>
+        <select name="subject1_6">
+			<!-- 月曜日2限目 -->
+            <option value="">選択してください</option>
+            <!-- 科目データを動的に挿入 -->
+            <th:block th:each="subject : ${subjects}">
+				
+                 <th:block th:if="${subject.kamoku1 != null and subject.kamoku1 != ''}">
+                     <option th:text="${subject.kamoku1}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku2 != null and subject.kamoku2 != ''}">
+                     <option th:text="${subject.kamoku2}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku3 != null and subject.kamoku3 != ''}">
+                     <option th:text="${subject.kamoku3}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku4 != null and subject.kamoku4 != ''}">
+                     <option th:text="${subject.kamoku4}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku5 != null and subject.kamoku5 != ''}">
+                     <option th:text="${subject.kamoku5}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku6 != null and subject.kamoku6 != ''}">
+                     <option th:text="${subject.kamoku6}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku7 != null and subject.kamoku7 != ''}">
+                     <option th:text="${subject.kamoku7}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku8 != null and subject.kamoku8 != ''}">
+                     <option th:text="${subject.kamoku8}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku9 != null and subject.kamoku9 != ''}">
+                     <option th:text="${subject.kamoku9}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku10 != null and subject.kamoku10 != ''}">
+                     <option th:text="${subject.kamoku10}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku11 != null and subject.kamoku11 != ''}">
+                     <option th:text="${subject.kamoku11}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku12 != null and subject.kamoku12 != ''}">
+                     <option th:text="${subject.kamoku12}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku13 != null and subject.kamoku13 != ''}">
+                     <option th:text="${subject.kamoku13}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku14 != null and subject.kamoku14 != ''}">
+                     <option th:text="${subject.kamoku14}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku15 != null and subject.kamoku15 != ''}">
+                     <option th:text="${subject.kamoku15}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku16 != null and subject.kamoku16 != ''}">
+                     <option th:text="${subject.kamoku16}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku17 != null and subject.kamoku17 != ''}">
+                     <option th:text="${subject.kamoku17}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku18 != null and subject.kamoku18 != ''}">
+                     <option th:text="${subject.kamoku8}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku19 != null and subject.kamoku19 != ''}">
+                     <option th:text="${subject.kamoku19}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku20 != null and subject.kamoku20 != ''}">
+                     <option th:text="${subject.kamoku20}"></option>
+                 </th:block>
+                 
+            </th:block>
+            <!-- 月曜日2限目終わり -->
+            
+            
+        </select>
+    </td>
+                <td>
+        <select name="subject1_6">
+			<!-- 火曜日2限目 -->
+            <option value="">選択してください</option>
+            <!-- 科目データを動的に挿入 -->
+            <th:block th:each="subject : ${subjects}">
+				
+                 <th:block th:if="${subject.kamoku1 != null and subject.kamoku1 != ''}">
+                     <option th:text="${subject.kamoku1}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku2 != null and subject.kamoku2 != ''}">
+                     <option th:text="${subject.kamoku2}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku3 != null and subject.kamoku3 != ''}">
+                     <option th:text="${subject.kamoku3}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku4 != null and subject.kamoku4 != ''}">
+                     <option th:text="${subject.kamoku4}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku5 != null and subject.kamoku5 != ''}">
+                     <option th:text="${subject.kamoku5}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku6 != null and subject.kamoku6 != ''}">
+                     <option th:text="${subject.kamoku6}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku7 != null and subject.kamoku7 != ''}">
+                     <option th:text="${subject.kamoku7}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku8 != null and subject.kamoku8 != ''}">
+                     <option th:text="${subject.kamoku8}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku9 != null and subject.kamoku9 != ''}">
+                     <option th:text="${subject.kamoku9}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku10 != null and subject.kamoku10 != ''}">
+                     <option th:text="${subject.kamoku10}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku11 != null and subject.kamoku11 != ''}">
+                     <option th:text="${subject.kamoku11}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku12 != null and subject.kamoku12 != ''}">
+                     <option th:text="${subject.kamoku12}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku13 != null and subject.kamoku13 != ''}">
+                     <option th:text="${subject.kamoku13}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku14 != null and subject.kamoku14 != ''}">
+                     <option th:text="${subject.kamoku14}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku15 != null and subject.kamoku15 != ''}">
+                     <option th:text="${subject.kamoku15}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku16 != null and subject.kamoku16 != ''}">
+                     <option th:text="${subject.kamoku16}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku17 != null and subject.kamoku17 != ''}">
+                     <option th:text="${subject.kamoku17}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku18 != null and subject.kamoku18 != ''}">
+                     <option th:text="${subject.kamoku8}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku19 != null and subject.kamoku19 != ''}">
+                     <option th:text="${subject.kamoku19}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku20 != null and subject.kamoku20 != ''}">
+                     <option th:text="${subject.kamoku20}"></option>
+                 </th:block>
+                 
+            </th:block>
+            <!-- 火曜日2限目終わり -->
+            
+            
+        </select>
+    </td>    
+               <td>
+        <select name="subject1_6">
+			<!-- 水曜日2限目 -->
+            <option value="">選択してください</option>
+            <!-- 科目データを動的に挿入 -->
+            <th:block th:each="subject : ${subjects}">
+				
+                 <th:block th:if="${subject.kamoku1 != null and subject.kamoku1 != ''}">
+                     <option th:text="${subject.kamoku1}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku2 != null and subject.kamoku2 != ''}">
+                     <option th:text="${subject.kamoku2}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku3 != null and subject.kamoku3 != ''}">
+                     <option th:text="${subject.kamoku3}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku4 != null and subject.kamoku4 != ''}">
+                     <option th:text="${subject.kamoku4}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku5 != null and subject.kamoku5 != ''}">
+                     <option th:text="${subject.kamoku5}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku6 != null and subject.kamoku6 != ''}">
+                     <option th:text="${subject.kamoku6}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku7 != null and subject.kamoku7 != ''}">
+                     <option th:text="${subject.kamoku7}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku8 != null and subject.kamoku8 != ''}">
+                     <option th:text="${subject.kamoku8}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku9 != null and subject.kamoku9 != ''}">
+                     <option th:text="${subject.kamoku9}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku10 != null and subject.kamoku10 != ''}">
+                     <option th:text="${subject.kamoku10}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku11 != null and subject.kamoku11 != ''}">
+                     <option th:text="${subject.kamoku11}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku12 != null and subject.kamoku12 != ''}">
+                     <option th:text="${subject.kamoku12}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku13 != null and subject.kamoku13 != ''}">
+                     <option th:text="${subject.kamoku13}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku14 != null and subject.kamoku14 != ''}">
+                     <option th:text="${subject.kamoku14}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku15 != null and subject.kamoku15 != ''}">
+                     <option th:text="${subject.kamoku15}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku16 != null and subject.kamoku16 != ''}">
+                     <option th:text="${subject.kamoku16}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku17 != null and subject.kamoku17 != ''}">
+                     <option th:text="${subject.kamoku17}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku18 != null and subject.kamoku18 != ''}">
+                     <option th:text="${subject.kamoku8}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku19 != null and subject.kamoku19 != ''}">
+                     <option th:text="${subject.kamoku19}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku20 != null and subject.kamoku20 != ''}">
+                     <option th:text="${subject.kamoku20}"></option>
+                 </th:block>
+                 
+            </th:block>
+            <!-- 水曜日2限目終わり -->
+            
+            
+        </select>
+    </td>         
+                 <td>
+        <select name="subject1_6">
+			<!-- 木曜日2限目 -->
+            <option value="">選択してください</option>
+            <!-- 科目データを動的に挿入 -->
+            <th:block th:each="subject : ${subjects}">
+				
+                 <th:block th:if="${subject.kamoku1 != null and subject.kamoku1 != ''}">
+                     <option th:text="${subject.kamoku1}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku2 != null and subject.kamoku2 != ''}">
+                     <option th:text="${subject.kamoku2}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku3 != null and subject.kamoku3 != ''}">
+                     <option th:text="${subject.kamoku3}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku4 != null and subject.kamoku4 != ''}">
+                     <option th:text="${subject.kamoku4}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku5 != null and subject.kamoku5 != ''}">
+                     <option th:text="${subject.kamoku5}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku6 != null and subject.kamoku6 != ''}">
+                     <option th:text="${subject.kamoku6}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku7 != null and subject.kamoku7 != ''}">
+                     <option th:text="${subject.kamoku7}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku8 != null and subject.kamoku8 != ''}">
+                     <option th:text="${subject.kamoku8}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku9 != null and subject.kamoku9 != ''}">
+                     <option th:text="${subject.kamoku9}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku10 != null and subject.kamoku10 != ''}">
+                     <option th:text="${subject.kamoku10}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku11 != null and subject.kamoku11 != ''}">
+                     <option th:text="${subject.kamoku11}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku12 != null and subject.kamoku12 != ''}">
+                     <option th:text="${subject.kamoku12}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku13 != null and subject.kamoku13 != ''}">
+                     <option th:text="${subject.kamoku13}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku14 != null and subject.kamoku14 != ''}">
+                     <option th:text="${subject.kamoku14}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku15 != null and subject.kamoku15 != ''}">
+                     <option th:text="${subject.kamoku15}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku16 != null and subject.kamoku16 != ''}">
+                     <option th:text="${subject.kamoku16}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku17 != null and subject.kamoku17 != ''}">
+                     <option th:text="${subject.kamoku17}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku18 != null and subject.kamoku18 != ''}">
+                     <option th:text="${subject.kamoku8}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku19 != null and subject.kamoku19 != ''}">
+                     <option th:text="${subject.kamoku19}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku20 != null and subject.kamoku20 != ''}">
+                     <option th:text="${subject.kamoku20}"></option>
+                 </th:block>
+                 
+            </th:block>
+            <!-- 木曜日2限目終わり -->
+            
+            
+        </select>
+    </td>       
+                      <td>
+        <select name="subject1_6">
+			<!-- 金曜日2限目 -->
+            <option value="">選択してください</option>
+            <!-- 科目データを動的に挿入 -->
+            <th:block th:each="subject : ${subjects}">
+				
+                 <th:block th:if="${subject.kamoku1 != null and subject.kamoku1 != ''}">
+                     <option th:text="${subject.kamoku1}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku2 != null and subject.kamoku2 != ''}">
+                     <option th:text="${subject.kamoku2}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku3 != null and subject.kamoku3 != ''}">
+                     <option th:text="${subject.kamoku3}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku4 != null and subject.kamoku4 != ''}">
+                     <option th:text="${subject.kamoku4}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku5 != null and subject.kamoku5 != ''}">
+                     <option th:text="${subject.kamoku5}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku6 != null and subject.kamoku6 != ''}">
+                     <option th:text="${subject.kamoku6}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku7 != null and subject.kamoku7 != ''}">
+                     <option th:text="${subject.kamoku7}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku8 != null and subject.kamoku8 != ''}">
+                     <option th:text="${subject.kamoku8}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku9 != null and subject.kamoku9 != ''}">
+                     <option th:text="${subject.kamoku9}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku10 != null and subject.kamoku10 != ''}">
+                     <option th:text="${subject.kamoku10}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku11 != null and subject.kamoku11 != ''}">
+                     <option th:text="${subject.kamoku11}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku12 != null and subject.kamoku12 != ''}">
+                     <option th:text="${subject.kamoku12}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku13 != null and subject.kamoku13 != ''}">
+                     <option th:text="${subject.kamoku13}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku14 != null and subject.kamoku14 != ''}">
+                     <option th:text="${subject.kamoku14}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku15 != null and subject.kamoku15 != ''}">
+                     <option th:text="${subject.kamoku15}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku16 != null and subject.kamoku16 != ''}">
+                     <option th:text="${subject.kamoku16}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku17 != null and subject.kamoku17 != ''}">
+                     <option th:text="${subject.kamoku17}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku18 != null and subject.kamoku18 != ''}">
+                     <option th:text="${subject.kamoku8}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku19 != null and subject.kamoku19 != ''}">
+                     <option th:text="${subject.kamoku19}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku20 != null and subject.kamoku20 != ''}">
+                     <option th:text="${subject.kamoku20}"></option>
+                 </th:block>
+                 
+            </th:block>
+            <!-- 金曜日2限目終わり -->
+            
+            
+        </select>
+    </td>  
+    <!-- あああああああああああああああああああああああああああああああああああ -->
+               <tr>
                     <td>3</td>
-                    <td><input type="text" name="studentId_7" placeholder="月3"></td>
-                    <td><input type="text" name="studentName_7" placeholder="火3"></td>
-                    <td><input type="text" name="subject1_7" placeholder="水3"></td>
-                    <td><input type="text" name="subject2_7" placeholder="木3"></td>
-                    <td><input type="text" name="subject3_7" placeholder="金3"></td>
-                </tr>
-                <tr>
+                    <td>
+        <select name="subject1_6">
+			<!-- 月曜日2限目 -->
+            <option value="">選択してください</option>
+            <!-- 科目データを動的に挿入 -->
+            <th:block th:each="subject : ${subjects}">
+				
+                 <th:block th:if="${subject.kamoku1 != null and subject.kamoku1 != ''}">
+                     <option th:text="${subject.kamoku1}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku2 != null and subject.kamoku2 != ''}">
+                     <option th:text="${subject.kamoku2}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku3 != null and subject.kamoku3 != ''}">
+                     <option th:text="${subject.kamoku3}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku4 != null and subject.kamoku4 != ''}">
+                     <option th:text="${subject.kamoku4}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku5 != null and subject.kamoku5 != ''}">
+                     <option th:text="${subject.kamoku5}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku6 != null and subject.kamoku6 != ''}">
+                     <option th:text="${subject.kamoku6}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku7 != null and subject.kamoku7 != ''}">
+                     <option th:text="${subject.kamoku7}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku8 != null and subject.kamoku8 != ''}">
+                     <option th:text="${subject.kamoku8}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku9 != null and subject.kamoku9 != ''}">
+                     <option th:text="${subject.kamoku9}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku10 != null and subject.kamoku10 != ''}">
+                     <option th:text="${subject.kamoku10}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku11 != null and subject.kamoku11 != ''}">
+                     <option th:text="${subject.kamoku11}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku12 != null and subject.kamoku12 != ''}">
+                     <option th:text="${subject.kamoku12}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku13 != null and subject.kamoku13 != ''}">
+                     <option th:text="${subject.kamoku13}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku14 != null and subject.kamoku14 != ''}">
+                     <option th:text="${subject.kamoku14}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku15 != null and subject.kamoku15 != ''}">
+                     <option th:text="${subject.kamoku15}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku16 != null and subject.kamoku16 != ''}">
+                     <option th:text="${subject.kamoku16}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku17 != null and subject.kamoku17 != ''}">
+                     <option th:text="${subject.kamoku17}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku18 != null and subject.kamoku18 != ''}">
+                     <option th:text="${subject.kamoku8}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku19 != null and subject.kamoku19 != ''}">
+                     <option th:text="${subject.kamoku19}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku20 != null and subject.kamoku20 != ''}">
+                     <option th:text="${subject.kamoku20}"></option>
+                 </th:block>
+                 
+            </th:block>
+            <!-- 月曜日2限目終わり -->
+            
+            
+        </select>
+    </td>
+                <td>
+        <select name="subject1_6">
+			<!-- 火曜日2限目 -->
+            <option value="">選択してください</option>
+            <!-- 科目データを動的に挿入 -->
+            <th:block th:each="subject : ${subjects}">
+				
+                 <th:block th:if="${subject.kamoku1 != null and subject.kamoku1 != ''}">
+                     <option th:text="${subject.kamoku1}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku2 != null and subject.kamoku2 != ''}">
+                     <option th:text="${subject.kamoku2}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku3 != null and subject.kamoku3 != ''}">
+                     <option th:text="${subject.kamoku3}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku4 != null and subject.kamoku4 != ''}">
+                     <option th:text="${subject.kamoku4}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku5 != null and subject.kamoku5 != ''}">
+                     <option th:text="${subject.kamoku5}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku6 != null and subject.kamoku6 != ''}">
+                     <option th:text="${subject.kamoku6}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku7 != null and subject.kamoku7 != ''}">
+                     <option th:text="${subject.kamoku7}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku8 != null and subject.kamoku8 != ''}">
+                     <option th:text="${subject.kamoku8}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku9 != null and subject.kamoku9 != ''}">
+                     <option th:text="${subject.kamoku9}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku10 != null and subject.kamoku10 != ''}">
+                     <option th:text="${subject.kamoku10}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku11 != null and subject.kamoku11 != ''}">
+                     <option th:text="${subject.kamoku11}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku12 != null and subject.kamoku12 != ''}">
+                     <option th:text="${subject.kamoku12}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku13 != null and subject.kamoku13 != ''}">
+                     <option th:text="${subject.kamoku13}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku14 != null and subject.kamoku14 != ''}">
+                     <option th:text="${subject.kamoku14}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku15 != null and subject.kamoku15 != ''}">
+                     <option th:text="${subject.kamoku15}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku16 != null and subject.kamoku16 != ''}">
+                     <option th:text="${subject.kamoku16}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku17 != null and subject.kamoku17 != ''}">
+                     <option th:text="${subject.kamoku17}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku18 != null and subject.kamoku18 != ''}">
+                     <option th:text="${subject.kamoku8}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku19 != null and subject.kamoku19 != ''}">
+                     <option th:text="${subject.kamoku19}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku20 != null and subject.kamoku20 != ''}">
+                     <option th:text="${subject.kamoku20}"></option>
+                 </th:block>
+                 
+            </th:block>
+            <!-- 火曜日2限目終わり -->
+            
+            
+        </select>
+    </td>    
+               <td>
+        <select name="subject1_6">
+			<!-- 水曜日2限目 -->
+            <option value="">選択してください</option>
+            <!-- 科目データを動的に挿入 -->
+            <th:block th:each="subject : ${subjects}">
+				
+                 <th:block th:if="${subject.kamoku1 != null and subject.kamoku1 != ''}">
+                     <option th:text="${subject.kamoku1}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku2 != null and subject.kamoku2 != ''}">
+                     <option th:text="${subject.kamoku2}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku3 != null and subject.kamoku3 != ''}">
+                     <option th:text="${subject.kamoku3}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku4 != null and subject.kamoku4 != ''}">
+                     <option th:text="${subject.kamoku4}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku5 != null and subject.kamoku5 != ''}">
+                     <option th:text="${subject.kamoku5}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku6 != null and subject.kamoku6 != ''}">
+                     <option th:text="${subject.kamoku6}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku7 != null and subject.kamoku7 != ''}">
+                     <option th:text="${subject.kamoku7}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku8 != null and subject.kamoku8 != ''}">
+                     <option th:text="${subject.kamoku8}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku9 != null and subject.kamoku9 != ''}">
+                     <option th:text="${subject.kamoku9}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku10 != null and subject.kamoku10 != ''}">
+                     <option th:text="${subject.kamoku10}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku11 != null and subject.kamoku11 != ''}">
+                     <option th:text="${subject.kamoku11}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku12 != null and subject.kamoku12 != ''}">
+                     <option th:text="${subject.kamoku12}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku13 != null and subject.kamoku13 != ''}">
+                     <option th:text="${subject.kamoku13}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku14 != null and subject.kamoku14 != ''}">
+                     <option th:text="${subject.kamoku14}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku15 != null and subject.kamoku15 != ''}">
+                     <option th:text="${subject.kamoku15}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku16 != null and subject.kamoku16 != ''}">
+                     <option th:text="${subject.kamoku16}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku17 != null and subject.kamoku17 != ''}">
+                     <option th:text="${subject.kamoku17}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku18 != null and subject.kamoku18 != ''}">
+                     <option th:text="${subject.kamoku8}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku19 != null and subject.kamoku19 != ''}">
+                     <option th:text="${subject.kamoku19}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku20 != null and subject.kamoku20 != ''}">
+                     <option th:text="${subject.kamoku20}"></option>
+                 </th:block>
+                 
+            </th:block>
+            <!-- 水曜日2限目終わり -->
+            
+            
+        </select>
+    </td>         
+                 <td>
+        <select name="subject1_6">
+			<!-- 木曜日2限目 -->
+            <option value="">選択してください</option>
+            <!-- 科目データを動的に挿入 -->
+            <th:block th:each="subject : ${subjects}">
+				
+                 <th:block th:if="${subject.kamoku1 != null and subject.kamoku1 != ''}">
+                     <option th:text="${subject.kamoku1}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku2 != null and subject.kamoku2 != ''}">
+                     <option th:text="${subject.kamoku2}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku3 != null and subject.kamoku3 != ''}">
+                     <option th:text="${subject.kamoku3}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku4 != null and subject.kamoku4 != ''}">
+                     <option th:text="${subject.kamoku4}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku5 != null and subject.kamoku5 != ''}">
+                     <option th:text="${subject.kamoku5}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku6 != null and subject.kamoku6 != ''}">
+                     <option th:text="${subject.kamoku6}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku7 != null and subject.kamoku7 != ''}">
+                     <option th:text="${subject.kamoku7}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku8 != null and subject.kamoku8 != ''}">
+                     <option th:text="${subject.kamoku8}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku9 != null and subject.kamoku9 != ''}">
+                     <option th:text="${subject.kamoku9}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku10 != null and subject.kamoku10 != ''}">
+                     <option th:text="${subject.kamoku10}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku11 != null and subject.kamoku11 != ''}">
+                     <option th:text="${subject.kamoku11}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku12 != null and subject.kamoku12 != ''}">
+                     <option th:text="${subject.kamoku12}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku13 != null and subject.kamoku13 != ''}">
+                     <option th:text="${subject.kamoku13}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku14 != null and subject.kamoku14 != ''}">
+                     <option th:text="${subject.kamoku14}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku15 != null and subject.kamoku15 != ''}">
+                     <option th:text="${subject.kamoku15}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku16 != null and subject.kamoku16 != ''}">
+                     <option th:text="${subject.kamoku16}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku17 != null and subject.kamoku17 != ''}">
+                     <option th:text="${subject.kamoku17}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku18 != null and subject.kamoku18 != ''}">
+                     <option th:text="${subject.kamoku8}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku19 != null and subject.kamoku19 != ''}">
+                     <option th:text="${subject.kamoku19}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku20 != null and subject.kamoku20 != ''}">
+                     <option th:text="${subject.kamoku20}"></option>
+                 </th:block>
+                 
+            </th:block>
+            <!-- 木曜日2限目終わり -->
+            
+            
+        </select>
+    </td>       
+                      <td>
+        <select name="subject1_6">
+			<!-- 金曜日2限目 -->
+            <option value="">選択してください</option>
+            <!-- 科目データを動的に挿入 -->
+            <th:block th:each="subject : ${subjects}">
+				
+                 <th:block th:if="${subject.kamoku1 != null and subject.kamoku1 != ''}">
+                     <option th:text="${subject.kamoku1}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku2 != null and subject.kamoku2 != ''}">
+                     <option th:text="${subject.kamoku2}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku3 != null and subject.kamoku3 != ''}">
+                     <option th:text="${subject.kamoku3}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku4 != null and subject.kamoku4 != ''}">
+                     <option th:text="${subject.kamoku4}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku5 != null and subject.kamoku5 != ''}">
+                     <option th:text="${subject.kamoku5}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku6 != null and subject.kamoku6 != ''}">
+                     <option th:text="${subject.kamoku6}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku7 != null and subject.kamoku7 != ''}">
+                     <option th:text="${subject.kamoku7}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku8 != null and subject.kamoku8 != ''}">
+                     <option th:text="${subject.kamoku8}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku9 != null and subject.kamoku9 != ''}">
+                     <option th:text="${subject.kamoku9}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku10 != null and subject.kamoku10 != ''}">
+                     <option th:text="${subject.kamoku10}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku11 != null and subject.kamoku11 != ''}">
+                     <option th:text="${subject.kamoku11}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku12 != null and subject.kamoku12 != ''}">
+                     <option th:text="${subject.kamoku12}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku13 != null and subject.kamoku13 != ''}">
+                     <option th:text="${subject.kamoku13}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku14 != null and subject.kamoku14 != ''}">
+                     <option th:text="${subject.kamoku14}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku15 != null and subject.kamoku15 != ''}">
+                     <option th:text="${subject.kamoku15}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku16 != null and subject.kamoku16 != ''}">
+                     <option th:text="${subject.kamoku16}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku17 != null and subject.kamoku17 != ''}">
+                     <option th:text="${subject.kamoku17}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku18 != null and subject.kamoku18 != ''}">
+                     <option th:text="${subject.kamoku8}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku19 != null and subject.kamoku19 != ''}">
+                     <option th:text="${subject.kamoku19}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku20 != null and subject.kamoku20 != ''}">
+                     <option th:text="${subject.kamoku20}"></option>
+                 </th:block>
+                 
+            </th:block>
+            <!-- 金曜日2限目終わり -->
+            
+            
+        </select>
+    </td>  
+            <!-- ここ？ -->
+            
+            <tr>
                     <td>4</td>
-                    <td><input type="text" name="studentId_10" placeholder="月4"></td>
-                    <td><input type="text" name="studentName_10" placeholder="火4"></td>
-                    <td><input type="text" name="subject1_10" placeholder="水4"></td>
-                    <td><input type="text" name="subject2_10" placeholder="木4"></td>
-                    <td><input type="text" name="subject3_10"placeholder="金4"></td>
-                </tr>
+                    <td>
+        <select name="subject1_6">
+			<!-- 月曜日2限目 -->
+            <option value="">選択してください</option>
+            <!-- 科目データを動的に挿入 -->
+            <th:block th:each="subject : ${subjects}">
+				
+                 <th:block th:if="${subject.kamoku1 != null and subject.kamoku1 != ''}">
+                     <option th:text="${subject.kamoku1}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku2 != null and subject.kamoku2 != ''}">
+                     <option th:text="${subject.kamoku2}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku3 != null and subject.kamoku3 != ''}">
+                     <option th:text="${subject.kamoku3}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku4 != null and subject.kamoku4 != ''}">
+                     <option th:text="${subject.kamoku4}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku5 != null and subject.kamoku5 != ''}">
+                     <option th:text="${subject.kamoku5}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku6 != null and subject.kamoku6 != ''}">
+                     <option th:text="${subject.kamoku6}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku7 != null and subject.kamoku7 != ''}">
+                     <option th:text="${subject.kamoku7}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku8 != null and subject.kamoku8 != ''}">
+                     <option th:text="${subject.kamoku8}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku9 != null and subject.kamoku9 != ''}">
+                     <option th:text="${subject.kamoku9}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku10 != null and subject.kamoku10 != ''}">
+                     <option th:text="${subject.kamoku10}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku11 != null and subject.kamoku11 != ''}">
+                     <option th:text="${subject.kamoku11}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku12 != null and subject.kamoku12 != ''}">
+                     <option th:text="${subject.kamoku12}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku13 != null and subject.kamoku13 != ''}">
+                     <option th:text="${subject.kamoku13}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku14 != null and subject.kamoku14 != ''}">
+                     <option th:text="${subject.kamoku14}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku15 != null and subject.kamoku15 != ''}">
+                     <option th:text="${subject.kamoku15}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku16 != null and subject.kamoku16 != ''}">
+                     <option th:text="${subject.kamoku16}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku17 != null and subject.kamoku17 != ''}">
+                     <option th:text="${subject.kamoku17}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku18 != null and subject.kamoku18 != ''}">
+                     <option th:text="${subject.kamoku8}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku19 != null and subject.kamoku19 != ''}">
+                     <option th:text="${subject.kamoku19}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku20 != null and subject.kamoku20 != ''}">
+                     <option th:text="${subject.kamoku20}"></option>
+                 </th:block>
+                 
+            </th:block>
+            <!-- 月曜日2限目終わり -->
+            
+            
+        </select>
+    </td>
+                <td>
+        <select name="subject1_6">
+			<!-- 火曜日2限目 -->
+            <option value="">選択してください</option>
+            <!-- 科目データを動的に挿入 -->
+            <th:block th:each="subject : ${subjects}">
+				
+                 <th:block th:if="${subject.kamoku1 != null and subject.kamoku1 != ''}">
+                     <option th:text="${subject.kamoku1}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku2 != null and subject.kamoku2 != ''}">
+                     <option th:text="${subject.kamoku2}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku3 != null and subject.kamoku3 != ''}">
+                     <option th:text="${subject.kamoku3}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku4 != null and subject.kamoku4 != ''}">
+                     <option th:text="${subject.kamoku4}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku5 != null and subject.kamoku5 != ''}">
+                     <option th:text="${subject.kamoku5}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku6 != null and subject.kamoku6 != ''}">
+                     <option th:text="${subject.kamoku6}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku7 != null and subject.kamoku7 != ''}">
+                     <option th:text="${subject.kamoku7}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku8 != null and subject.kamoku8 != ''}">
+                     <option th:text="${subject.kamoku8}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku9 != null and subject.kamoku9 != ''}">
+                     <option th:text="${subject.kamoku9}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku10 != null and subject.kamoku10 != ''}">
+                     <option th:text="${subject.kamoku10}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku11 != null and subject.kamoku11 != ''}">
+                     <option th:text="${subject.kamoku11}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku12 != null and subject.kamoku12 != ''}">
+                     <option th:text="${subject.kamoku12}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku13 != null and subject.kamoku13 != ''}">
+                     <option th:text="${subject.kamoku13}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku14 != null and subject.kamoku14 != ''}">
+                     <option th:text="${subject.kamoku14}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku15 != null and subject.kamoku15 != ''}">
+                     <option th:text="${subject.kamoku15}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku16 != null and subject.kamoku16 != ''}">
+                     <option th:text="${subject.kamoku16}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku17 != null and subject.kamoku17 != ''}">
+                     <option th:text="${subject.kamoku17}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku18 != null and subject.kamoku18 != ''}">
+                     <option th:text="${subject.kamoku8}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku19 != null and subject.kamoku19 != ''}">
+                     <option th:text="${subject.kamoku19}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku20 != null and subject.kamoku20 != ''}">
+                     <option th:text="${subject.kamoku20}"></option>
+                 </th:block>
+                 
+            </th:block>
+            <!-- 火曜日2限目終わり -->
+            
+            
+        </select>
+    </td>    
+               <td>
+        <select name="subject1_6">
+			<!-- 水曜日2限目 -->
+            <option value="">選択してください</option>
+            <!-- 科目データを動的に挿入 -->
+            <th:block th:each="subject : ${subjects}">
+				
+                 <th:block th:if="${subject.kamoku1 != null and subject.kamoku1 != ''}">
+                     <option th:text="${subject.kamoku1}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku2 != null and subject.kamoku2 != ''}">
+                     <option th:text="${subject.kamoku2}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku3 != null and subject.kamoku3 != ''}">
+                     <option th:text="${subject.kamoku3}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku4 != null and subject.kamoku4 != ''}">
+                     <option th:text="${subject.kamoku4}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku5 != null and subject.kamoku5 != ''}">
+                     <option th:text="${subject.kamoku5}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku6 != null and subject.kamoku6 != ''}">
+                     <option th:text="${subject.kamoku6}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku7 != null and subject.kamoku7 != ''}">
+                     <option th:text="${subject.kamoku7}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku8 != null and subject.kamoku8 != ''}">
+                     <option th:text="${subject.kamoku8}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku9 != null and subject.kamoku9 != ''}">
+                     <option th:text="${subject.kamoku9}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku10 != null and subject.kamoku10 != ''}">
+                     <option th:text="${subject.kamoku10}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku11 != null and subject.kamoku11 != ''}">
+                     <option th:text="${subject.kamoku11}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku12 != null and subject.kamoku12 != ''}">
+                     <option th:text="${subject.kamoku12}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku13 != null and subject.kamoku13 != ''}">
+                     <option th:text="${subject.kamoku13}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku14 != null and subject.kamoku14 != ''}">
+                     <option th:text="${subject.kamoku14}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku15 != null and subject.kamoku15 != ''}">
+                     <option th:text="${subject.kamoku15}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku16 != null and subject.kamoku16 != ''}">
+                     <option th:text="${subject.kamoku16}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku17 != null and subject.kamoku17 != ''}">
+                     <option th:text="${subject.kamoku17}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku18 != null and subject.kamoku18 != ''}">
+                     <option th:text="${subject.kamoku8}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku19 != null and subject.kamoku19 != ''}">
+                     <option th:text="${subject.kamoku19}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku20 != null and subject.kamoku20 != ''}">
+                     <option th:text="${subject.kamoku20}"></option>
+                 </th:block>
+                 
+            </th:block>
+            <!-- 水曜日2限目終わり -->
+            
+            
+        </select>
+    </td>         
+                 <td>
+        <select name="subject1_6">
+			<!-- 木曜日2限目 -->
+            <option value="">選択してください</option>
+            <!-- 科目データを動的に挿入 -->
+            <th:block th:each="subject : ${subjects}">
+				
+                 <th:block th:if="${subject.kamoku1 != null and subject.kamoku1 != ''}">
+                     <option th:text="${subject.kamoku1}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku2 != null and subject.kamoku2 != ''}">
+                     <option th:text="${subject.kamoku2}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku3 != null and subject.kamoku3 != ''}">
+                     <option th:text="${subject.kamoku3}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku4 != null and subject.kamoku4 != ''}">
+                     <option th:text="${subject.kamoku4}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku5 != null and subject.kamoku5 != ''}">
+                     <option th:text="${subject.kamoku5}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku6 != null and subject.kamoku6 != ''}">
+                     <option th:text="${subject.kamoku6}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku7 != null and subject.kamoku7 != ''}">
+                     <option th:text="${subject.kamoku7}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku8 != null and subject.kamoku8 != ''}">
+                     <option th:text="${subject.kamoku8}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku9 != null and subject.kamoku9 != ''}">
+                     <option th:text="${subject.kamoku9}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku10 != null and subject.kamoku10 != ''}">
+                     <option th:text="${subject.kamoku10}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku11 != null and subject.kamoku11 != ''}">
+                     <option th:text="${subject.kamoku11}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku12 != null and subject.kamoku12 != ''}">
+                     <option th:text="${subject.kamoku12}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku13 != null and subject.kamoku13 != ''}">
+                     <option th:text="${subject.kamoku13}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku14 != null and subject.kamoku14 != ''}">
+                     <option th:text="${subject.kamoku14}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku15 != null and subject.kamoku15 != ''}">
+                     <option th:text="${subject.kamoku15}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku16 != null and subject.kamoku16 != ''}">
+                     <option th:text="${subject.kamoku16}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku17 != null and subject.kamoku17 != ''}">
+                     <option th:text="${subject.kamoku17}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku18 != null and subject.kamoku18 != ''}">
+                     <option th:text="${subject.kamoku8}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku19 != null and subject.kamoku19 != ''}">
+                     <option th:text="${subject.kamoku19}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku20 != null and subject.kamoku20 != ''}">
+                     <option th:text="${subject.kamoku20}"></option>
+                 </th:block>
+                 
+            </th:block>
+            <!-- 木曜日2限目終わり -->
+            
+            
+        </select>
+    </td>       
+                      <td>
+        <select name="subject1_6">
+			<!-- 金曜日2限目 -->
+            <option value="">選択してください</option>
+            <!-- 科目データを動的に挿入 -->
+            <th:block th:each="subject : ${subjects}">
+				
+                 <th:block th:if="${subject.kamoku1 != null and subject.kamoku1 != ''}">
+                     <option th:text="${subject.kamoku1}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku2 != null and subject.kamoku2 != ''}">
+                     <option th:text="${subject.kamoku2}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku3 != null and subject.kamoku3 != ''}">
+                     <option th:text="${subject.kamoku3}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku4 != null and subject.kamoku4 != ''}">
+                     <option th:text="${subject.kamoku4}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku5 != null and subject.kamoku5 != ''}">
+                     <option th:text="${subject.kamoku5}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku6 != null and subject.kamoku6 != ''}">
+                     <option th:text="${subject.kamoku6}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku7 != null and subject.kamoku7 != ''}">
+                     <option th:text="${subject.kamoku7}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku8 != null and subject.kamoku8 != ''}">
+                     <option th:text="${subject.kamoku8}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku9 != null and subject.kamoku9 != ''}">
+                     <option th:text="${subject.kamoku9}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku10 != null and subject.kamoku10 != ''}">
+                     <option th:text="${subject.kamoku10}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku11 != null and subject.kamoku11 != ''}">
+                     <option th:text="${subject.kamoku11}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku12 != null and subject.kamoku12 != ''}">
+                     <option th:text="${subject.kamoku12}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku13 != null and subject.kamoku13 != ''}">
+                     <option th:text="${subject.kamoku13}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku14 != null and subject.kamoku14 != ''}">
+                     <option th:text="${subject.kamoku14}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku15 != null and subject.kamoku15 != ''}">
+                     <option th:text="${subject.kamoku15}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku16 != null and subject.kamoku16 != ''}">
+                     <option th:text="${subject.kamoku16}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku17 != null and subject.kamoku17 != ''}">
+                     <option th:text="${subject.kamoku17}"></option>
+                 </th:block>
+                  <th:block th:if="${subject.kamoku18 != null and subject.kamoku18 != ''}">
+                     <option th:text="${subject.kamoku8}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku19 != null and subject.kamoku19 != ''}">
+                     <option th:text="${subject.kamoku19}"></option>
+                 </th:block>
+                 <th:block th:if="${subject.kamoku20 != null and subject.kamoku20 != ''}">
+                     <option th:text="${subject.kamoku20}"></option>
+                 </th:block>
+                 
+            </th:block>
+            <!-- 金曜日2限目終わり -->
+            
+            
+        </select>
+    </td>  
+            
+        </select>
+    </td>  
             </tbody>
         </table>
 

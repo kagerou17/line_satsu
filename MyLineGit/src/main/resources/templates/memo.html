@@ -26,6 +26,14 @@
         h1 {
             color: #333;
         }
+      
+ select {
+            width: 100%; /* プルダウンの幅を最大にします */
+            padding: 10px; /* プルダウンの内側に少し余白を追加します */
+            font-size: 18px; /* プルダウンの文字サイズを大きくします */
+            border: 1px solid #ccc; /* プルダウンの境界線を追加します */
+            border-radius: 5px; /* プルダウンの角を少し丸くします */
+        }
 
         button {
             padding: 10px;
@@ -127,43 +135,42 @@
     <header>
         <h1>学生支援システムRIKO</h1>
     </header>
-    <h1>メモ</h1>
-    <form>
+    <h1>ノート</h1>
+    <form method="post" th:action="@{/memo}">
+		
+		
+		
+		
+		 <label for="note_id">ID:</label>
+                <input type="text"  name="note_id">
+                
+        
         <label for="insert-date">日時:</label>
-        <input type="date" id="insert-date" name="insert-date">
+        <input type="date"  name="subject_time">
+        
+  
+        <br><br>
+        
+        
+        <select name="subject">
+            <option value="DB応用">DB応用</option>
+            <option value="Javaフレームワーク">Javaフレームワーク</option>
+            <option value="卒業制作">卒業制作</option>
+            <!-- 他のオプションを追加 -->
+        </select>
+        
         <br><br>
         <label for="memo">登録したい内容を入力してください:</label>
-        <textarea id="memo" rows="4" cols="50"></textarea>
+       <textarea name="note" rows="4" cols="50"></textarea>
         <br><br>
-        <button type="button" onclick="saveMemo()">保存</button>
+        <button type="submit">送信</button>
         <hr>
         <a th:href="@{/homedemo}">
             <button type="button">ホーム画面</button>
         </a>
     </form>
 
-    <script>
-        function saveMemo() {
-            var selectedDate = document.getElementById('insert-date').value;
-            if (selectedDate.trim() === '') {
-                alert('日時を選択してください');
-                return;
-            }
-            var memoText = document.getElementById('memo').value;
-            if (memoText.trim() !== '') {
-                var memoData = {
-                    text: memoText,
-                    timestamp: new Date().toLocaleString()
-                };
-                console.log('メモが保存されました:', memoData);
-                document.getElementById('memo').value = '';
-                //window.location.href = 'file:///C:/Users/S0521/Desktop/%E3%83%87%E3%83%A2/memokanryou.html';
-                th:href="@{/memokanryou}";
-            } else {
-                alert('メモを入力してください');
-            }
-        }
-    </script>
+    
 </body>
 
 </html>
