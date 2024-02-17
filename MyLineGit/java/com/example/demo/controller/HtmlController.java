@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.example.demo.entity.Acount;
 import com.example.demo.entity.Event;
 import com.example.demo.entity.Kamoku;
+import com.example.demo.entity.Nikka;
 import com.example.demo.entity.Note;
 import com.example.demo.repository.AcountRepository;
 import com.example.demo.repository.EventRepository;
@@ -281,21 +282,45 @@ return "nikkakanryou";
 	
 	
 	
-	
+
 	@RequestMapping(path = "/nikkasentaku", method = RequestMethod.GET)
 	public String nikkasentaku(Model model) {
 
 		// データベースから科目を取得してモデルにセット
-        List<Kamoku> subjects = kamokurepository.findAll(); // これはSubjectエンティティを全て取得する例です
-        model.addAttribute("subjects", subjects);
+//        List<Kamoku> subjects = kamokurepository.findByKamoku_id(); // これはSubjectエンティティを全て取得する例です
+        List<Kamoku> subject = kamokurepository.findAll();
+        model.addAttribute("subjects", subject);
 return "nikkasentaku";
 }
 	
+//	@RequestMapping(path = "/nikkasentaku", method = RequestMethod.POST)
+//	public String nikkasentaku1(@RequestParam("selectedOption1") String selectedOption1) {
+//		System.out.println("選択されたオプション: " + selectedOption1);
+//		
+//return "nikkasentaku";
+//}
+//	@PostMapping("/nikkasentaku")
+//    public String processForm(@RequestParam("selectedOption") String selectedOption) {
+//        // 選択されたオプションを処理するロジックをここに追加
+//        System.out.println("選択されたオプション: " + selectedOption);
+//        
+//        // 必要に応じて他の処理やリダイレクトを行う
+//        return "redirect:/nikkasentaku";
+//    }
 	
+	@RequestMapping(path = "/nikkasentaku", method = RequestMethod.POST)
+	public String nikkasentaku1(String getu1) {
+
+		Nikka nikka = new Nikka();
+		System.out.println("いいいいいいいいいいいいいい");
+		nikka.setGetu1(getu1);
+		
+		
+	System.out.println("ひあった");
+		nikkarepository.save(nikka);
+return "nikkasentaku";
 	
-	
-	
-	
+	}
 	
 	@RequestMapping(path = "/nikkatouroku", method = RequestMethod.GET)
 	public String nikkatouroku() {

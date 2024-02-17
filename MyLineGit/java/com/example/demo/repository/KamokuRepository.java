@@ -1,11 +1,15 @@
 package com.example.demo.repository;
 
+
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.example.demo.entity.Nikka;
+import com.example.demo.entity.Kamoku;
 
 @Repository
-public interface NikkaRepository extends JpaRepository<Nikka,Integer>{
+public interface KamokuRepository extends JpaRepository<Kamoku,Integer>{
 
+
+	
 }
