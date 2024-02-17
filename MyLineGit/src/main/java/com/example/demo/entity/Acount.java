@@ -11,7 +11,7 @@ public class Acount {
 
     @Id
     @Column(name="acount_id")
-    private String acount_id;
+    private int acount_id;
 
     @Column(name="acount_name")
     private String acount_name;
@@ -34,11 +34,11 @@ public class Acount {
     @Column(name="class")
     private String classs;
 
-	public String getAcount_id() {
+	public int getAcount_id() {
 		return acount_id;
 	}
 
-	public void setAcount_id(String acount_id) {
+	public void setAcount_id(int acount_id) {
 		this.acount_id = acount_id;
 	}
 
@@ -97,6 +97,6 @@ public class Acount {
 	public void setClasss(String classs) {
 		this.classs = classs;
 	}
-    
 
+	
 }

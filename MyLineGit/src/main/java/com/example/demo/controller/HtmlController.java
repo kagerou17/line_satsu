@@ -115,7 +115,7 @@ public class HtmlController {
 		return "sinkitouroku";
 	}
 	@RequestMapping(path = "/sinkitouroku/{lineUserId}", method = RequestMethod.POST)
-	public String sinkitouroku1(@PathVariable String lineUserId, Model model,int acount_id,String acount_name,String password) {
+	public String sinkitouroku1(@PathVariable String lineUserId, Model model,Integer acount_id,String acount_name,String password) {
 
 		model.addAttribute("lineUserId", lineUserId);
 		
